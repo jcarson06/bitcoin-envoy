@@ -1,0 +1,52 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+const Intro = () => {
+  return <section className="overflow-hidden relative bg-cover py-20 md:py-32" id="hero" style={{
+    backgroundImage: 'url("/Header-background.webp")',
+    backgroundPosition: 'center 30%'
+  }}>
+      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
+      
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
+          <div className="w-full lg:w-1/2">
+            <h1 style={{
+            animationDelay: "0.3s"
+          }} className="section-title sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-5xl">Welcome To Your Bitcoin Journey</h1>
+            
+            <p className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" style={{
+            animationDelay: "0.5s"
+          }}>Have you ever been curious about bitcoin... but unsure where to start? Bitcoin Envoy was built exclusively for beginners — to help you understand the basics.</p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.7s"
+          }}>
+              <Link to="/learn" className="flex items-center justify-center group w-full sm:w-auto text-center transition-transform hover:scale-105" style={{
+              backgroundColor: '#FE5C02',
+              borderRadius: '1440px',
+              color: '#FFFFFF',
+              fontSize: '14px',
+              lineHeight: '20px',
+              padding: '16px 24px',
+              border: '1px solid white'
+            }}>
+                Start Your Bitcoin Journey
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+          
+          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl opacity-0 animate-fade-in" style={{
+            animationDelay: "0.9s"
+          }}>
+              <img src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" alt="Bitcoin education and coaching" className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>;
+};
+export default Intro;

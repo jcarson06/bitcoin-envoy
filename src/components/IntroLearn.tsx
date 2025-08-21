@@ -6,7 +6,7 @@ const IntroLearn = () => {
         <h1 className="section-title mb-6">
           Let's Dive In
         </h1>
-        <p className="section-subtitle mx-auto mb-8 max-w-2xl">Below, you'll find the very best bitcoin educational content. Feel free to take your time and explore whatever topics interest you.</p>
+        <p className="section-subtitle mx-auto mb-8 max-w-2xl">This page is designed to provide you with the very best bitcoin educational content on the internet today. Think of it like the top 1% of bitcoin content out there — but specifically curated for beginners.</p>
       </div>
     </Section>;
 };

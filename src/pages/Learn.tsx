@@ -16,7 +16,7 @@ const Learn = () => {
       <Section spacing="lg" background="white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Start your Bitcoin journey with this 20 min overview of Bitcoin's many use cases and why it's important for the future of freedom and money.</h2>
+            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
             <p className="section-subtitle mx-auto max-w-2xl">
               Start your Bitcoin journey with this comprehensive overview of Bitcoin's many use cases 
               and why it's important for the future of money.

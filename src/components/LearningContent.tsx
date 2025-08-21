@@ -12,10 +12,20 @@ interface ContentItem {
   duration: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   thumbnail?: string;
+  youtubeId?: string;
 }
 
 const contentData = {
   basics: [
+    {
+      id: '0',
+      title: 'Why Bitcoin is Important',
+      description: 'Complete overview of Bitcoin use cases and why it matters for the future',
+      type: 'video' as const,
+      duration: '15 min',
+      level: 'Beginner' as const,
+      youtubeId: 'R4gyS5mb9dE'
+    },
     {
       id: '1',
       title: 'What is Bitcoin?',
@@ -141,7 +151,7 @@ const getLevelColor = (level: ContentItem['level']) => {
 
 const ContentCard: React.FC<{ item: ContentItem }> = ({ item }) => (
   <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-    {item.thumbnail && (
+    {item.thumbnail ? (
       <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
         <img 
           src={item.thumbnail}
@@ -149,7 +159,20 @@ const ContentCard: React.FC<{ item: ContentItem }> = ({ item }) => (
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-    )}
+    ) : item.youtubeId ? (
+      <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden relative">
+        <img 
+          src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
+          alt={item.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:bg-red-700 transition-colors">
+            <Play className="w-6 h-6 text-white ml-1" />
+          </div>
+        </div>
+      </div>
+    ) : null}
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between gap-2">
         <CardTitle className="text-lg font-semibold leading-tight group-hover:text-pulse-600 transition-colors">

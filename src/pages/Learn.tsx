@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import IntroLearn from "@/components/IntroLearn";
 import LearningContent from "@/components/LearningContent";
+import YouTubeEmbed from "@/components/common/YouTubeEmbed";
 import { Section } from "@/components/common/Section";
 const Learn = () => {
   return <div className="min-h-screen">
@@ -10,6 +11,33 @@ const Learn = () => {
       
       {/* IntroLearn Section */}
       <IntroLearn />
+
+      {/* Featured Content Section */}
+      <Section spacing="lg" background="white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">
+              Start your Bitcoin journey with this comprehensive overview of Bitcoin's many use cases 
+              and why it's important for the future of money.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed 
+              videoId="R4gyS5mb9dE" 
+              title="Why Bitcoin is Important - Complete Overview"
+              className="mb-6"
+            />
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-2">Bitcoin Use Cases Overview</h3>
+              <p className="text-gray-600">
+                An excellent introduction to all the many use cases of Bitcoin and why it's revolutionizing money.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Learning Modules Section */}
       <Section spacing="lg" background="white">

@@ -24,11 +24,7 @@ const Learn = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed 
-              videoId="R4gyS5mb9dE" 
-              title="Why Bitcoin is Important - Complete Overview"
-              className="mb-6"
-            />
+            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
             <div className="text-center">
               <h3 className="text-xl font-semibold mb-2">Bitcoin Use Cases Overview</h3>
               <p className="text-gray-600">
@@ -104,7 +100,7 @@ const Learn = () => {
       {/* CTA Section */}
       <Section spacing="lg" background="gray">
         <div className="section-container text-center">
-          <h2 className="section-title mb-4">Ready to Start Learning?</h2>
+          <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">
             Take the first step towards bitcoin mastery with our comprehensive educational resources.
           </p>

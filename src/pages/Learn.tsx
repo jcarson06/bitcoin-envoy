@@ -29,6 +29,31 @@ const Learn = () => {
         </div>
       </Section>
 
+      {/* Why Traditional Money Loses Value Section */}
+      <Section spacing="lg" background="gray">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">Why Traditional Money Loses Value</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">
+              Understanding the problem with fiat currency helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/d6e48a76-6347-4e37-80e0-321b54411aef.png" 
+              alt="Dollar debasement infographic showing how traditional money loses purchasing power over time compared to Bitcoin and other assets"
+              className="w-full h-auto rounded-lg shadow-lg mb-6"
+            />
+            <div className="text-center">
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                This infographic demonstrates how the US dollar has lost significant purchasing power over decades due to monetary policy and inflation. 
+                Bitcoin offers a fixed supply alternative that has historically preserved and increased purchasing power over time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* CTA Section */}
       <Section spacing="lg" background="gray">

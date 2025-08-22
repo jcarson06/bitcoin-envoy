@@ -40,10 +40,7 @@ const Learn = () => {
           <div className="max-w-4xl mx-auto">
             <img src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades" className="w-full h-auto rounded-lg shadow-lg mb-6" />
             <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                This infographic demonstrates how the US dollar has lost significant purchasing power over decades due to monetary policy and inflation. 
-                Bitcoin offers a fixed supply alternative that has historically preserved and increased purchasing power over time.
-              </p>
+              <p className="text-gray-600 max-w-3xl mx-auto">This infographic demonstrates how the US dollar has lost significant purchasing power over the past century due to monetary policy and inflation. Pay special attention to the bottom row of images and all of the many items that $1 could have afforded you in the past. What can $1 buy you today?</p>
             </div>
           </div>
         </div>

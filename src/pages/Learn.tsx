@@ -40,8 +40,8 @@ const Learn = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-elegant">
               <img 
-                src="/lovable-uploads/2f32361e-a80a-4627-9cd8-4f3c955d99a6.png" 
-                alt="Infographic showing the declining purchasing power of the US dollar from 1913 to present, demonstrating how $1 in 1913 has the same purchasing power as over $30 today"
+                src="/lovable-uploads/c28f3428-bc87-4af3-9dbc-3ffa15ce8b48.png" 
+                alt="Infographic showing the declining purchasing power of the US dollar from 1913 to 2020, with examples of what $1 could buy including Hershey's bars, Coca-Cola, and other items throughout different time periods"
                 className="w-full h-auto rounded-xl"
                 loading="lazy"
                 decoding="async"

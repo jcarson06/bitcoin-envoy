@@ -41,7 +41,7 @@ const Learn = () => {
           
           <div className="max-w-4xl mx-auto">
             <img 
-              src="/lovable-uploads/d6e48a76-6347-4e37-80e0-321b54411aef.png" 
+              src="/lovable-uploads/145c7978-4866-4776-bf84-57e5beb97fa8.png" 
               alt="Dollar debasement infographic showing how traditional money loses purchasing power over time compared to Bitcoin and other assets"
               className="w-full h-auto rounded-lg shadow-lg mb-6"
             />

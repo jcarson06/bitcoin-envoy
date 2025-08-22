@@ -41,8 +41,8 @@ const Learn = () => {
           
           <div className="max-w-4xl mx-auto">
             <img 
-              src="/lovable-uploads/145c7978-4866-4776-bf84-57e5beb97fa8.png" 
-              alt="Dollar debasement infographic showing how traditional money loses purchasing power over time compared to Bitcoin and other assets"
+              src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" 
+              alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades"
               className="w-full h-auto rounded-lg shadow-lg mb-6"
             />
             <div className="text-center">

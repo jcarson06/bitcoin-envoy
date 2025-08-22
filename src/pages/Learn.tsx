@@ -33,18 +33,14 @@ const Learn = () => {
       <Section spacing="lg" background="gray">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Why Traditional Money Loses Value</h2>
+            <h2 className="section-title mb-4">History of the Dollar</h2>
             <p className="section-subtitle mx-auto max-w-2xl">
               Understanding the problem with fiat currency helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <img 
-              src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" 
-              alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades"
-              className="w-full h-auto rounded-lg shadow-lg mb-6"
-            />
+            <img src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades" className="w-full h-auto rounded-lg shadow-lg mb-6" />
             <div className="text-center">
               <p className="text-gray-600 max-w-3xl mx-auto">
                 This infographic demonstrates how the US dollar has lost significant purchasing power over decades due to monetary policy and inflation. 

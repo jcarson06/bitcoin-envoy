@@ -56,13 +56,13 @@ const Learn = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section spacing="lg" background="gray">
+      <Section spacing="lg" background="white">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">
             Learn more about personalized, one-on-one coaching with real human bitcoin experts. Your first session is 100% free.
           </p>
-          <a href="/coaching" className="inline-flex items-center px-8 py-4 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300">
+          <a href="/coaching" className="button-primary">
             Get Personalized Coaching
           </a>
         </div>

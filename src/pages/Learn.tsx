@@ -34,9 +34,7 @@ const Learn = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">History of the Dollar</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">
-              Understanding the problem with fiat currency helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.
-            </p>
+            <p className="section-subtitle mx-auto max-w-2xl">Understanding monetary history helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.</p>
           </div>
           
           <div className="max-w-4xl mx-auto">

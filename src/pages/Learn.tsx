@@ -29,6 +29,31 @@ const Learn = () => {
         </div>
       </Section>
 
+      {/* Understanding Money & Inflation Section */}
+      <Section spacing="lg" background="gray">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">Why Traditional Money Loses Value</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">Understanding how inflation erodes purchasing power helps explain why Bitcoin's fixed supply of 21 million coins makes it an attractive store of value.</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-elegant">
+              <img 
+                src="/lovable-uploads/2f32361e-a80a-4627-9cd8-4f3c955d99a6.png" 
+                alt="Infographic showing the declining purchasing power of the US dollar from 1913 to present, demonstrating how $1 in 1913 has the same purchasing power as over $30 today"
+                className="w-full h-auto rounded-xl"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-semibold mb-2">The Hidden Tax of Inflation</h3>
+                <p className="text-gray-600">This chart shows how the US dollar has lost over 96% of its purchasing power since 1913. Bitcoin's fixed supply cap of 21 million coins was designed to be deflationary, protecting against this systematic debasement of money.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* CTA Section */}
       <Section spacing="lg" background="gray">

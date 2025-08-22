@@ -11,6 +11,23 @@ const Learn = () => {
       {/* IntroLearn Section */}
       <IntroLearn />
 
+      {/* What is Bitcoin? Section */}
+      <Section spacing="lg" background="gray">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">What is Bitcoin?</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">Start with the fundamentals - a clear explanation of what Bitcoin actually is and how it works.</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed videoId="okJPiG5s9oU" title="What is Bitcoin? - Foundational Overview" className="mb-6" />
+            <div className="text-center">
+              <p className="text-gray-600 max-w-3xl mx-auto">This foundational video explains the basics of Bitcoin in simple terms, perfect for beginners who want to understand what Bitcoin is before diving deeper into why it matters.</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Featured Content Section */}
       <Section spacing="lg" background="white">
         <div className="section-container">

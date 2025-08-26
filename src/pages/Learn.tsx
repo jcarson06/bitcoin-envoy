@@ -12,7 +12,7 @@ const Learn = () => {
       <IntroLearn />
 
       {/* What is Bitcoin? Section */}
-      <Section spacing="lg" background="gray">
+      <Section id="what-is-bitcoin" spacing="lg" background="gray">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">What is Bitcoin?</h2>
@@ -29,7 +29,7 @@ const Learn = () => {
       </Section>
 
       {/* What is Bitcoin Part 2 Section */}
-      <Section spacing="lg" background="white">
+      <Section id="what-is-bitcoin-part-2" spacing="lg" background="white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">What is Bitcoin (Part 2)?</h2>
@@ -46,7 +46,7 @@ const Learn = () => {
       </Section>
 
       {/* Featured Content Section */}
-      <Section spacing="lg" background="gray">
+      <Section id="why-bitcoin-matters" spacing="lg" background="gray">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
@@ -64,7 +64,7 @@ const Learn = () => {
       </Section>
 
       {/* Why Traditional Money Loses Value Section */}
-      <Section spacing="lg" background="white">
+      <Section id="dollar-history" spacing="lg" background="white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">History of the Dollar</h2>
@@ -81,7 +81,7 @@ const Learn = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section spacing="lg" background="gray">
+      <Section id="coaching-cta" spacing="lg" background="gray">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">

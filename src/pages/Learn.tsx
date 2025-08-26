@@ -33,7 +33,7 @@ const Learn = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">What is Bitcoin (Part 2)?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Building on the fundamentals, here's a fun cartoon explanation that makes Bitcoin concepts even clearer and more engaging. [4 min]</p>
+            <p className="section-subtitle mx-auto max-w-2xl">Building on the fundamentals, here's a fun cartoon explanation that makes Bitcoin concepts even clearer and more engaging. [3 min]</p>
           </div>
           
           <div className="max-w-4xl mx-auto">

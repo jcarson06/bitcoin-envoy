@@ -28,29 +28,12 @@ const Learn = () => {
         </div>
       </Section>
 
-      {/* What is Bitcoin Part 2 Section */}
+      {/* Featured Content Section */}
       <Section spacing="lg" background="white">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="section-title mb-4">What is Bitcoin (Part 2)?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Building on the fundamentals, here's a fun cartoon explanation that makes Bitcoin concepts even clearer and more engaging. [4 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="BL5vUVQvmX4" title="What is Bitcoin (Part 2)? - Cartoon Explainer" className="mb-6" />
-            <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">This animated cartoon makes Bitcoin concepts accessible and entertaining, perfect for reinforcing what you learned in the first video with a more visual and fun approach.</p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Featured Content Section */}
-      <Section spacing="lg" background="gray">
-        <div className="section-container">
-          <div className="text-center mb-12">
             <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
+            <p className="section-subtitle mx-auto max-w-2xl">Building on the fundamentals, here's a fun cartoon explanation that makes Bitcoin concepts even clearer and more engaging. [3 min]</p>
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -64,7 +47,7 @@ const Learn = () => {
       </Section>
 
       {/* Why Traditional Money Loses Value Section */}
-      <Section spacing="lg" background="white">
+      <Section spacing="lg" background="gray">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">History of the Dollar</h2>
@@ -81,7 +64,7 @@ const Learn = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section spacing="lg" background="gray">
+      <Section spacing="lg" background="white">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">

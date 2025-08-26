@@ -85,7 +85,7 @@ const Learn = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">Why Does Bitcoin Have Value?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Now that you understand what Bitcoin is and how traditional money loses value, let's explore what gives Bitcoin its value and why people are willing to pay for it. [10 min]</p>
+            <p className="section-subtitle mx-auto max-w-2xl">Now that you understand what Bitcoin is and how traditional money loses value, let's explore what gives Bitcoin its value and why people are willing to pay for it. [3 min]</p>
           </div>
           
           <div className="max-w-4xl mx-auto">

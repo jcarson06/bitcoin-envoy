@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import IntroLearn from "@/components/IntroLearn";
 import YouTubeEmbed from "@/components/common/YouTubeEmbed";
 import { Section } from "@/components/common/Section";
+import { Link } from "react-router-dom";
 const Learn = () => {
   return <div className="min-h-screen">
       <Navbar />
@@ -104,9 +105,9 @@ const Learn = () => {
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">
             Learn more about personalized, one-on-one coaching with real human bitcoin experts. Your first session is 100% free.
           </p>
-          <a href="/coaching" className="button-primary">
+          <Link to="/coaching" className="button-primary">
             Get Personalized Coaching
-          </a>
+          </Link>
         </div>
       </Section>
 

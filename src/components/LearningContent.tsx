@@ -3,6 +3,7 @@ import { Section } from "@/components/common/Section";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Play, FileText, Image, Clock, BarChart3 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ContentItem {
   id: string;
@@ -279,12 +280,12 @@ const LearningContent = () => {
             <p className="text-gray-600 mb-6">
               Get expert support tailored to your learning style and pace with our 1-on-1 coaching sessions.
             </p>
-            <a 
-              href="/coaching" 
+            <Link 
+              to="/coaching" 
               className="inline-flex items-center px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300"
             >
               Explore Coaching Options
-            </a>
+            </Link>
           </div>
         </div>
       </div>

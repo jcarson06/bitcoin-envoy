@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Details from "@/components/Details";
-import HowItWorks from "@/components/HowItWorks";
 import IntroCoaching from "@/components/IntroCoaching";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
@@ -20,9 +19,6 @@ const Coaching = () => {
 
         {/* Benefits Section */}
         <Benefits />
-
-        {/* How It Works Section */}
-        <HowItWorks />
 
         {/* Coaching Details and Contact Form */}
         <Section spacing="lg" background="gray">

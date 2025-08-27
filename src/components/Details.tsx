@@ -41,7 +41,7 @@ const Details = () => {
                     <p className="text-gray-600 text-sm leading-relaxed mb-2">
                       After submitting this form, you'll receive a confirmation email within 24 hours to schedule your free consultation.
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">During our call, we'll answer any questions and discuss your goals and how our coaching can help you achieve them. No obligation - just expert guidance tailored to your journey.</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">During our call, we'll answer any questions and discuss your goals and how our coaching can help you achieve them. No obligation — just expert guidance tailored to your journey.</p>
                   </div>
                   <FormField control={form.control} name="fullName" rules={{
                   required: "Full name is required"

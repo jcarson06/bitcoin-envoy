@@ -1,24 +1,20 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-
 const Benefits = () => {
-  return (
-    <Section spacing="lg" background="white">
+  return <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">Why Choose Personal Coaching?</h2>
-          <p className="section-subtitle mx-auto">
-            Personalized education that adapts to your learning style and pace
-          </p>
+          <p className="section-subtitle mx-auto">Personalized education that adapts to your learning style and pace.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-pulse-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-pulse-600">
-                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 1 1-4-4"/>
-                <path d="M12 8a4 4 0 1 0 4 4"/>
-                <circle cx="12" cy="12" r="1"/>
+                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 1 1-4-4" />
+                <path d="M12 8a4 4 0 1 0 4 4" />
+                <circle cx="12" cy="12" r="1" />
               </svg>
             </div>
             <div>
@@ -32,8 +28,8 @@ const Benefits = () => {
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-pulse-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-pulse-600">
-                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                <polyline points="14 2 14 8 20 8"/>
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                <polyline points="14 2 14 8 20 8" />
               </svg>
             </div>
             <div>
@@ -47,9 +43,9 @@ const Benefits = () => {
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-pulse-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-pulse-600">
-                <rect width="18" height="11" x="3" y="11" rx="2"/>
-                <circle cx="12" cy="5" r="2"/>
-                <path d="M12 7v4"/>
+                <rect width="18" height="11" x="3" y="11" rx="2" />
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 7v4" />
               </svg>
             </div>
             <div>
@@ -63,7 +59,7 @@ const Benefits = () => {
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-pulse-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-pulse-600">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
               </svg>
             </div>
             <div>
@@ -75,8 +71,6 @@ const Benefits = () => {
           </div>
         </div>
       </div>
-    </Section>
-  );
+    </Section>;
 };
-
 export default Benefits;

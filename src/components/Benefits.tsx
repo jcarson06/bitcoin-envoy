@@ -62,9 +62,7 @@ const Benefits = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Ongoing Support</h3>
-              <p className="text-gray-600">
-                Lifetime access to resources and continued support as you grow your bitcoin knowledge.
-              </p>
+              <p className="text-gray-600">Lifetime access to educational resources and continued support as you grow your bitcoin knowledge.</p>
             </div>
           </div>
         </div>

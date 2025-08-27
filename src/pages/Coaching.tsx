@@ -7,28 +7,31 @@ import IntroCoaching from "@/components/IntroCoaching";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import { Section } from "@/components/common/Section";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const Coaching = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       
-      {/* IntroCoaching Section */}
-      <IntroCoaching />
+      <ErrorBoundary>
+        {/* IntroCoaching Section */}
+        <IntroCoaching />
 
-      {/* Benefits Section */}
-      <Benefits />
+        {/* Benefits Section */}
+        <Benefits />
 
-      {/* How It Works Section */}
-      <HowItWorks />
+        {/* How It Works Section */}
+        <HowItWorks />
 
-      {/* Coaching Details and Contact Form */}
-      <Section spacing="lg" background="gray">
-        <Details />
-      </Section>
+        {/* Coaching Details and Contact Form */}
+        <Section spacing="lg" background="gray">
+          <Details />
+        </Section>
 
-      {/* Testimonials Section */}
-      <Testimonials />
+        {/* Testimonials Section */}
+        <Testimonials />
+      </ErrorBoundary>
 
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/common/Container";
 
 interface FormData {
   fullName: string;
@@ -26,13 +27,12 @@ const Details = () => {
   };
 
   return (
-    <section id="details" className="w-full bg-white py-16 md:py-24">
-      <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
+    <Container>
+      <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
           {/* Left Card - The Details */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
             <div className="relative h-48 sm:h-64 p-6 sm:p-8 flex items-end" style={{
-              backgroundImage: "url('/background-section3.png')",
+              backgroundImage: "url('/background-section2.png')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}>
@@ -74,7 +74,7 @@ const Details = () => {
           {/* Right Card - Contact Form */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
             <div className="relative h-48 sm:h-64 p-6 sm:p-8 flex flex-col items-start" style={{
-              backgroundImage: "url('/background-section1.png')",
+              backgroundImage: "url('/background-section2.png')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}>
@@ -160,9 +160,8 @@ const Details = () => {
               </Form>
             </div>
           </div>
-        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 

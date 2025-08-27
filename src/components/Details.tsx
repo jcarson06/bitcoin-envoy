@@ -8,14 +8,12 @@ import { Container } from "@/components/common/Container";
 interface FormData {
   fullName: string;
   email: string;
-  phone?: string;
 }
 const Details = () => {
   const form = useForm<FormData>({
     defaultValues: {
       fullName: "",
-      email: "",
-      phone: ""
+      email: ""
     }
   });
   const onSubmit = (data: FormData) => {
@@ -39,6 +37,14 @@ const Details = () => {
             <div className="bg-white p-4 sm:p-8 border border-gray-100">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                  <div className="mb-6">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-2">
+                      After submitting this form, you'll receive a confirmation email within 24 hours to schedule your free consultation.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      During our call, we'll discuss your Bitcoin goals and how our coaching can help you achieve them. No obligation - just expert guidance tailored to your journey.
+                    </p>
+                  </div>
                   <FormField control={form.control} name="fullName" rules={{
                   required: "Full name is required"
                 }} render={({
@@ -65,14 +71,6 @@ const Details = () => {
                         <FormMessage />
                       </FormItem>} />
                   
-                  <FormField control={form.control} name="phone" render={({
-                  field
-                }) => <FormItem>
-                        <FormControl>
-                          
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>} />
                   
                   <Button type="submit" className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300">
                     Get Bitcoin Coaching

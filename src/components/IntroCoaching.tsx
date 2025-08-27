@@ -9,7 +9,7 @@ const IntroCoaching = () => {
         <h1 className="section-title mb-6">
           One-on-One Bitcoin Coaching
         </h1>
-        <p className="section-subtitle mx-auto mb-8 max-w-2xl">Still have questions? Get answers plus personalized guidance from experienced bitcoin educators who want to help you.</p>
+        <p className="section-subtitle mx-auto mb-8 max-w-2xl">Still have questions? Get answers plus personalized guidance from trusted bitcoin educators who are here to help.</p>
       </div>
     </Section>;
 };

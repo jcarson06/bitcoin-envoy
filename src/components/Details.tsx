@@ -69,7 +69,7 @@ const Details = () => {
                   field
                 }) => <FormItem>
                         <FormControl>
-                          <Input type="tel" placeholder="Phone number (optional)" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" {...field} />
+                          
                         </FormControl>
                         <FormMessage />
                       </FormItem>} />

@@ -75,7 +75,7 @@ const Details = () => {
                       </FormItem>} />
                   
                   <Button type="submit" className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300">
-                    Start Bitcoin Coaching
+                    Get Bitcoin Coaching
                   </Button>
                 </form>
               </Form>

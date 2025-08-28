@@ -28,7 +28,7 @@ const CTA = memo(() => {
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
           Ready to Start Your Bitcoin Journey?
         </h2>
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Join others who've taken steps to secure their financial future with co</p>
+        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Join others who've taken steps to secure their financial future by learning about Bitcoin and how it's changing the world.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/learn" className="button-primary">
             Start Learning

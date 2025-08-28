@@ -167,7 +167,7 @@
   }
 
   .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:ring-offset-2 whitespace-nowrap;
   }
 
   .hero-cta-button {

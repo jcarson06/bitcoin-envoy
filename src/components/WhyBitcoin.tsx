@@ -15,7 +15,7 @@ const WhyBitcoin = () => {
       delay: "0.4s"
     },
     {
-      title: "Bitcoin is the future of sound money",
+      title: "Bitcoin is the future of sound money and is changing the world for the better",
       tag: "Make A Difference",
       backgroundImage: "/background-section3.png", 
       delay: "0.6s"

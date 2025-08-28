@@ -3,7 +3,7 @@ import React from "react";
 const WhyBitcoin = () => {
   const cards = [
     {
-      title: "Understanding bitcoin gives you financial independence",
+      title: "Understanding Bitcoin allows you to achieve financial independence",
       tag: "Build A Foundation",
       backgroundImage: "/background-section1.png",
       delay: "0.2s"

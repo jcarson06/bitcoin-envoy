@@ -31,7 +31,7 @@ const Intro = () => {
               padding: '16px 24px',
               border: '1px solid white'
             }}>
-                Start Your Bitcoin Journey
+                Start Learning
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

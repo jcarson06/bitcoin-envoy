@@ -4,7 +4,7 @@ const WhyBitcoin = () => {
   const cards = [
     {
       title: "Understanding bitcoin gives you financial independence",
-      tag: "Foundation",
+      tag: "Build A Foundation",
       backgroundImage: "/background-section1.png",
       delay: "0.2s"
     },

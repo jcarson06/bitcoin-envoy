@@ -10,7 +10,7 @@ const WhyBitcoin = () => {
     },
     {
       title: "Bitcoin protects your wealth from inflation and debasement",
-      tag: "Security", 
+      tag: "Secure Your Future", 
       backgroundImage: "/background-section2.png",
       delay: "0.4s"
     },

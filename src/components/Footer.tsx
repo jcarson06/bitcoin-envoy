@@ -15,7 +15,7 @@ const Footer = () => {
           </Link>
         </p>
         <p className="text-center text-gray-500 text-xs mt-2">
-          This website takes inspiration from DesignJoy's BUILD WARS design, built with Lovable by Rezaul Arif.
+          This website takes inspiration from DesignJoy's BUILD WARS design, updated with Lovable by Rezaul Arif.
         </p>
       </div>
     </footer>;

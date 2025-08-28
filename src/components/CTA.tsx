@@ -36,7 +36,7 @@ const CTA = memo(() => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             to="/learn" 
-            className="button-primary whitespace-nowrap"
+            className="button-primary"
           >
             Start Learning
             <ArrowRight className="ml-2 h-4 w-4" />

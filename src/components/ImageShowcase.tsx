@@ -9,7 +9,7 @@ const ImageShowcase = () => {
           </div>
           <div className="bg-white p-4 sm:p-8">
             <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Bitcoin Education That Works</h3>
-            <p className="text-gray-700 text-sm sm:text-base">Our proven approach combines expert guidance with personalized support, helping you master bitcoin fundamentals at your own pace while building the confidence you need to start stacking sats.</p>
+            <p className="text-gray-700 text-sm sm:text-base">Our proven approach combines foundational educational resources with expert guidance and personalized support, helping you master the fundamentals at your own pace while building the confidence you need to start stacking sats.</p>
           </div>
         </div>
       </div>

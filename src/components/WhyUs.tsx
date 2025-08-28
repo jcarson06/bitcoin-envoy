@@ -10,7 +10,7 @@ const WhyUs = () => {
       delay: "0.2s"
     },
     {
-      title: "The best educational content on the internet, especially curated for beginners",
+      title: "Expert guidance from trusted Bitcoin educators",
       tag: "Topflight Educational Resources",
       backgroundImage: "/background-section2.png",
       delay: "0.4s"

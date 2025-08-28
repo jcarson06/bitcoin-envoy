@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, memo } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, Coins } from "lucide-react";
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+import { useThrottledScroll } from "@/hooks/useThrottledScroll";
+
+const Navbar = memo(() => {
+  const isScrolled = useThrottledScroll({ threshold: 10, throttleMs: 16 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll, {
-      passive: true
-    });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     // Prevent background scrolling when menu is open
@@ -32,9 +24,9 @@ const Navbar = () => {
       document.body.style.overflow = '';
     }
   };
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300", isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
+  return <header className={cn("fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300 will-change-transform", isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center space-x-2" aria-label="Bitcoin Education & Coaching">
+        <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Education & Coaching">
           <Coins className="h-7 w-7 text-amber-500 hover:text-amber-600 transition-colors" />
           <span className="font-brockmann text-2xl font-bold text-pulse-600 hover:text-pulse-700 transition-colors">
             Bitcoin Envoy
@@ -42,16 +34,16 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <Link to="/" className="nav-link">
+        <nav className="hidden md:flex space-x-8" role="navigation">
+          <Link to="/" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">
             Home
           </Link>
-          <Link to="/learn" className="nav-link">Learn</Link>
-          <Link to="/coaching" className="nav-link">Coaching</Link>
+          <Link to="/learn" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Learn</Link>
+          <Link to="/coaching" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Coaching</Link>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
-        <button className="md:hidden text-gray-700 p-3 focus:outline-none" onClick={toggleMenu} aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
+        <button className="md:hidden text-gray-700 p-3 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" onClick={toggleMenu} aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -80,5 +72,8 @@ const Navbar = () => {
         </nav>
       </div>
     </header>;
-};
+});
+
+Navbar.displayName = 'Navbar';
+
 export default Navbar;

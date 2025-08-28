@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import Navbar from "@/components/Navbar";
 import Intro from "@/components/Intro";
@@ -8,30 +8,11 @@ import WhyUs from "@/components/WhyUs";
 import Mission from "@/components/Mission";
 import ImageShowcase from "@/components/ImageShowcase";
 import Footer from "@/components/Footer";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Index = () => {
-  useEffect(() => {
-    // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Increased offset to account for mobile nav
-        const offset = window.innerWidth < 768 ? 100 : 80;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      });
-    });
-  }, []);
+  // Use custom hook for scroll behavior with proper cleanup
+  useScrollToSection({ offset: 80, mobileOffset: 100 });
 
   return (
     <div className="min-h-screen">

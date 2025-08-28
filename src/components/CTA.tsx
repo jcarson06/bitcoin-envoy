@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-const CTA = () => {
+
+const CTA = memo(() => {
   const ctaRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -35,7 +36,7 @@ const CTA = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             to="/learn" 
-            className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            className="button-primary"
           >
             Start Learning
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -44,5 +45,8 @@ const CTA = () => {
       </div>
     </section>
   );
-};
+});
+
+CTA.displayName = 'CTA';
+
 export default CTA;

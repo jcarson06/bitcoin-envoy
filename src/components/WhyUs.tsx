@@ -11,7 +11,7 @@ const WhyUs = () => {
     },
     {
       title: "Expert guidance from experienced Bitcoin educators",
-      tag: "Top-flight Educational Content",
+      tag: "Expert",
       backgroundImage: "/background-section2.png",
       delay: "0.4s"
     }

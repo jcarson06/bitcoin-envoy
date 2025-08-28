@@ -106,7 +106,7 @@ const Learn = () => {
             Learn more about personalized, one-on-one coaching with real human bitcoin experts. Your first session is 100% free.
           </p>
           <Link to="/coaching" className="button-primary">
-            Get Personalized Coaching
+            Learn About Coaching
           </Link>
         </div>
       </Section>

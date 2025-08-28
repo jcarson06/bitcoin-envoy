@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Intro from "@/components/Intro";
 import CTA from "@/components/CTA";
 import WhyBitcoin from "@/components/WhyBitcoin";
-import WhyUs from "@/components/WhyUs";
 import Mission from "@/components/Mission";
 import ImageShowcase from "@/components/ImageShowcase";
 import Footer from "@/components/Footer";
@@ -21,7 +20,6 @@ const Index = () => {
         <Intro />
         <Mission />
         <WhyBitcoin />
-        <WhyUs />
         <ImageShowcase />
         <CTA />
         <Footer />

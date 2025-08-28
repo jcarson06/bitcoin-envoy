@@ -34,7 +34,7 @@ const Intro = memo(() => {
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
             style={{ animationDelay: "0.7s" }}
           >
-            <Link to="/learn" className="hero-cta-button">
+            <Link to="/learn" className="hero-cta-button group">
               Start Learning
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>

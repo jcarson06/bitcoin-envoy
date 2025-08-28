@@ -11,10 +11,8 @@ export const useThrottledScroll = (options: UseThrottledScrollOptions = {}) => {
 
   const updateScrollState = useCallback(() => {
     const scrolled = window.scrollY > threshold;
-    if (scrolled !== isScrolled) {
-      setIsScrolled(scrolled);
-    }
-  }, [threshold, isScrolled]);
+    setIsScrolled(prev => prev !== scrolled ? scrolled : prev);
+  }, [threshold]);
 
   useEffect(() => {
     let ticking = false;

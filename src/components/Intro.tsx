@@ -17,7 +17,7 @@ const Intro = () => {
             
             <p className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" style={{
             animationDelay: "0.5s"
-          }}>Have you ever been curious about bitcoin — but unsure where to start? Bitcoin Envoy was built for beginners. We're here to help you understand the basics and get started on your journey.</p>
+          }}>Have you ever been curious about bitcoin but unsure where or how to get started? Bitcoin Envoy was built for beginners. We're here to help you understand the basics and gain the necessary confidence to get started on your journey.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"

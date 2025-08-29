@@ -2,8 +2,6 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { Resend } from "npm:resend@2.0.0";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
-
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -70,6 +68,46 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     console.log("Consultation request saved:", data);
+
+    // Initialize Resend for email sending
+    let resend;
+    try {
+      const resendApiKey = Deno.env.get("RESEND_API_KEY");
+      if (!resendApiKey) {
+        console.warn("RESEND_API_KEY not found, skipping email sending");
+        return new Response(
+          JSON.stringify({ 
+            success: true, 
+            message: "Consultation request submitted successfully (emails not sent - missing API key)",
+            id: data.id 
+          }),
+          {
+            status: 200,
+            headers: {
+              "Content-Type": "application/json",
+              ...corsHeaders,
+            },
+          }
+        );
+      }
+      resend = new Resend(resendApiKey);
+    } catch (error) {
+      console.error("Failed to initialize Resend:", error);
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          message: "Consultation request submitted successfully (emails not sent - Resend error)",
+          id: data.id 
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+            ...corsHeaders,
+          },
+        }
+      );
+    }
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({

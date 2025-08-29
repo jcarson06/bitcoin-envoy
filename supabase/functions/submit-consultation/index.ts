@@ -70,116 +70,109 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Consultation request saved:", data);
 
     // Initialize Resend for email sending
-    let resend;
+    let emailStatus = "success";
+    let emailMessage = "";
+    
     try {
       const resendApiKey = Deno.env.get("RESEND_API_KEY");
+      console.log("Checking RESEND_API_KEY:", resendApiKey ? "Found" : "Missing");
+      
       if (!resendApiKey) {
         console.warn("RESEND_API_KEY not found, skipping email sending");
-        return new Response(
-          JSON.stringify({ 
-            success: true, 
-            message: "Consultation request submitted successfully (emails not sent - missing API key)",
-            id: data.id 
-          }),
-          {
-            status: 200,
-            headers: {
-              "Content-Type": "application/json",
-              ...corsHeaders,
-            },
-          }
-        );
-      }
-      resend = new Resend(resendApiKey);
-    } catch (error) {
-      console.error("Failed to initialize Resend:", error);
-      return new Response(
-        JSON.stringify({ 
-          success: true, 
-          message: "Consultation request submitted successfully (emails not sent - Resend error)",
-          id: data.id 
-        }),
-        {
-          status: 200,
-          headers: {
-            "Content-Type": "application/json",
-            ...corsHeaders,
-          },
+        emailStatus = "skipped";
+        emailMessage = "emails not sent - missing API key";
+      } else {
+        const resend = new Resend(resendApiKey);
+        console.log("Resend initialized successfully, sending emails...");
+
+        // Send confirmation email to user
+        const userEmailResponse = await resend.emails.send({
+          from: "Bitcoin Coaching <onboarding@resend.dev>",
+          to: [email],
+          subject: "Your Bitcoin Coaching Consultation Request",
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h1 style="color: #333; margin-bottom: 24px;">Thank you for your interest in Bitcoin Coaching!</h1>
+              
+              <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
+                Hi ${fullName},
+              </p>
+              
+              <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
+                Thank you for requesting a free consultation. We're excited to help you on your Bitcoin journey!
+              </p>
+              
+              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 24px 0;">
+                <h3 style="color: #333; margin: 0 0 12px 0;">What happens next?</h3>
+                <ul style="color: #555; line-height: 1.6; margin: 0; padding-left: 20px;">
+                  <li>You'll receive a confirmation email within 24 hours</li>
+                  <li>We'll schedule your 45-minute consultation at your convenience</li>
+                  <li>Our expert will answer your questions and discuss your Bitcoin goals</li>
+                  <li>No obligation whatsoever — just expert guidance you can trust</li>
+                </ul>
+              </div>
+              
+              <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
+                If you have any immediate questions, feel free to reply to this email.
+              </p>
+              
+              <p style="color: #555; line-height: 1.6;">
+                Best regards,<br>
+                The Bitcoin Coaching Team
+              </p>
+            </div>
+          `,
+        });
+
+        // Send notification email to admin
+        const adminEmailResponse = await resend.emails.send({
+          from: "Bitcoin Coaching <onboarding@resend.dev>",
+          to: ["admin@bitcoinenvoy.co"],
+          subject: "New Bitcoin Consultation Request",
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h1 style="color: #333; margin-bottom: 24px;">New Consultation Request</h1>
+              
+              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 24px 0;">
+                <h3 style="color: #333; margin: 0 0 12px 0;">Request Details:</h3>
+                <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Name:</strong> ${fullName}</p>
+                <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Email:</strong> ${email}</p>
+                <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Request ID:</strong> ${data.id}</p>
+                <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+              </div>
+              
+              <p style="color: #555; line-height: 1.6;">
+                Please follow up with this consultation request within 24 hours.
+              </p>
+            </div>
+          `,
+        });
+
+        console.log("User email response:", userEmailResponse);
+        console.log("Admin email response:", adminEmailResponse);
+
+        if (userEmailResponse.error) {
+          throw new Error(`User email failed: ${userEmailResponse.error.message}`);
         }
-      );
+        if (adminEmailResponse.error) {
+          throw new Error(`Admin email failed: ${adminEmailResponse.error.message}`);
+        }
+
+        console.log("Both emails sent successfully");
+        emailMessage = "emails sent successfully";
+      }
+    } catch (error) {
+      console.error("Email sending error:", error);
+      emailStatus = "error";
+      emailMessage = `emails not sent - ${error.message}`;
     }
-
-    // Send confirmation email to user
-    const userEmailResponse = await resend.emails.send({
-      from: "Bitcoin Coaching <onboarding@resend.dev>",
-      to: [email],
-      subject: "Your Bitcoin Coaching Consultation Request",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #333; margin-bottom: 24px;">Thank you for your interest in Bitcoin Coaching!</h1>
-          
-          <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
-            Hi ${fullName},
-          </p>
-          
-          <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
-            Thank you for requesting a free consultation. We're excited to help you on your Bitcoin journey!
-          </p>
-          
-          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 24px 0;">
-            <h3 style="color: #333; margin: 0 0 12px 0;">What happens next?</h3>
-            <ul style="color: #555; line-height: 1.6; margin: 0; padding-left: 20px;">
-              <li>You'll receive a confirmation email within 24 hours</li>
-              <li>We'll schedule your 45-minute consultation at your convenience</li>
-              <li>Our expert will answer your questions and discuss your Bitcoin goals</li>
-              <li>No obligation whatsoever — just expert guidance you can trust</li>
-            </ul>
-          </div>
-          
-          <p style="color: #555; line-height: 1.6; margin-bottom: 16px;">
-            If you have any immediate questions, feel free to reply to this email.
-          </p>
-          
-          <p style="color: #555; line-height: 1.6;">
-            Best regards,<br>
-            The Bitcoin Coaching Team
-          </p>
-        </div>
-      `,
-    });
-
-    // Send notification email to admin
-    const adminEmailResponse = await resend.emails.send({
-      from: "Bitcoin Coaching <onboarding@resend.dev>",
-      to: ["admin@bitcoinenvoy.co"],
-      subject: "New Bitcoin Consultation Request",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #333; margin-bottom: 24px;">New Consultation Request</h1>
-          
-          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 24px 0;">
-            <h3 style="color: #333; margin: 0 0 12px 0;">Request Details:</h3>
-            <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Name:</strong> ${fullName}</p>
-            <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Email:</strong> ${email}</p>
-            <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Request ID:</strong> ${data.id}</p>
-            <p style="color: #555; line-height: 1.6; margin: 8px 0;"><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-          </div>
-          
-          <p style="color: #555; line-height: 1.6;">
-            Please follow up with this consultation request within 24 hours.
-          </p>
-        </div>
-      `,
-    });
-
-    console.log("User email sent:", userEmailResponse);
-    console.log("Admin email sent:", adminEmailResponse);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: "Consultation request submitted successfully",
-        id: data.id 
+        message: `Consultation request submitted successfully (${emailMessage})`,
+        id: data.id,
+        emailStatus: emailStatus
       }),
       {
         status: 200,

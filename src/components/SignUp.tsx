@@ -6,11 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/common/Container";
 import { supabase } from "@/integrations/supabase/client";
+
 interface FormData {
   fullName: string;
   email: string;
 }
-const Details = () => {
+
+const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<FormData>({
@@ -52,16 +54,18 @@ const Details = () => {
       setIsSubmitting(false);
     }
   };
-  return <Container>
+
+  return (
+    <Container>
       <div className="flex justify-center">
         <div className="w-full max-w-2xl">
           {/* Contact Form */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
             <div className="relative h-48 sm:h-64 p-6 sm:p-8 flex flex-col items-start" style={{
-            backgroundImage: "url('/background-section2.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}>
+              backgroundImage: "url('/background-section2.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}>
               <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4">Free Consultation</div>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold mt-auto">Sign up for a free initial consultation</h2>
             </div>
@@ -73,32 +77,48 @@ const Details = () => {
                     <p className="text-gray-600 text-sm leading-relaxed mb-2">After submitting this form, you'll receive a confirmation email within 24 hours to schedule your free consultation. Note, these initial sessions typically last about 45 minutes.</p>
                     <p className="text-gray-600 text-sm leading-relaxed">We'll answer any questions and discuss your goals and how our coaching can help you achieve them. No obligation whatsoever — just expert guidance you can trust.</p>
                   </div>
-                  <FormField control={form.control} name="fullName" rules={{
-                  required: "Full name is required"
-                }} render={({
-                  field
-                }) => <FormItem>
+                  <FormField
+                    control={form.control}
+                    name="fullName"
+                    rules={{ required: "Full name is required" }}
+                    render={({ field }) => (
+                      <FormItem>
                         <FormControl>
-                          <Input placeholder="Your full name" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" {...field} />
+                          <Input
+                            placeholder="Your full name"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
-                      </FormItem>} />
+                      </FormItem>
+                    )}
+                  />
                   
-                  <FormField control={form.control} name="email" rules={{
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address"
-                  }
-                }} render={({
-                  field
-                }) => <FormItem>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    rules={{
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
+                    }}
+                    render={({ field }) => (
+                      <FormItem>
                         <FormControl>
-                          <Input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" {...field} />
+                          <Input
+                            type="email"
+                            placeholder="Your email address"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
-                      </FormItem>} />
-                  
+                      </FormItem>
+                    )}
+                  />
                   
                   <Button 
                     type="submit" 
@@ -113,6 +133,8 @@ const Details = () => {
           </div>
         </div>
       </div>
-    </Container>;
+    </Container>
+  );
 };
-export default Details;
+
+export default SignUp;

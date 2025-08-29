@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Details from "@/components/Details";
+import SignUp from "@/components/SignUp";
 import IntroCoaching from "@/components/IntroCoaching";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
@@ -22,9 +22,9 @@ const Coaching = () => {
         {/* Benefits Section */}
         <Benefits />
 
-        {/* Coaching Details and Contact Form */}
+        {/* Coaching SignUp and Contact Form */}
         <Section spacing="lg" background="gray">
-          <Details />
+          <SignUp />
         </Section>
 
         {/* Testimonials Section */}

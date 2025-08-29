@@ -110,10 +110,10 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    // Send notification email to admin (using same email for demo)
+    // Send notification email to admin
     const adminEmailResponse = await resend.emails.send({
       from: "Bitcoin Coaching <onboarding@resend.dev>",
-      to: ["admin@example.com"], // Replace with actual admin email
+      to: ["admin@bitcoinenvoy.co"],
       subject: "New Bitcoin Consultation Request",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

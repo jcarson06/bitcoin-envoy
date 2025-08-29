@@ -9,6 +9,8 @@ import { Section } from "@/components/common/Section";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const Coaching = () => {
+  console.log('Coaching component rendering - URL:', window.location.pathname);
+  
   return (
     <div className="min-h-screen">
       <Navbar />

@@ -1,24 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/common/Container";
+import { supabase } from "@/integrations/supabase/client";
 interface FormData {
   fullName: string;
   email: string;
 }
 const Details = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<FormData>({
     defaultValues: {
       fullName: "",
       email: ""
     }
   });
-  const onSubmit = (data: FormData) => {
-    toast.success("Request submitted successfully!");
-    form.reset();
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { data: result, error } = await supabase.functions.invoke('submit-consultation', {
+        body: {
+          fullName: data.fullName,
+          email: data.email,
+        },
+      });
+
+      if (error) {
+        console.error('Supabase function error:', error);
+        toast.error("Failed to submit request. Please try again.");
+        return;
+      }
+
+      if (result?.error) {
+        console.error('Function returned error:', result.error);
+        toast.error(result.error || "Failed to submit request. Please try again.");
+        return;
+      }
+
+      toast.success("Request submitted successfully! Check your email for confirmation.");
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting consultation request:', error);
+      toast.error("Failed to submit request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <Container>
       <div className="flex justify-center">
@@ -68,8 +100,12 @@ const Details = () => {
                       </FormItem>} />
                   
                   
-                  <Button type="submit" className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300">
-                    Get Bitcoin Coaching
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-full transition-colors duration-300"
+                  >
+                    {isSubmitting ? "Submitting..." : "Get Bitcoin Coaching"}
                   </Button>
                 </form>
               </Form>

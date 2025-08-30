@@ -14,7 +14,7 @@ interface ConsultationRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  console.log(`[${new Date().toISOString()}] Function version: 2.1 - Enhanced debugging`);
+  console.log(`[${new Date().toISOString()}] Submit consultation v2.2`);
   
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -30,11 +30,11 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const { fullName, email }: ConsultationRequest = await req.json();
-    console.log(`Processing request for: ${fullName} (${email})`);
+    console.log(`Processing consultation request for: ${email}`);
 
-    // Validate input
+    // Validate required fields
     if (!fullName || !email) {
-      console.error("Validation failed: Missing fullName or email");
+      console.error("Validation failed: Missing required fields");
       return new Response(
         JSON.stringify({ error: "Full name and email are required" }),
         {
@@ -44,13 +44,13 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Initialize Supabase client with service role key to bypass RLS
+    // Initialize Supabase client
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
     );
 
-    // Insert consultation request into database
+    // Save to database
     const { data, error: dbError } = await supabase
       .from("consultation_requests")
       .insert({
@@ -61,7 +61,7 @@ const handler = async (req: Request): Promise<Response> => {
       .single();
 
     if (dbError) {
-      console.error("Database error:", dbError);
+      console.error("Database save failed:", dbError);
       return new Response(
         JSON.stringify({ error: "Failed to save consultation request" }),
         {
@@ -71,47 +71,25 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    console.log("Consultation request saved:", data);
+    console.log(`Consultation saved with ID: ${data.id}`);
 
-    // Enhanced debugging for email sending
+    // Send emails (graceful failure handling)
     let emailStatus = "success";
-    let emailMessage = "";
+    let statusMessage = "Consultation request submitted successfully";
     
     try {
-      // Enhanced environment variable debugging
-      console.log("=== EMAIL DEBUGGING START ===");
-      console.log(`Timestamp: ${new Date().toISOString()}`);
-      
       const resendApiKey = Deno.env.get("RESEND_API_KEY");
-      const keyExists = !!resendApiKey;
-      const keyLength = resendApiKey ? resendApiKey.length : 0;
-      const keyPrefix = resendApiKey ? resendApiKey.substring(0, 6) : "none";
-      
-      console.log(`RESEND_API_KEY status: ${keyExists ? "FOUND" : "MISSING"}`);
-      console.log(`Key length: ${keyLength} characters`);
-      console.log(`Key prefix: ${keyPrefix}...`);
-      
-      // Check if we can access other environment variables
-      const supabaseUrl = Deno.env.get("SUPABASE_URL");
-      console.log(`Other env vars accessible - SUPABASE_URL: ${supabaseUrl ? "FOUND" : "MISSING"}`);
       
       if (!resendApiKey) {
-        console.warn("=== RESEND_API_KEY NOT FOUND ===");
-        console.warn("This indicates either:");
-        console.warn("1. Secret not properly saved in Supabase");
-        console.warn("2. Function deployment cache issue");
-        console.warn("3. Secret name mismatch");
+        console.warn("RESEND_API_KEY not found - emails will be skipped");
         emailStatus = "skipped";
-        emailMessage = "emails not sent - API key missing from environment";
+        statusMessage += " (confirmation email pending)";
       } else {
-        console.log("=== INITIALIZING RESEND ===");
+        console.log("Sending confirmation emails...");
         const resend = new Resend(resendApiKey);
-        console.log("Resend client initialized successfully");
 
-        console.log("=== SENDING USER EMAIL ===");
-
-        // Send confirmation email to user
-        const userEmailResponse = await resend.emails.send({
+        // Send user confirmation email
+        const userEmail = await resend.emails.send({
           from: "Bitcoin Coaching <onboarding@resend.dev>",
           to: [email],
           subject: "Your Bitcoin Coaching Consultation Request",
@@ -149,8 +127,8 @@ const handler = async (req: Request): Promise<Response> => {
           `,
         });
 
-        // Send notification email to admin
-        const adminEmailResponse = await resend.emails.send({
+        // Send admin notification
+        const adminEmail = await resend.emails.send({
           from: "Bitcoin Coaching <onboarding@resend.dev>",
           to: ["admin@bitcoinenvoy.co"],
           subject: "New Bitcoin Consultation Request",
@@ -173,29 +151,25 @@ const handler = async (req: Request): Promise<Response> => {
           `,
         });
 
-        console.log("User email response:", userEmailResponse);
-        console.log("Admin email response:", adminEmailResponse);
-
-        if (userEmailResponse.error) {
-          throw new Error(`User email failed: ${userEmailResponse.error.message}`);
-        }
-        if (adminEmailResponse.error) {
-          throw new Error(`Admin email failed: ${adminEmailResponse.error.message}`);
+        // Check for email errors
+        if (userEmail.error || adminEmail.error) {
+          throw new Error(`Email delivery failed: ${userEmail.error?.message || adminEmail.error?.message}`);
         }
 
         console.log("Both emails sent successfully");
-        emailMessage = "emails sent successfully";
+        statusMessage += " - confirmation email sent";
       }
-    } catch (error) {
-      console.error("Email sending error:", error);
-      emailStatus = "error";
-      emailMessage = `emails not sent - ${error.message}`;
+    } catch (emailError) {
+      console.error("Email error:", emailError);
+      emailStatus = "failed";
+      statusMessage += " (email delivery failed - manual follow-up required)";
     }
 
+    // Always return success if database save succeeded
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: `Consultation request submitted successfully (${emailMessage})`,
+        message: statusMessage,
         id: data.id,
         emailStatus: emailStatus
       }),
@@ -207,10 +181,11 @@ const handler = async (req: Request): Promise<Response> => {
         },
       }
     );
+
   } catch (error: any) {
-    console.error("Error in submit-consultation function:", error);
+    console.error("Function error:", error);
     return new Response(
-      JSON.stringify({ error: "Internal server error" }),
+      JSON.stringify({ error: "Failed to process consultation request" }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },

@@ -14,6 +14,8 @@ interface ConsultationRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  console.log(`[${new Date().toISOString()}] Function version: 2.1 - Enhanced debugging`);
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -28,9 +30,11 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const { fullName, email }: ConsultationRequest = await req.json();
+    console.log(`Processing request for: ${fullName} (${email})`);
 
     // Validate input
     if (!fullName || !email) {
+      console.error("Validation failed: Missing fullName or email");
       return new Response(
         JSON.stringify({ error: "Full name and email are required" }),
         {
@@ -69,21 +73,42 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Consultation request saved:", data);
 
-    // Initialize Resend for email sending
+    // Enhanced debugging for email sending
     let emailStatus = "success";
     let emailMessage = "";
     
     try {
+      // Enhanced environment variable debugging
+      console.log("=== EMAIL DEBUGGING START ===");
+      console.log(`Timestamp: ${new Date().toISOString()}`);
+      
       const resendApiKey = Deno.env.get("RESEND_API_KEY");
-      console.log("Checking RESEND_API_KEY:", resendApiKey ? "Found" : "Missing");
+      const keyExists = !!resendApiKey;
+      const keyLength = resendApiKey ? resendApiKey.length : 0;
+      const keyPrefix = resendApiKey ? resendApiKey.substring(0, 6) : "none";
+      
+      console.log(`RESEND_API_KEY status: ${keyExists ? "FOUND" : "MISSING"}`);
+      console.log(`Key length: ${keyLength} characters`);
+      console.log(`Key prefix: ${keyPrefix}...`);
+      
+      // Check if we can access other environment variables
+      const supabaseUrl = Deno.env.get("SUPABASE_URL");
+      console.log(`Other env vars accessible - SUPABASE_URL: ${supabaseUrl ? "FOUND" : "MISSING"}`);
       
       if (!resendApiKey) {
-        console.warn("RESEND_API_KEY not found, skipping email sending");
+        console.warn("=== RESEND_API_KEY NOT FOUND ===");
+        console.warn("This indicates either:");
+        console.warn("1. Secret not properly saved in Supabase");
+        console.warn("2. Function deployment cache issue");
+        console.warn("3. Secret name mismatch");
         emailStatus = "skipped";
-        emailMessage = "emails not sent - missing API key";
+        emailMessage = "emails not sent - API key missing from environment";
       } else {
+        console.log("=== INITIALIZING RESEND ===");
         const resend = new Resend(resendApiKey);
-        console.log("Resend initialized successfully, sending emails...");
+        console.log("Resend client initialized successfully");
+
+        console.log("=== SENDING USER EMAIL ===");
 
         // Send confirmation email to user
         const userEmailResponse = await resend.emails.send({

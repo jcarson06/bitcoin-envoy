@@ -26,29 +26,23 @@ const SignUp = () => {
     setIsSubmitting(true);
     
     try {
-      const { data: result, error } = await supabase.functions.invoke('submit-consultation', {
-        body: {
-          fullName: data.fullName,
+      const { error } = await supabase
+        .from('signups')
+        .insert({
+          name: data.fullName,
           email: data.email,
-        },
-      });
+        });
 
       if (error) {
-        console.error('Supabase function error:', error);
+        console.error('Database error:', error);
         toast.error("Failed to submit request. Please try again.");
         return;
       }
 
-      if (result?.error) {
-        console.error('Function returned error:', result.error);
-        toast.error(result.error || "Failed to submit request. Please try again.");
-        return;
-      }
-
-      toast.success("Request submitted successfully! Check your email for confirmation.");
+      toast.success("Request submitted successfully! We'll be in touch soon.");
       form.reset();
     } catch (error) {
-      console.error('Error submitting consultation request:', error);
+      console.error('Error submitting signup:', error);
       toast.error("Failed to submit request. Please try again.");
     } finally {
       setIsSubmitting(false);

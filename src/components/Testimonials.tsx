@@ -32,7 +32,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <p className="font-semibold">Dara F.W.</p>
-                <p className="text-sm text-gray-500">Software Engineer</p>
+                <p className="text-sm text-gray-500">Nonprofit Strategy & Operations</p>
               </div>
             </div>
             <p className="text-gray-600">

@@ -47,7 +47,7 @@ const Testimonials = () => {
                 <span className="text-pulse-600 font-semibold">JD</span>
               </div>
               <div>
-                <p className="font-semibold">Jennifer D.</p>
+                <p className="font-semibold">Pete W.</p>
                 <p className="text-sm text-gray-500">Small Business Owner</p>
               </div>
             </div>

@@ -5,8 +5,15 @@ import IntroLearn from "@/components/IntroLearn";
 import YouTubeEmbed from "@/components/common/YouTubeEmbed";
 import { Section } from "@/components/common/Section";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 const Learn = () => {
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
+      <SEO 
+        title="Learn Bitcoin - Free Educational Content"
+        description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works."
+        keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial"
+      />
       <Navbar />
       
       {/* IntroLearn Section */}
@@ -110,6 +117,7 @@ const Learn = () => {
       </Section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Learn;

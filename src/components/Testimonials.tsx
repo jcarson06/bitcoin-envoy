@@ -35,10 +35,7 @@ const Testimonials = () => {
                 <p className="text-sm text-gray-500">Nonprofit Strategy & Operations</p>
               </div>
             </div>
-            <p className="text-gray-600">
-              "Finally, bitcoin education that doesn't overwhelm you with technical jargon. 
-              The coach explained everything in terms I could actually understand."
-            </p>
+            <p className="text-gray-600">"Bitcoin Envoy helped me get started with a dollar-cost-averaging approach to buying bitcoin. Jeff, the founder, was super helpful and broke everything down for me in clear digestible terms. He made me comfortable and helped me find an approach that works for my age and stage of life. And he's always there to answer all of my questions."</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-elegant border border-gray-100">

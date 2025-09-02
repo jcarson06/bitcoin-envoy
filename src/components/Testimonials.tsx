@@ -31,7 +31,7 @@ const Testimonials = () => {
                 <span className="text-pulse-600 font-semibold">MR</span>
               </div>
               <div>
-                <p className="font-semibold">Mike R.</p>
+                <p className="font-semibold">Dara F.W.</p>
                 <p className="text-sm text-gray-500">Software Engineer</p>
               </div>
             </div>

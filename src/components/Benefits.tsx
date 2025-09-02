@@ -48,9 +48,7 @@ const Benefits = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Flexible Scheduling</h3>
-              <p className="text-gray-600">
-                Sessions scheduled around your availability with both online and in-person options.
-              </p>
+              <p className="text-gray-600">Sessions scheduled around your availability with both online and in-person options (where available).</p>
             </div>
           </div>
 

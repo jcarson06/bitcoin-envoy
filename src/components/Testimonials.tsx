@@ -16,7 +16,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <p className="font-semibold">Matthew S.</p>
-                <p className="text-sm text-gray-500">Marketing Manager</p>
+                <p className="text-sm text-gray-500">Advocacy Executive</p>
               </div>
             </div>
             <p className="text-gray-600">

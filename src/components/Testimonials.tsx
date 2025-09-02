@@ -44,7 +44,7 @@ const Testimonials = () => {
           <div className="bg-white rounded-2xl p-6 shadow-elegant border border-gray-100">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-pulse-100 rounded-full flex items-center justify-center mr-4">
-                <span className="text-pulse-600 font-semibold">JD</span>
+                <span className="text-pulse-600 font-semibold">PW</span>
               </div>
               <div>
                 <p className="font-semibold">Pete W.</p>

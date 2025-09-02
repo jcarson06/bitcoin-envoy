@@ -10,8 +10,6 @@ import Footer from "@/components/Footer";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Index = () => {
-  console.log('Index component rendering - URL:', window.location.pathname);
-  
   // Use custom hook for scroll behavior with proper cleanup
   useScrollToSection({ offset: 80, mobileOffset: 100 });
 

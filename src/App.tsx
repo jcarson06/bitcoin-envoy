@@ -25,8 +25,6 @@ const PageLoader = () => (
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log('App component rendering');
-  
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
@@ -37,24 +35,9 @@ const App = () => {
             <ScrollToTop />
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={
-                  <>
-                    {console.log('Rendering Index route')}
-                    <Index />
-                  </>
-                } />
-                <Route path="/learn" element={
-                  <>
-                    {console.log('Rendering Learn route')}
-                    <Learn />
-                  </>
-                } />
-                <Route path="/coaching" element={
-                  <>
-                    {console.log('Rendering Coaching route')}
-                    <Coaching />
-                  </>
-                } />
+                <Route path="/" element={<Index />} />
+                <Route path="/learn" element={<Learn />} />
+                <Route path="/coaching" element={<Coaching />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

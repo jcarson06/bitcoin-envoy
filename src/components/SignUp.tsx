@@ -6,10 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/common/Container";
 import { supabase } from "@/integrations/supabase/client";
+import { logger } from "@/utils/logger";
+
 interface FormData {
   fullName: string;
   email: string;
 }
+
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormData>({
@@ -18,30 +21,33 @@ const SignUp = () => {
       email: ""
     }
   });
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const {
-        error
-      } = await supabase.from('signups').insert({
+      const { error } = await supabase.from('signups').insert({
         name: data.fullName,
         email: data.email
       });
+
       if (error) {
-        console.error('Database error:', error);
+        logger.error('Database error during signup submission', error);
         toast.error("Failed to submit request. Please try again.");
         return;
       }
+      
       toast.success("Request submitted successfully! We'll be in touch soon.");
       form.reset();
     } catch (error) {
-      console.error('Error submitting signup:', error);
+      logger.error('Error submitting signup form', error);
       toast.error("Failed to submit request. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-  return <Container>
+
+  return (
+    <Container>
       <div className="flex justify-center">
         <div className="w-full max-w-2xl">
           {/* Contact Form */}
@@ -97,6 +103,8 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </Container>;
+    </Container>
+  );
 };
+
 export default SignUp;

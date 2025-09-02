@@ -1,4 +1,5 @@
 import React from 'react';
+import { logger } from '@/utils/logger';
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -20,24 +21,10 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    // Enhanced error logging with performance data
-    console.error('ErrorBoundary caught an error:', {
+    logger.error('ErrorBoundary caught a React error', {
       error: error.message,
       stack: error.stack,
-      componentStack: errorInfo.componentStack,
-      timestamp: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-      url: window.location.href,
-      performance: {
-        memory: (performance as any).memory ? {
-          usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
-          totalJSHeapSize: (performance as any).memory.totalJSHeapSize,
-        } : null,
-        navigation: performance.navigation ? {
-          type: performance.navigation.type,
-          redirectCount: performance.navigation.redirectCount,
-        } : null,
-      }
+      componentStack: errorInfo.componentStack
     });
   }
 

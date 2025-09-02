@@ -102,9 +102,7 @@ const Learn = () => {
       <Section id="coaching-cta" spacing="lg" background="white">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
-          <p className="section-subtitle mb-8 max-w-2xl mx-auto">
-            Learn more about personalized, one-on-one coaching with real human bitcoin experts. Your first session is 100% free.
-          </p>
+          <p className="section-subtitle mb-8 max-w-2xl mx-auto">Learn more about personalized, one-on-one coaching with real human bitcoin experts. There's no obligation, and your first session is 100% free.</p>
           <Link to="/coaching" className="button-primary">
             Learn About Coaching
           </Link>

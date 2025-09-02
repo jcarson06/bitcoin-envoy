@@ -187,12 +187,12 @@ const SignUp = () => {
                               </div>
                             )}
                           </div>
-                          {nameValidation.message && (
-                            <p className={`text-sm mt-1 ${nameValidation.isValid ? 'text-green-600' : 'text-red-600'}`}>
-                              {nameValidation.message}
-                            </p>
-                          )}
                         </FormControl>
+                        {nameValidation.message && (
+                          <p className={`text-sm mt-1 ${nameValidation.isValid ? 'text-green-600' : 'text-red-600'}`}>
+                            {nameValidation.message}
+                          </p>
+                        )}
                         <FormMessage />
                       </FormItem>} />
                   
@@ -237,14 +237,14 @@ const SignUp = () => {
                               </div>
                             )}
                           </div>
-                          {emailValidation.message && (
-                            <p className={`text-sm mt-1 ${
-                              emailValidation.isValid ? 'text-yellow-600' : 'text-red-600'
-                            }`}>
-                              {emailValidation.message}
-                            </p>
-                          )}
                         </FormControl>
+                        {emailValidation.message && (
+                          <p className={`text-sm mt-1 ${
+                            emailValidation.isValid ? 'text-yellow-600' : 'text-red-600'
+                          }`}>
+                            {emailValidation.message}
+                          </p>
+                        )}
                         <FormMessage />
                       </FormItem>} />
                   

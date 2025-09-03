@@ -52,15 +52,15 @@ const Navbar = memo(() => {
       </div>
 
       {/* Mobile Navigation - improved for better touch experience */}
-      <div className={cn("fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out", isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none")}>
+      <div className={cn("fixed inset-0 z-60 bg-gray-100 flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out", isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none")}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
-          <Link to="/" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg bg-white hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>
-          <Link to="/learn" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/learn" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg bg-white hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>
             Learn
           </Link>
-          <Link to="/coaching" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/coaching" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg bg-white hover:bg-gray-200" onClick={() => setIsMenuOpen(false)}>
             Coaching
           </Link>
         </nav>

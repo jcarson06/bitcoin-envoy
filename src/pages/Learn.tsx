@@ -53,23 +53,6 @@ const Learn = () => {
         </div>
       </Section>
 
-      {/* Featured Content Section */}
-      <Section id="why-bitcoin-matters" spacing="lg" background="gray">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
-              <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Highly recommended!</p>
-            </div>
-          </div>
-        </div>
-      </Section>
 
       {/* Why Traditional Money Loses Value Section */}
       <Section id="dollar-history" spacing="lg" background="white">
@@ -105,8 +88,26 @@ const Learn = () => {
         </div>
       </Section>
 
+      {/* Featured Content Section */}
+      <Section id="why-bitcoin-matters" spacing="lg" background="white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
+              <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Highly recommended!</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* CTA Section */}
-      <Section id="coaching-cta" spacing="lg" background="white">
+      <Section id="coaching-cta" spacing="lg" background="gray">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">Learn more about personalized, one-on-one coaching with real human bitcoin experts. There's no obligation, and your first session is 100% free.</p>

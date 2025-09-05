@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy load non-critical pages
 const Learn = lazy(() => import("./pages/Learn"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 const Coaching = lazy(() => import("./pages/Coaching"));
 const Admin = lazy(() => import("./pages/Admin"));
 
@@ -38,6 +39,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/learn" element={<Learn />} />
+                <Route path="/faq" element={<FAQ />} />
                 <Route path="/coaching" element={<Coaching />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />

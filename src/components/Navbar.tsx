@@ -45,6 +45,7 @@ const Navbar = memo(() => {
               Home
             </Link>
             <Link to="/learn" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Learn</Link>
+            <Link to="/faq" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">FAQ+</Link>
             <Link to="/coaching" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Coaching</Link>
           </nav>
 
@@ -91,6 +92,13 @@ const Navbar = memo(() => {
             onClick={() => setIsMenuOpen(false)}
           >
             Learn
+          </Link>
+          <Link 
+            to="/faq" 
+            className="text-lg font-medium py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors" 
+            onClick={() => setIsMenuOpen(false)}
+          >
+            FAQ+
           </Link>
           <Link 
             to="/coaching" 

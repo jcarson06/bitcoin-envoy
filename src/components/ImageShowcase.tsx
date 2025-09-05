@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { logger } from "@/utils/logger";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const ImageShowcase = () => {
   const [showcaseImageError, setShowcaseImageError] = useState(false);
+  const { elementRef } = useIntersectionObserver();
 
   const handleImageError = () => {
     logger.warn('Showcase image failed to load', { 
@@ -13,7 +15,7 @@ const ImageShowcase = () => {
   return <section className="w-full pt-0 pb-8 sm:pb-12 bg-white" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto py-[64px]">
         
-        <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
+        <div ref={elementRef} className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl opacity-0 transition-all duration-300">
           <div className="w-full">
             {showcaseImageError ? (
               <div className="w-full h-64 bg-muted flex items-center justify-center">

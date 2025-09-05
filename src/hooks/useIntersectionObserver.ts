@@ -50,26 +50,3 @@ export const useIntersectionObserver = (
 
   return { elementRef, isIntersecting, hasTriggered };
 };
-
-export const useScrollAnimation = (elements: string = '.animate-on-scroll') => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elementsToObserve = document.querySelectorAll(elements);
-    elementsToObserve.forEach((el) => observer.observe(el));
-
-    return () => {
-      elementsToObserve.forEach((el) => observer.unobserve(el));
-    };
-  }, [elements]);
-};

@@ -1,12 +1,13 @@
 
-import React, { useRef } from "react";
+import React from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const HumanIntuitionSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const { elementRef } = useIntersectionObserver();
 
   return (
-    <section className="py-12 bg-gray-50" id="human-intuition" ref={sectionRef}> {/* Reduced from py-20 */}
-      <div className="section-container opacity-0 animate-on-scroll">
+    <section className="py-12 bg-gray-50" id="human-intuition">
+      <div ref={elementRef} className="section-container opacity-0 transition-all duration-300">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <div className="pulse-chip mb-4">

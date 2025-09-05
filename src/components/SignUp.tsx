@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/common/Container";
 import { supabase } from "@/integrations/supabase/client";
 import { logger } from "@/utils/logger";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface FormData {
   fullName: string;
@@ -32,8 +33,8 @@ const SignUp = () => {
     mode: "onChange"
   });
 
-  // Real-time validation functions
-  const validateEmail = async (email: string): Promise<FieldValidation> => {
+  // Immediate format validation (no database calls)
+  const validateEmailFormat = (email: string): FieldValidation => {
     if (!email) {
       return { isValid: false };
     }
@@ -54,6 +55,16 @@ const SignUp = () => {
       }
     }
 
+    return { isValid: true };
+  };
+
+  // Database validation for duplicates (debounced)
+  const validateEmailDuplicate = async (email: string): Promise<FieldValidation> => {
+    const formatValidation = validateEmailFormat(email);
+    if (!formatValidation.isValid) {
+      return formatValidation;
+    }
+
     // Check for duplicate email
     try {
       const { data, error } = await supabase
@@ -64,14 +75,16 @@ const SignUp = () => {
 
       if (error) {
         logger.warn('Error checking duplicate email:', error);
+        return formatValidation; // Return format validation if DB check fails
       } else if (data && data.length > 0) {
         return { isValid: false, message: "This email has already been submitted" };
       }
     } catch (error) {
       logger.warn('Error checking duplicate email:', error);
+      return formatValidation; // Return format validation if DB check fails
     }
 
-    return { isValid: true };
+    return formatValidation;
   };
 
   const validateName = (name: string): FieldValidation => {
@@ -84,10 +97,25 @@ const SignUp = () => {
     return { isValid: true };
   };
 
+  // Debounced database validation
+  const debouncedValidateEmail = useDebounce(
+    useCallback(async (email: string) => {
+      const validation = await validateEmailDuplicate(email);
+      setEmailValidation(validation);
+    }, []),
+    500
+  );
+
   // Handle real-time validation
-  const handleEmailChange = async (email: string) => {
-    const validation = await validateEmail(email);
-    setEmailValidation(validation);
+  const handleEmailChange = (email: string) => {
+    // Immediate format validation
+    const formatValidation = validateEmailFormat(email);
+    setEmailValidation(formatValidation);
+    
+    // Debounced duplicate check (only if format is valid)
+    if (formatValidation.isValid && email.trim()) {
+      debouncedValidateEmail(email);
+    }
   };
 
   const handleNameChange = (name: string) => {
@@ -99,7 +127,7 @@ const SignUp = () => {
     setIsSubmitting(true);
     try {
       // Final validation
-      const emailValidation = await validateEmail(data.email);
+      const emailValidation = await validateEmailDuplicate(data.email);
       const nameValidation = validateName(data.fullName);
 
       if (!emailValidation.isValid || !nameValidation.isValid) {

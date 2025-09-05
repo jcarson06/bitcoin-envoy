@@ -7,13 +7,8 @@ import { Section } from "@/components/common/Section";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 const Learn = () => {
-  return (
-    <div className="min-h-screen">
-      <SEO 
-        title="Learn Bitcoin - Free Educational Content"
-        description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works."
-        keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial"
-      />
+  return <div className="min-h-screen">
+      <SEO title="Learn Bitcoin - Free Educational Content" description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works." keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial" />
       <Navbar />
       
       {/* IntroLearn Section */}
@@ -53,9 +48,26 @@ const Learn = () => {
         </div>
       </Section>
 
+      {/* Featured Content Section */}
+      <Section id="why-bitcoin-matters" spacing="lg" background="gray">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
+            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
+              <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Highly recommended!</p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Why Traditional Money Loses Value Section */}
-      <Section id="dollar-history" spacing="lg" className="bg-gradient-to-br from-pulse-50 to-white">
+      <Section id="dollar-history" spacing="lg" background="white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">History of the Dollar</h2>
@@ -76,7 +88,7 @@ const Learn = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">Why Does Bitcoin Have Value?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Now that you understand what Bitcoin is and how traditional money loses value, let's explore what gives Bitcoin its value and why more people are adopting it everyday. [3 min]</p>
+            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this insightful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -88,26 +100,8 @@ const Learn = () => {
         </div>
       </Section>
 
-      {/* Featured Content Section */}
-      <Section id="why-bitcoin-matters" spacing="lg" background="white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
-              <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Highly recommended!</p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* CTA Section */}
-      <Section id="coaching-cta" spacing="lg" background="gray">
+      <Section id="coaching-cta" spacing="lg" background="white">
         <div className="section-container text-center">
           <h2 className="section-title mb-4">Have questions? Want help?</h2>
           <p className="section-subtitle mb-8 max-w-2xl mx-auto">Learn more about personalized, one-on-one coaching with real human bitcoin experts. There's no obligation, and your first session is 100% free.</p>
@@ -118,7 +112,6 @@ const Learn = () => {
       </Section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
 export default Learn;

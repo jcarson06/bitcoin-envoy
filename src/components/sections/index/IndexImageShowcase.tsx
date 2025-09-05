@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { logger } from "@/utils/logger";
+import { Section } from "@/components/common/Section";
 
 const IndexImageShowcase = () => {
   const { elementRef } = useIntersectionObserver();
@@ -14,8 +15,8 @@ const IndexImageShowcase = () => {
   };
 
   return (
-    <section ref={elementRef} className="py-16 md:py-24 bg-gray-50">
-      <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
+    <Section ref={elementRef} spacing="lg" background="gray">
+      <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Don't Let Inflation Eat Your Savings</h2>
           <p className="section-subtitle mx-auto max-w-3xl">
@@ -39,7 +40,7 @@ const IndexImageShowcase = () => {
           )}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

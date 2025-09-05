@@ -7,16 +7,10 @@ import { Section } from "@/components/common/Section";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
-
 const Learn = () => {
   const [imageError, setImageError] = useState(false);
-  return (
-    <div className="min-h-screen">
-      <SEO 
-        title="Learn Bitcoin - Free Educational Content"
-        description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works."
-        keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial"
-      />
+  return <div className="min-h-screen">
+      <SEO title="Learn Bitcoin - Free Educational Content" description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works." keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial" />
       <ErrorBoundary>
         <Navbar />
         {/* IntroLearn Section */}
@@ -66,18 +60,9 @@ const Learn = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            {!imageError ? (
-              <img 
-                src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" 
-                alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades" 
-                className="w-full h-auto rounded-lg shadow-lg mb-6"
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
+            {!imageError ? <img src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades" className="w-full h-auto rounded-lg shadow-lg mb-6" onError={() => setImageError(true)} /> : <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
                 <p className="text-gray-500">Image unavailable</p>
-              </div>
-            )}
+              </div>}
             <div className="text-center">
               <p className="text-gray-600 max-w-3xl mx-auto">This infographic demonstrates how the US dollar has lost significant purchasing power over the past century due to monetary policy and inflation. Pay special attention to the bottom row of images and all of the many items that $1 could have afforded you in the past. What can $1 buy you today?</p>
             </div>
@@ -107,7 +92,7 @@ const Learn = () => {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this helpful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
+            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this insightful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
           </div>
           
           <div className="max-w-4xl mx-auto">
@@ -133,7 +118,6 @@ const Learn = () => {
         
         <Footer />
       </ErrorBoundary>
-    </div>
-  );
+    </div>;
 };
 export default Learn;

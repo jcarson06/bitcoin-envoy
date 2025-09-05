@@ -1,8 +1,17 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { logger } from "@/utils/logger";
 
 const Intro = memo(() => {
+  const [heroImageError, setHeroImageError] = useState(false);
+
+  const handleImageError = () => {
+    logger.warn('Hero image failed to load', { 
+      src: '/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png' 
+    });
+    setHeroImageError(true);
+  };
   return <section 
     className="overflow-hidden relative bg-cover py-20 md:py-32 will-change-transform" 
     id="hero" 
@@ -46,13 +55,22 @@ const Intro = memo(() => {
             className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl animate-fade-in" 
             style={{ animationDelay: "0.9s", animationFillMode: "both" }}
           >
-            <img 
-              src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" 
-              alt="Bitcoin education and coaching - Learn the fundamentals of Bitcoin with expert guidance" 
-              className="hero-image"
-              loading="eager"
-              decoding="async"
-            />
+            {heroImageError ? (
+              <div className="hero-image bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="text-center text-muted-foreground">
+                  <p className="text-sm">Image unavailable</p>
+                </div>
+              </div>
+            ) : (
+              <img 
+                src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" 
+                alt="Bitcoin education and coaching - Learn the fundamentals of Bitcoin with expert guidance" 
+                className="hero-image"
+                loading="eager"
+                decoding="async"
+                onError={handleImageError}
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>
         </div>

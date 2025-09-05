@@ -1,120 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import IntroLearn from "@/components/IntroLearn";
-import YouTubeEmbed from "@/components/common/YouTubeEmbed";
-import { Section } from "@/components/common/Section";
-import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
+import LearnWhatIsBitcoin from "@/components/sections/learn/LearnWhatIsBitcoin";
+import LearnWhatIsBitcoinPart2 from "@/components/sections/learn/LearnWhatIsBitcoinPart2";
+import LearnDollarHistory from "@/components/sections/learn/LearnDollarHistory";
+import LearnWhyBitcoinHasValue from "@/components/sections/learn/LearnWhyBitcoinHasValue";
+import LearnWhyBitcoinMatters from "@/components/sections/learn/LearnWhyBitcoinMatters";
+import LearnCoachingCTA from "@/components/sections/learn/LearnCoachingCTA";
 const Learn = () => {
-  const [imageError, setImageError] = useState(false);
   return <div className="min-h-screen">
       <SEO title="Learn Bitcoin - Free Educational Content" description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works." keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial" />
       <ErrorBoundary>
         <Navbar />
+        
         {/* IntroLearn Section */}
         <IntroLearn />
 
-      {/* What is Bitcoin? Section */}
-      <Section id="what-is-bitcoin" spacing="lg" background="gray">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">What is Bitcoin?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Start with the fundamentals. Here's a clear explanation of what Bitcoin actually is and how it works. [3 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="okJPiG5s9oU" title="What is Bitcoin? - Foundational Overview" className="mb-6" />
-            <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">This foundational video explains the basics of Bitcoin in simple terms, perfect for beginners who want to understand what Bitcoin is before diving deeper into why it matters. Attribution: iShares, by BlackRock.</p>
-            </div>
-          </div>
-        </div>
-      </Section>
+        {/* LearnWhatIsBitcoin Section */}
+        <LearnWhatIsBitcoin />
 
-      {/* What is Bitcoin Part 2 Section */}
-      <Section id="what-is-bitcoin-part-2" spacing="lg" background="white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">What is Bitcoin (Part 2)?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Building on the fundamentals, here's a fun cartoon explanation that makes Bitcoin concepts even clearer and more engaging. [3 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="BL5vUVQvmX4" title="What is Bitcoin (Part 2)? - Cartoon Explainer" className="mb-6" />
-            <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">This animated cartoon makes Bitcoin concepts accessible and entertaining, perfect for reinforcing what you learned in the first video with a more visual and fun approach. Attribution: Tuttle Twins</p>
-            </div>
-          </div>
-        </div>
-      </Section>
+        {/* LearnWhatIsBitcoinPart2 Section */}
+        <LearnWhatIsBitcoinPart2 />
 
+        {/* LearnDollarHistory Section */}
+        <LearnDollarHistory />
 
-      {/* Why Traditional Money Loses Value Section */}
-      <Section id="dollar-history" spacing="lg" className="bg-gradient-to-br from-pulse-50 to-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">History of the Dollar</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Understanding monetary history helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            {!imageError ? <img src="/lovable-uploads/0108b8ad-fcf1-4944-bed6-da89f90d6703.png" alt="A Dollar's Worth infographic showing the purchasing power decline of the U.S. dollar from $25 in 1920 to $1 in 2020, with historical examples of what $1 could buy in different decades" className="w-full h-auto rounded-lg shadow-lg mb-6" onError={() => setImageError(true)} /> : <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
-                <p className="text-gray-500">Image unavailable</p>
-              </div>}
-            <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">This infographic demonstrates how the US dollar has lost significant purchasing power over the past century due to monetary policy and inflation. Pay special attention to the bottom row of images and all of the many items that $1 could have afforded you in the past. What can $1 buy you today?</p>
-            </div>
-          </div>
-        </div>
-      </Section>
+        {/* LearnWhyBitcoinHasValue Section */}
+        <LearnWhyBitcoinHasValue />
 
-      {/* Why Does Bitcoin Have Value Section */}
-      <Section id="why-bitcoin-has-value" spacing="lg" background="gray">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Why Does Bitcoin Have Value?</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Now that you understand what Bitcoin is and how traditional money loses value, let's explore what gives Bitcoin its value and why more people are adopting it everyday. [3 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="SUJfuCrlnPw" title="Why Does Bitcoin Have Value? - River Financial" className="mb-6" />
-            <div className="text-center">
-              <p className="text-gray-600 max-w-3xl mx-auto">This video explains the fundamental reasons why Bitcoin has value, including its mathematical scarcity, unique properties as digital money, and the network effects that make it increasingly valuable over time. Attribution: River Financial</p>
-            </div>
-          </div>
-        </div>
-      </Section>
+        {/* LearnWhyBitcoinMatters Section */}
+        <LearnWhyBitcoinMatters />
 
-      {/* Featured Content Section */}
-      <Section id="why-bitcoin-matters" spacing="lg" background="white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-4">Why Bitcoin Matters</h2>
-            <p className="section-subtitle mx-auto max-w-2xl">Continue your journey with this insightful overview of Bitcoin's many use cases and why it's important for the future of money. [20 min]</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
-              <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Highly recommended!</p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section id="coaching-cta" spacing="lg" background="gray">
-        <div className="section-container text-center">
-          <h2 className="section-title mb-4">Have questions? Want help?</h2>
-          <p className="section-subtitle mb-8 max-w-2xl mx-auto">Learn more about personalized, one-on-one coaching with real human bitcoin experts. There's no obligation, and your first session is 100% free.</p>
-          <Link to="/coaching" className="button-primary">
-            Learn About Coaching
-          </Link>
-        </div>
-      </Section>
+        {/* LearnCoachingCTA Section */}
+        <LearnCoachingCTA />
         
         <Footer />
       </ErrorBoundary>

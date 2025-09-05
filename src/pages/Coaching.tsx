@@ -1,13 +1,12 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SignUp from "@/components/SignUp";
 import IntroCoaching from "@/components/IntroCoaching";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import SEO from "@/components/SEO";
-import { Section } from "@/components/common/Section";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
+import CoachingSignUp from "@/components/sections/coaching/CoachingSignUp";
 
 const Coaching = () => {
   const structuredData = {
@@ -44,10 +43,8 @@ const Coaching = () => {
         {/* Benefits Section */}
         <Benefits />
 
-        {/* Coaching SignUp and Contact Form */}
-        <Section spacing="lg" background="gray">
-          <SignUp />
-        </Section>
+        {/* CoachingSignUp Section */}
+        <CoachingSignUp />
 
         {/* Testimonials Section */}
         <Testimonials />

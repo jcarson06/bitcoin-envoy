@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhyBitcoin = () => {
+const IndexWhyBitcoin = () => {
   const cards = [
     {
       title: "Understanding Bitcoin allows you to achieve financial independence",
@@ -71,4 +71,5 @@ const WhyBitcoin = () => {
     </section>
   );
 };
-export default WhyBitcoin;
+
+export default IndexWhyBitcoin;

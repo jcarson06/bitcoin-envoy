@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { logger } from "@/utils/logger";
 
-const Intro = memo(() => {
+const IndexIntro = memo(() => {
   const [heroImageError, setHeroImageError] = useState(false);
 
   const handleImageError = () => {
@@ -79,6 +79,6 @@ const Intro = memo(() => {
   </section>;
 });
 
-Intro.displayName = 'Intro';
+IndexIntro.displayName = 'IndexIntro';
 
-export default Intro;
+export default IndexIntro;

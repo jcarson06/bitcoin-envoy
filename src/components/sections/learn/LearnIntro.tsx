@@ -1,6 +1,7 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-const IntroLearn = () => {
+
+const LearnIntro = () => {
   return <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container text-center">
         <h1 className="section-title mb-6">Let's Get Started</h1>
@@ -8,4 +9,5 @@ const IntroLearn = () => {
       </div>
     </Section>;
 };
-export default IntroLearn;
+
+export default LearnIntro;

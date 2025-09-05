@@ -1,11 +1,11 @@
 import React from "react";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import Navbar from "@/components/Navbar";
-import Intro from "@/components/Intro";
-import CTA from "@/components/CTA";
-import WhyBitcoin from "@/components/WhyBitcoin";
-import Mission from "@/components/Mission";
-import ImageShowcase from "@/components/ImageShowcase";
+import IndexIntro from "@/components/sections/index/IndexIntro";
+import IndexCTA from "@/components/sections/index/IndexCTA";
+import IndexWhyBitcoin from "@/components/sections/index/IndexWhyBitcoin";
+import IndexMission from "@/components/sections/index/IndexMission";
+import IndexImageShowcase from "@/components/sections/index/IndexImageShowcase";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
@@ -40,11 +40,11 @@ const Index = () => {
       />
       <ErrorBoundary>
         <Navbar />
-        <Intro />
-        <Mission />
-        <WhyBitcoin />
-        <ImageShowcase />
-        <CTA />
+        <IndexIntro />
+        <IndexMission />
+        <IndexWhyBitcoin />
+        <IndexImageShowcase />
+        <IndexCTA />
         <Footer />
       </ErrorBoundary>
     </div>

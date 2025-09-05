@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import IntroLearn from "@/components/IntroLearn";
+import LearnIntro from "@/components/sections/learn/LearnIntro";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import LearnWhatIsBitcoin from "@/components/sections/learn/LearnWhatIsBitcoin";
@@ -16,8 +16,8 @@ const Learn = () => {
       <ErrorBoundary>
         <Navbar />
         
-        {/* IntroLearn Section */}
-        <IntroLearn />
+        {/* LearnIntro Section */}
+        <LearnIntro />
 
         {/* LearnWhatIsBitcoin Section */}
         <LearnWhatIsBitcoin />

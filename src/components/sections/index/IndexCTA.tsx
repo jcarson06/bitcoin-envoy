@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-const CTA = memo(() => {
+
+const IndexCTA = memo(() => {
   const ctaRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,15 +16,18 @@ const CTA = memo(() => {
     }, {
       threshold: 0.1
     });
+
     if (ctaRef.current) {
       observer.observe(ctaRef.current);
     }
+
     return () => {
       if (ctaRef.current) {
         observer.unobserve(ctaRef.current);
       }
     };
   }, []);
+
   return <section ref={ctaRef} className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -38,5 +43,7 @@ const CTA = memo(() => {
       </div>
     </section>;
 });
-CTA.displayName = 'CTA';
-export default CTA;
+
+IndexCTA.displayName = 'IndexCTA';
+
+export default IndexCTA;

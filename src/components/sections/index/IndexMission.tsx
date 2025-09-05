@@ -1,5 +1,6 @@
 import React from "react";
-const Mission = () => {
+
+const IndexMission = () => {
   return <section className="w-full py-6 sm:py-10 bg-white" id="specifications">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Header with badge and line */}
@@ -19,4 +20,5 @@ const Mission = () => {
       </div>
     </section>;
 };
-export default Mission;
+
+export default IndexMission;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-const Benefits = () => {
+
+const CoachingBenefits = () => {
   return <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-16">
@@ -67,4 +68,5 @@ const Benefits = () => {
       </div>
     </Section>;
 };
-export default Benefits;
+
+export default CoachingBenefits;

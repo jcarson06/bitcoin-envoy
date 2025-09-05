@@ -1,6 +1,7 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-const IntroCoaching = () => {
+
+const CoachingIntro = () => {
   return <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container text-center">
         <div className="pulse-chip mx-auto mb-6">
@@ -13,4 +14,5 @@ const IntroCoaching = () => {
       </div>
     </Section>;
 };
-export default IntroCoaching;
+
+export default CoachingIntro;

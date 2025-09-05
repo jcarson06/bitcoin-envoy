@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import IntroCoaching from "@/components/IntroCoaching";
-import Benefits from "@/components/Benefits";
-import Testimonials from "@/components/Testimonials";
+import CoachingIntro from "@/components/sections/coaching/CoachingIntro";
+import CoachingBenefits from "@/components/sections/coaching/CoachingBenefits";
+import CoachingTestimonials from "@/components/sections/coaching/CoachingTestimonials";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import CoachingSignUp from "@/components/sections/coaching/CoachingSignUp";
@@ -37,17 +37,17 @@ const Coaching = () => {
       <Navbar />
       
       <ErrorBoundary>
-        {/* IntroCoaching Section */}
-        <IntroCoaching />
+        {/* CoachingIntro Section */}
+        <CoachingIntro />
 
-        {/* Benefits Section */}
-        <Benefits />
+        {/* CoachingBenefits Section */}
+        <CoachingBenefits />
 
         {/* CoachingSignUp Section */}
         <CoachingSignUp />
 
-        {/* Testimonials Section */}
-        <Testimonials />
+        {/* CoachingTestimonials Section */}
+        <CoachingTestimonials />
       </ErrorBoundary>
 
       <Footer />

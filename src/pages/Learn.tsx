@@ -55,7 +55,7 @@ const Learn = () => {
 
 
       {/* Why Traditional Money Loses Value Section */}
-      <Section id="dollar-history" spacing="lg" background="white">
+      <Section id="dollar-history" spacing="lg" className="bg-gradient-to-br from-pulse-50 to-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">History of the Dollar</h2>

@@ -17,22 +17,22 @@ const Intro = memo(() => {
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
         <div className="w-full lg:w-1/2">
           <h1 
-            className="section-title sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-5xl" 
-            style={{ animationDelay: "0.3s" }}
+            className="section-title sm:text-4xl lg:text-5xl xl:text-6xl leading-tight animate-fade-in text-5xl" 
+            style={{ animationDelay: "0.3s", animationFillMode: "both" }}
           >
             Welcome To Your Bitcoin Journey
           </h1>
           
           <p 
-            className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" 
-            style={{ animationDelay: "0.5s" }}
+            className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" 
+            style={{ animationDelay: "0.5s", animationFillMode: "both" }}
           >
             Have you ever been curious about bitcoin but unsure where or how to get started? Bitcoin Envoy was built for beginners. We're here to help you understand the basics and gain the necessary confidence to get started on your journey.
           </p>
           
           <div 
-            className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
-            style={{ animationDelay: "0.7s" }}
+            className="flex flex-col sm:flex-row gap-4 animate-fade-in" 
+            style={{ animationDelay: "0.7s", animationFillMode: "both" }}
           >
             <Link to="/learn" className="hero-cta-button group">
               Start Learning
@@ -43,8 +43,8 @@ const Intro = memo(() => {
         
         <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
           <div 
-            className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl opacity-0 animate-fade-in" 
-            style={{ animationDelay: "0.9s" }}
+            className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl animate-fade-in" 
+            style={{ animationDelay: "0.9s", animationFillMode: "both" }}
           >
             <img 
               src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" 

@@ -5,7 +5,7 @@ import IndexIntro from "@/components/sections/index/IndexIntro";
 import IndexCTA from "@/components/sections/index/IndexCTA";
 import IndexWhyBitcoin from "@/components/sections/index/IndexWhyBitcoin";
 import IndexMission from "@/components/sections/index/IndexMission";
-import IndexImageShowcase from "@/components/sections/index/IndexImageShowcase";
+
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
@@ -43,7 +43,7 @@ const Index = () => {
         <IndexIntro />
         <IndexMission />
         <IndexWhyBitcoin />
-        <IndexImageShowcase />
+        
         <IndexCTA />
         <Footer />
       </ErrorBoundary>

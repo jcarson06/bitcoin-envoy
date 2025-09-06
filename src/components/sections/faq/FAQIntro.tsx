@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 
-const FAQHero = () => {
+const FAQIntro = () => {
   return (
     <Section spacing="lg" background="white" className="pt-20">
       <div className="section-container text-center">
@@ -17,4 +17,4 @@ const FAQHero = () => {
   );
 };
 
-export default FAQHero;
+export default FAQIntro;

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
-import FAQHero from "@/components/sections/faq/FAQHero";
+import FAQIntro from "@/components/sections/faq/FAQIntro";
 import FAQQuestions from "@/components/sections/faq/FAQQuestions";
 import FAQRules from "@/components/sections/faq/FAQRules";
 import FAQReadingList from "@/components/sections/faq/FAQReadingList";
@@ -39,8 +39,8 @@ const FAQ = () => {
       <Navbar />
       
       <ErrorBoundary>
-        {/* FAQHero Section */}
-        <FAQHero />
+        {/* FAQIntro Section */}
+        <FAQIntro />
         
         {/* FAQQuestions Section */}
         <FAQQuestions />

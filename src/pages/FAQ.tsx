@@ -9,6 +9,7 @@ import FAQRules from "@/components/sections/faq/FAQRules";
 import FAQReadingList from "@/components/sections/faq/FAQReadingList";
 import FAQPeopleToFollow from "@/components/sections/faq/FAQPeopleToFollow";
 import FAQAdditionalResources from "@/components/sections/faq/FAQAdditionalResources";
+import FAQCoachingCTA from "@/components/sections/faq/FAQCoachingCTA";
 import { faqData } from "@/data/faqData";
 
 // Data is now imported from centralized data file
@@ -56,6 +57,9 @@ const FAQ = () => {
         
         {/* FAQAdditionalResources Section */}
         <FAQAdditionalResources />
+        
+        {/* FAQCoachingCTA Section */}
+        <FAQCoachingCTA />
       </ErrorBoundary>
 
       <Footer />

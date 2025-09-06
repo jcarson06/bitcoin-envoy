@@ -3,7 +3,7 @@ import { Section } from '@/components/common/Section';
 
 const FAQIntro = () => {
   return (
-    <Section spacing="lg" background="white" className="pt-20">
+    <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
           Bitcoin FAQ+

@@ -6,7 +6,6 @@ import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import LearnWhatIsBitcoin from "@/components/sections/learn/LearnWhatIsBitcoin";
 import LearnWhatIsBitcoinPart2 from "@/components/sections/learn/LearnWhatIsBitcoinPart2";
-import LearnDollarHistory from "@/components/sections/learn/LearnDollarHistory";
 import LearnWhyBitcoinHasValue from "@/components/sections/learn/LearnWhyBitcoinHasValue";
 import LearnWhyBitcoinMatters from "@/components/sections/learn/LearnWhyBitcoinMatters";
 import LearnFAQCTA from "@/components/sections/learn/LearnFAQCTA";
@@ -24,9 +23,6 @@ const Learn = () => {
 
         {/* LearnWhatIsBitcoinPart2 Section */}
         <LearnWhatIsBitcoinPart2 />
-
-        {/* LearnDollarHistory Section */}
-        <LearnDollarHistory />
 
         {/* LearnWhyBitcoinHasValue Section */}
         <LearnWhyBitcoinHasValue />

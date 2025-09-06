@@ -5,6 +5,7 @@ import IndexIntro from "@/components/sections/index/IndexIntro";
 import IndexCTA from "@/components/sections/index/IndexCTA";
 import IndexWhyBitcoin from "@/components/sections/index/IndexWhyBitcoin";
 import IndexMission from "@/components/sections/index/IndexMission";
+import IndexDollarHistory from "@/components/sections/index/IndexDollarHistory";
 
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -43,7 +44,7 @@ const Index = () => {
         <IndexIntro />
         <IndexMission />
         <IndexWhyBitcoin />
-        
+        <IndexDollarHistory />
         <IndexCTA />
         <Footer />
       </ErrorBoundary>

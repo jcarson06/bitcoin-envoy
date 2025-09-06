@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Section } from '@/components/common/Section';
 
-const LearnDollarHistory = () => {
+const IndexDollarHistory = () => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <Section id="dollar-history" spacing="lg" className="bg-gradient-to-br from-pulse-50 to-white">
+    <Section spacing="lg" className="bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="section-title mb-4">History of the Dollar</h2>
-          <p className="section-subtitle mx-auto max-w-2xl">Understanding monetary history helps explain why Bitcoin offers a superior alternative for preserving and growing wealth over time.</p>
+          <h2 className="section-title mb-4">Understanding Monetary History</h2>
+          <p className="section-subtitle mx-auto max-w-2xl">See how traditional currency has lost value over time, and why Bitcoin offers a superior alternative for preserving and growing wealth.</p>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -34,4 +34,4 @@ const LearnDollarHistory = () => {
   );
 };
 
-export default LearnDollarHistory;
+export default IndexDollarHistory;

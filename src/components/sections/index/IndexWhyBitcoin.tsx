@@ -1,4 +1,5 @@
 import React from "react";
+import { Section } from "@/components/common/Section";
 
 const IndexWhyBitcoin = () => {
   const cards = [
@@ -23,8 +24,8 @@ const IndexWhyBitcoin = () => {
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white" id="why-humanoid">
-      <div className="container px-6 lg:px-8 mx-auto">
+    <Section spacing="lg" background="white" id="why-humanoid">
+      <div className="section-container">
         <div className="mb-8 md:mb-12">
           <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-4">
             Why Learn About Bitcoin
@@ -68,7 +69,7 @@ const IndexWhyBitcoin = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -15,8 +15,8 @@ const IndexImageShowcase = () => {
   };
 
   return (
-    <Section ref={elementRef} spacing="lg" background="gray">
-      <div className="section-container">
+    <Section spacing="lg" background="gray">
+      <div className="section-container" ref={elementRef}>
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Don't Let Inflation Eat Your Savings</h2>
           <p className="section-subtitle mx-auto max-w-3xl">

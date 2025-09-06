@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { readingList } from '@/data/faqData';
 
 const FAQReadingList = () => {
@@ -9,7 +9,7 @@ const FAQReadingList = () => {
     <Section spacing="lg" background="gray">
       <div className="section-container">
         <div className="text-center mb-12">
-          <BookOpen className="mx-auto mb-4 text-primary" size={48} />
+          
           <h2 className="section-title mb-4">Essential Reading List</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             Must-read books and papers to deepen your understanding of Bitcoin.

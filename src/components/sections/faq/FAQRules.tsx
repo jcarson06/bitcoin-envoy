@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Compass } from 'lucide-react';
+
 import { rulesData } from '@/data/faqData';
 
 const FAQRules = () => {
@@ -9,7 +9,7 @@ const FAQRules = () => {
     <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-12">
-          <Compass className="mx-auto mb-4 text-primary" size={48} />
+          
           <h2 className="section-title mb-4">Rules of the Road</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             Essential principles to guide your Bitcoin journey safely and responsibly.

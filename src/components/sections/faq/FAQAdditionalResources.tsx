@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Compass, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { additionalResources } from '@/data/faqData';
 
 const FAQAdditionalResources = () => {
@@ -9,7 +9,7 @@ const FAQAdditionalResources = () => {
     <Section spacing="lg" background="gray">
       <div className="section-container">
         <div className="text-center mb-12">
-          <Compass className="mx-auto mb-4 text-primary" size={48} />
+          
           <h2 className="section-title mb-4">Additional Resources</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             Curated tools, platforms, and resources to support your Bitcoin journey.

@@ -14,7 +14,7 @@ const IndexBitcoinHistory = () => {
               <p className="text-gray-500">Image unavailable</p>
             </div>}
           <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">Notice how home prices have gone up when priced in Dollars, but gone down when priced in Bitcoin. If you're not sure what that means or why it's happening, you're not alone. And you came to the right place!</p>
+            <p className="text-gray-600 max-w-3xl mx-auto">Notice how home prices have gone up when priced in Dollars, but gone down when priced in Bitcoin. If you're not sure what that means or why it's happening, you're not alone, and you came to the right place.</p>
           </div>
         </div>
       </div>

@@ -10,18 +10,11 @@ const IndexBitcoinHistory = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {!imageError ? <img 
-            src="/lovable-uploads/e937ee56-d44e-4461-a995-dbcd4eaef7d9.png" 
-            alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024" 
-            className="w-full h-auto rounded-lg shadow-lg mb-6" 
-            loading="lazy"
-            decoding="async"
-            onError={() => setImageError(true)} 
-          /> : <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
+          {!imageError ? <img src="/lovable-uploads/e937ee56-d44e-4461-a995-dbcd4eaef7d9.png" alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024" className="w-full h-auto rounded-lg shadow-lg mb-6" loading="lazy" decoding="async" onError={() => setImageError(true)} /> : <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
               <p className="text-gray-500">Image unavailable</p>
             </div>}
           <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">Notice how the median home price has gone up when priced in Dollars. But when priced in Bitcoin over that same time period, it's gone down (dramatically). What gives?</p>
+            <p className="text-gray-600 max-w-3xl mx-auto">Notice how home prices have gone UP when priced in Dollars, but gone DOWN when priced in Bitcoin. If you're not quite sure what that means or why it's happening, you're not alone. And you came to the right place!</p>
           </div>
         </div>
       </div>

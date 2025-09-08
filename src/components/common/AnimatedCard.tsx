@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useOptimizedIntersectionObserver } from '@/hooks/useOptimizedIntersectionObserver';
 
 interface AnimatedCardProps {
   children: React.ReactNode;
@@ -21,7 +21,9 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({
   delay = 0,
   variant = 'glass'
 }) => {
-  const { elementRef } = useIntersectionObserver();
+  const { elementRef } = useOptimizedIntersectionObserver({
+    animationClass: 'animate-fade-in'
+  });
 
   return (
     <div

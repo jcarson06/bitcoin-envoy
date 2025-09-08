@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Section } from '@/components/common/Section';
+import { OptimizedImage } from '@/components/common/OptimizedImage';
 const IndexBitcoinHistory = () => {
-  const [imageError, setImageError] = useState(false);
   return <Section spacing="lg" className="bg-gradient-to-br from-white to-pulse-50">
       <div className="section-container">
         <div className="text-center mb-12">
@@ -10,9 +10,12 @@ const IndexBitcoinHistory = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {!imageError ? <img src="/lovable-uploads/e937ee56-d44e-4461-a995-dbcd4eaef7d9.png" alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024" className="w-full h-auto rounded-lg shadow-lg mb-6" loading="lazy" decoding="async" onError={() => setImageError(true)} /> : <div className="w-full h-64 bg-gray-100 rounded-lg shadow-lg mb-6 flex items-center justify-center">
-              <p className="text-gray-500">Image unavailable</p>
-            </div>}
+          <OptimizedImage
+            src="/lovable-uploads/e937ee56-d44e-4461-a995-dbcd4eaef7d9.png"
+            alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024"
+            className="w-full h-auto rounded-lg shadow-elegant mb-6"
+            containerClassName="mb-6"
+          />
           <div className="text-center">
             <p className="text-gray-600 max-w-3xl mx-auto">Notice how home prices have gone up when priced in Dollars, but gone down when priced in Bitcoin. If you're not sure what that means or why it's happening, you're not alone, and you came to the right place.</p>
           </div>

@@ -1,10 +1,10 @@
 import React, { useRef, memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { useSharedIntersectionObserver } from "@/hooks/useSharedIntersectionObserver";
+import { useOptimizedIntersectionObserver } from "@/hooks/useOptimizedIntersectionObserver";
 
 const IndexCTA = memo(() => {
-  const { elementRef } = useSharedIntersectionObserver();
+  const { elementRef } = useOptimizedIntersectionObserver();
 
   return <section ref={elementRef} className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0">
       <div className="container mx-auto px-4 text-center">

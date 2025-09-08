@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { sharedObserverManager } from './useSharedIntersectionObserver';
 
 interface UseIntersectionObserverOptions {
   threshold?: number;
@@ -23,30 +24,33 @@ export const useIntersectionObserver = (
     const element = elementRef.current;
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        const isIntersecting = entry.isIntersecting;
-        
-        setIsIntersecting(isIntersecting);
-        
-        if (isIntersecting && triggerOnce && !hasTriggered) {
-          setHasTriggered(true);
+    let hasAnimated = false;
+
+    const handleIntersection = (isIntersecting: boolean) => {
+      setIsIntersecting(isIntersecting);
+      
+      if (isIntersecting && triggerOnce && !hasAnimated) {
+        hasAnimated = true;
+        setHasTriggered(true);
+        // Use requestAnimationFrame for smooth animation
+        requestAnimationFrame(() => {
           element.classList.add('animate-fade-in');
-          observer.unobserve(element);
-        } else if (!triggerOnce) {
-          if (isIntersecting) {
-            element.classList.add('animate-fade-in');
-          }
-        }
-      },
-      { threshold, rootMargin }
-    );
+        });
+        // Unobserve after triggering to improve performance
+        sharedObserverManager.unobserve(element);
+      } else if (!triggerOnce && isIntersecting) {
+        requestAnimationFrame(() => {
+          element.classList.add('animate-fade-in');
+        });
+      }
+    };
 
-    observer.observe(element);
+    sharedObserverManager.observe(element, handleIntersection, { threshold, rootMargin });
 
-    return () => observer.disconnect();
-  }, [threshold, rootMargin, triggerOnce, hasTriggered]);
+    return () => {
+      sharedObserverManager.unobserve(element);
+    };
+  }, [triggerOnce, threshold, rootMargin]);
 
   return { elementRef, isIntersecting, hasTriggered };
 };

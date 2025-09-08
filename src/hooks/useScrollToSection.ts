@@ -22,26 +22,24 @@ export const useScrollToSection = (options: UseScrollToSectionOptions = {}) => {
 
   useEffect(() => {
     const handleClick = (e: Event) => {
-      e.preventDefault();
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement;
       
-      const target = e.currentTarget as HTMLAnchorElement;
-      const targetId = target.getAttribute('href')?.substring(1);
+      if (!anchor) return;
+      
+      e.preventDefault();
+      const targetId = anchor.getAttribute('href')?.substring(1);
       if (!targetId) return;
       
       scrollToSection(targetId);
     };
 
-    // Add event listeners to all anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(anchor => {
-      anchor.addEventListener('click', handleClick);
-    });
+    // Use event delegation for better performance - single listener instead of many
+    document.addEventListener('click', handleClick, { passive: false });
 
     // Cleanup function
     return () => {
-      anchorLinks.forEach(anchor => {
-        anchor.removeEventListener('click', handleClick);
-      });
+      document.removeEventListener('click', handleClick);
     };
   }, [scrollToSection]);
 

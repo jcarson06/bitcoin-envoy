@@ -52,8 +52,8 @@ const createSharedObserverManager = (): SharedObserverManager => {
   return { observers, observe, unobserve, cleanup };
 };
 
-// Global instance
-const sharedObserverManager = createSharedObserverManager();
+// Global shared observer manager
+export const sharedObserverManager = createSharedObserverManager();
 
 interface UseSharedIntersectionObserverOptions extends IntersectionObserverInit {
   triggerOnce?: boolean;
@@ -69,15 +69,23 @@ export const useSharedIntersectionObserver = (options: UseSharedIntersectionObse
     const element = elementRef.current;
     if (!element) return;
 
+    let hasAnimated = false;
+
     const callback = (isIntersecting: boolean) => {
       setIsIntersecting(isIntersecting);
       
-      if (isIntersecting && triggerOnce && !hasTriggered) {
+      if (isIntersecting && triggerOnce && !hasAnimated) {
+        hasAnimated = true;
         setHasTriggered(true);
-        element.classList.add('animate-fade-in');
+        // Use requestAnimationFrame for smooth animation
+        requestAnimationFrame(() => {
+          element.classList.add('animate-fade-in');
+        });
         sharedObserverManager.unobserve(element);
       } else if (!triggerOnce && isIntersecting) {
-        element.classList.add('animate-fade-in');
+        requestAnimationFrame(() => {
+          element.classList.add('animate-fade-in');
+        });
       }
     };
 
@@ -86,7 +94,7 @@ export const useSharedIntersectionObserver = (options: UseSharedIntersectionObse
     return () => {
       sharedObserverManager.unobserve(element);
     };
-  }, [triggerOnce, hasTriggered, observerOptions]);
+  }, [triggerOnce, observerOptions]);
 
   return { elementRef, isIntersecting, hasTriggered };
 };

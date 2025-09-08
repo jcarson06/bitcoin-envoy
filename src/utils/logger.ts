@@ -29,9 +29,9 @@ class Logger {
           usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
           totalJSHeapSize: (performance as any).memory.totalJSHeapSize,
         } : null,
-        navigation: performance.navigation ? {
-          type: performance.navigation.type,
-          redirectCount: performance.navigation.redirectCount,
+        navigation: typeof performance !== 'undefined' && 'getEntriesByType' in performance ? {
+          type: (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)?.type || 0,
+          redirectCount: (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)?.redirectCount || 0,
         } : null,
       }
     };

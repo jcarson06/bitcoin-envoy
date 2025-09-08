@@ -35,7 +35,7 @@ export const useScrollToSection = (options: UseScrollToSectionOptions = {}) => {
     };
 
     // Use event delegation for better performance - single listener instead of many
-    document.addEventListener('click', handleClick, { passive: false });
+    document.addEventListener('click', handleClick);
 
     // Cleanup function
     return () => {

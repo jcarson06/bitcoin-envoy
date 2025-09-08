@@ -94,7 +94,7 @@ export const useSharedIntersectionObserver = (options: UseSharedIntersectionObse
     return () => {
       sharedObserverManager.unobserve(element);
     };
-  }, [triggerOnce, observerOptions]);
+  }, [triggerOnce, JSON.stringify(observerOptions)]);
 
   return { elementRef, isIntersecting, hasTriggered };
 };

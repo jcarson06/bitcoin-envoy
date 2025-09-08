@@ -14,7 +14,7 @@ const IndexDollarHistory = () => {
               <p className="text-gray-500">Image unavailable</p>
             </div>}
           <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">Note, pay special attention to the bottom row of images and all of the items that $1 could have afforded you in the past. What can $1 buy you today?</p>
+            <p className="text-gray-600 max-w-3xl mx-auto">Notice the bottom row of images and all of the items that $1 could have afforded you in the past. What can $1 buy you today?</p>
           </div>
         </div>
       </div>

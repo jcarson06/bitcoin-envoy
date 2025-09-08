@@ -17,7 +17,7 @@ const IndexBitcoinHistory = () => {
         <div className="max-w-4xl mx-auto">
           {!imageError ? (
             <img
-              src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png"
+              src="/lovable-uploads/e937ee56-d44e-4461-a995-dbcd4eaef7d9.png"
               alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024"
               className="w-full h-auto rounded-lg shadow-lg mb-6"
               onError={() => setImageError(true)}

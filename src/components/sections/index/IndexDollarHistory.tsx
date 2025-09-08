@@ -6,7 +6,7 @@ const IndexDollarHistory = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Understanding Monetary History</h2>
-          <p className="section-subtitle mx-auto max-w-2xl">See how traditional currency has lost value over time, and why Bitcoin offers a superior alternative for preserving and growing wealth.</p>
+          <p className="section-subtitle mx-auto max-w-2xl">See how the Dollar has lost value over time, and why Bitcoin offers a superior alternative for preserving and growing wealth.</p>
         </div>
         
         <div className="max-w-4xl mx-auto">

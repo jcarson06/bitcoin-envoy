@@ -6,9 +6,7 @@ const IndexBitcoinHistory = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Bitcoin's Purchasing Power</h2>
-          <p className="section-subtitle mx-auto max-w-2xl">
-            See how Bitcoin's purchasing power has increased dramatically over time, offering a superior store of value compared to traditional currencies.
-          </p>
+          <p className="section-subtitle mx-auto max-w-2xl">Bitcoin's purchasing power has increased dramatically over time, offering a superior store of value compared to the Dollar.</p>
         </div>
         
         <div className="max-w-4xl mx-auto">

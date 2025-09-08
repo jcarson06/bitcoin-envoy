@@ -14,9 +14,7 @@ const IndexBitcoinHistory = () => {
               <p className="text-gray-500">Image unavailable</p>
             </div>}
           <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Notice how the same home that required 664 Bitcoin in 2016 now only needs 6.6 Bitcoin in 2024 - a dramatic increase in Bitcoin's purchasing power over just 8 years.
-            </p>
+            <p className="text-gray-600 max-w-3xl mx-auto">Notice how the median home price has gone up when priced in Dollars. But when priced in Bitcoin over that same time period, it's gone down (dramatically). What gives?</p>
           </div>
         </div>
       </div>

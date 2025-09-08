@@ -17,8 +17,8 @@ const IndexBitcoinHistory = () => {
         <div className="max-w-4xl mx-auto">
           {!imageError ? (
             <img
-              src="/lovable-uploads/43c24c85-a596-413e-ba49-9d949a36c0d7.png"
-              alt="Bitcoin vs USD home price comparison infographic showing how many Bitcoin or dollars were needed to buy a home in different years, demonstrating Bitcoin's increasing purchasing power over time"
+              src="/lovable-uploads/ff6c39c6-bfcb-4ec6-969f-b5121e2a269c.png"
+              alt="Price of a Home: U.S. Dollars vs. Bitcoin comparison showing the same house requiring 664 BTC in 2016, 45 BTC in 2020, and only 6.6 BTC in 2024"
               className="w-full h-auto rounded-lg shadow-lg mb-6"
               onError={() => setImageError(true)}
             />
@@ -29,7 +29,7 @@ const IndexBitcoinHistory = () => {
           )}
           <div className="text-center">
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Notice how dramatically fewer Bitcoin are needed to purchase the same home over time, compared to the increasing number of dollars required.
+              Notice how the same home that required 664 Bitcoin in 2016 now only needs 6.6 Bitcoin in 2024 - a dramatic increase in Bitcoin's purchasing power over just 8 years.
             </p>
           </div>
         </div>

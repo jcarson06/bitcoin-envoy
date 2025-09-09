@@ -7,7 +7,11 @@ export const faqData = [
   },
   {
     question: "How do I get started with Bitcoin?",
-    answer: "Start by educating yourself (you're already doing that!), then consider setting up a secure wallet, learning about storage options, and starting with small amounts. Always do your own research and never invest more than you can afford to lose."
+    answer: "Start by educating yourself (you're already doing that!), then consider setting up a secure wallet and/or creating an account on an exchange. Always do your own research and never invest more than you can afford to lose."
+  },
+  {
+    question: "Where can I buy Bitcoin?",
+    answer: "On a reputable exchange, such as River or Strike. To learn more about exchanges, keep scrolling."
   },
   {
     question: "Is Bitcoin just for tech-savvy people?",

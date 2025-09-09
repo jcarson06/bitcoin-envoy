@@ -30,11 +30,11 @@ export const rulesData = [
   },
   {
     rule: "Do Your Own Research (DYOR)",
-    description: "Never invest based solely on someone else's advice, including ours. Take time to understand what you're investing in and verify information from multiple credible sources."
+    description: "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered financial advice. Take time to understand what you're investing in and verify information from multiple credible sources."
   },
   {
     rule: "Only invest what you can afford to lose",
-    description: "Bitcoin can be volatile in the short term. Never invest money you need for essential expenses, emergency funds, or money you cannot afford to see decrease in value."
+    description: "Bitcoin can be volatile in the short term. Never invest money you need for essential expenses, emergency funds, etc."
   },
   {
     rule: "Security is your responsibility",

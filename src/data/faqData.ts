@@ -15,7 +15,7 @@ export const faqData = [
   },
   {
     question: "How much should I invest in Bitcoin?",
-    answer: "This depends entirely on your personal financial situation, risk tolerance, and investment goals. A common approach is to start small and never invest more than you can afford to lose. Consider Bitcoin as part of a diversified investment strategy."
+    answer: "This depends entirely on your personal financial situation, risk tolerance, and investment goals. A common approach is to start small, utilize dollar-cost-averaging, and never invest more than you can afford to lose."
   },
   {
     question: "Can Bitcoin be hacked or shut down?",

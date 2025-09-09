@@ -1,20 +1,14 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
-
 const FAQIntro = () => {
-  return (
-    <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
+  return <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-          Bitcoin FAQ+
-        </h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Bitcoin Starter Pack</h1>
         <p className="section-subtitle max-w-3xl mx-auto">
           Your comprehensive guide to Bitcoin questions, essential rules, must-read resources, 
           and trusted voices in the Bitcoin space.
         </p>
       </div>
-    </Section>
-  );
+    </Section>;
 };
-
 export default FAQIntro;

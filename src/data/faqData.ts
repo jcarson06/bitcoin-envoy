@@ -99,16 +99,16 @@ export const peopleToFollow = [
     link: "https://x.com/saylor"
   },
   {
-    name: "Preston Pysh",
-    handle: "@PrestonPysh",
-    bio: "Host of The Investor's Podcast, Bitcoin educator, and value investing expert",
-    link: "https://x.com/PrestonPysh"
+    name: "Pierre Rochard",
+    handle: "@BitcoinPierre",
+    bio: "Former VP of Research at Riot Platforms, Bitcoin advisor, and mining economics expert",
+    link: "https://x.com/BitcoinPierre"
   },
   {
-    name: "Marty Bent",
-    handle: "@MartyBent",
-    bio: "Host of Tales from the Crypt podcast and The Bent newsletter, Bitcoin content creator",
-    link: "https://x.com/MartyBent"
+    name: "Natalie Brunell",
+    handle: "@natbrunell",
+    bio: "Award-winning journalist, host of Coin Stories podcast, and Bitcoin educator",
+    link: "https://x.com/natbrunell"
   }
 ];
 

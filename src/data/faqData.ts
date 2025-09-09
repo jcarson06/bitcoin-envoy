@@ -68,7 +68,7 @@ export const readingList = [
   {
     title: "Broken Money",
     author: "Lyn Alden",
-    description: "Why is our financial system failing us? Learn about the history of money, from using sea shells to gold, and gain a better understanding of why NOTHING STOPS THIS TRAIN.",
+    description: "Why is our financial system failing us? Why does everything seem to get more expensive over time? Learn about the history of money, from using sea shells to gold, and why this matters today.",
     link: "https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR"
   }
 ];

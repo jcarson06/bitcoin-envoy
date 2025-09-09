@@ -62,7 +62,7 @@ export const readingList = [
   {
     title: "The Bitcoin Standard",
     author: "Saifedean Ammous",
-    description: "A comprehensive look at Bitcoin through the lens of Austrian economics and monetary history.",
+    description: "A comprehensive look at Bitcoin through the lens of Austrian economics and monetary history. Widely considered the best one-stop-shop for learning about Bitcoin.",
     link: "https://www.amazon.com/Bitcoin-Standard-Decentralized-Alternative-Central/dp/1119473861"
   },
   {

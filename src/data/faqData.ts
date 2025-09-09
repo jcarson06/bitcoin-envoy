@@ -68,7 +68,7 @@ export const readingList = [
   {
     title: "Broken Money",
     author: "Lyn Alden",
-    description: "Why is our financial system failing us? Why does everything seem to get more expensive over time? Learn about the history of money, from using sea shells to gold, and why this matters today.",
+    description: "This book examines the flaws in past and present monetary systems, showing how technology and policy have shaped their failures. It makes the case for Bitcoin as a durable alternative that could repair today’s broken financial system.",
     link: "https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR"
   }
 ];

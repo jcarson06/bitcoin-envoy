@@ -57,13 +57,13 @@ export const readingList = [
     title: "The Bitcoin Standard",
     author: "Saifedean Ammous",
     description: "A comprehensive look at Bitcoin through the lens of Austrian economics and monetary history.",
-    link: "https://www.amazon.com/Bitcoin-Standard-Decentralized-Alternative-Central/dp/1119473861"
+    link: "https://saifedean.com/the-book/"
   },
   {
-    title: "Mastering Bitcoin",
-    author: "Andreas M. Antonopoulos",
-    description: "Technical deep-dive into how Bitcoin works, perfect for those wanting to understand the technology.",
-    link: "https://github.com/bitcoinbook/bitcoinbook"
+    title: "The Bullish Case for Bitcoin",
+    author: "Vijay Boyapati",
+    description: "The most widely read non-technical introduction to Bitcoin; frequently recommended to newcomers interested in learning more about this revolutionary technology.",
+    link: "https://www.bullishcaseforbitcoin.com/product-page/the-bullish-case-for-bitcoin-paperback-1"
   },
   {
     title: "The Internet of Money",

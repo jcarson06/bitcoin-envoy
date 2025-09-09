@@ -50,7 +50,7 @@ export const readingList = [
   {
     title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
     author: "Satoshi Nakamoto",
-    description: "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you only understand a portion of it. That's totally normal. And it's still very much worth your time.",
+    description: "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you only understand a portion of it. That's totally normal.",
     link: "https://bitcoin.org/bitcoin.pdf"
   },
   {

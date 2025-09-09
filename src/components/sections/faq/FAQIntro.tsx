@@ -4,7 +4,7 @@ const FAQIntro = () => {
   return <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">
       <div className="section-container text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Bitcoin Starter Pack</h1>
-        <p className="section-subtitle max-w-3xl mx-auto">See below for helpful extras including common questions & answers, essential rules of the road, and a recommended reading list.</p>
+        <p className="section-subtitle max-w-3xl mx-auto">Continue your journey with these helpful extras including common questions & answers, essential rules of the road, and a recommended reading list.</p>
       </div>
     </Section>;
 };

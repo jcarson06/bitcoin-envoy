@@ -119,14 +119,14 @@ export const peopleToFollow = [
 export const recommendedExchanges = [
   {
     name: "River",
-    description: "Bitcoin-only exchange focused on security and simplicity",
+    description: "Bitcoin-only exchange focused on security, simplicity, and top-notch customer service",
     features: ["Free dollar-cost averaging", "Institutional-grade security", "Bitcoin-only focus", "Educational resources"],
     link: "https://river.com"
   },
   {
     name: "Strike",
     description: "Lightning Network-powered platform for instant Bitcoin transactions",
-    features: ["Lightning Network integration", "Instant transactions", "Low fees", "Global payments"],
+    features: ["Lightning Network integration", "Bitcoin-backed loans", "Low fees", "Global payments"],
     link: "https://strike.me"
   },
   {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-
 const CoachingTestimonials = () => {
   return <Section spacing="lg" background="white">
       <div className="section-container">
@@ -20,7 +19,7 @@ const CoachingTestimonials = () => {
                 <p className="text-sm text-gray-500">Advocacy Executive</p>
               </div>
             </div>
-            <p className="text-gray-600">"The personalized coaching made all the difference. I've learned more about bitcoin over the past few months than I ever thought possible. And the best part is I finally feel confident enough to start buying. Highly recommend Bitcoin Envoy."</p>
+            <p className="text-gray-600">"Jeff has an amazing way of making Bitcoin easy to understand. He's patient, insightful, and passionate about helping people succeed. If you've ever wanted to learn about Bitcoin without the confusion, Jeff is the perfect coach to guide you."</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-elegant border border-gray-100">
@@ -52,5 +51,4 @@ const CoachingTestimonials = () => {
       </div>
     </Section>;
 };
-
 export default CoachingTestimonials;

@@ -115,3 +115,24 @@ export const peopleToFollow = [
     link: "https://x.com/natbrunell"
   }
 ];
+
+export const recommendedExchanges = [
+  {
+    name: "River",
+    description: "Bitcoin-only exchange focused on security and simplicity",
+    features: ["Free dollar-cost averaging", "Institutional-grade security", "Bitcoin-only focus", "Educational resources"],
+    link: "https://river.com"
+  },
+  {
+    name: "Strike",
+    description: "Lightning Network-powered platform for instant Bitcoin transactions",
+    features: ["Lightning Network integration", "Instant transactions", "Low fees", "Global payments"],
+    link: "https://strike.me"
+  },
+  {
+    name: "Swan",
+    description: "Bitcoin-only platform specializing in automated dollar-cost averaging",
+    features: ["Automated DCA", "Long-term accumulation", "Bitcoin-only", "Educational content"],
+    link: "https://swanbitcoin.com"
+  }
+];

@@ -8,7 +8,7 @@ import FAQQuestions from "@/components/sections/faq/FAQQuestions";
 import FAQRules from "@/components/sections/faq/FAQRules";
 import FAQReadingList from "@/components/sections/faq/FAQReadingList";
 import FAQPeopleToFollow from "@/components/sections/faq/FAQPeopleToFollow";
-
+import FAQRecommendedExchanges from "@/components/sections/faq/FAQRecommendedExchanges";
 import FAQCoachingCTA from "@/components/sections/faq/FAQCoachingCTA";
 import { faqData } from "@/data/faqData";
 
@@ -32,8 +32,8 @@ const FAQ = () => {
     <div className="min-h-screen">
       <SEO
         title="Bitcoin FAQ+ - Questions, Rules & Reading List"
-        description="Complete Bitcoin FAQ with frequently asked questions, rules of the road, essential reading list, and people to follow for your Bitcoin journey."
-        keywords="bitcoin faq, bitcoin rules, bitcoin reading list, bitcoin questions, bitcoin education"
+        description="Complete Bitcoin FAQ with frequently asked questions, rules of the road, essential reading list, recommended exchanges, and people to follow for your Bitcoin journey."
+        keywords="bitcoin faq, bitcoin rules, bitcoin reading list, bitcoin questions, bitcoin education, bitcoin exchanges"
         url="/faq"
         structuredData={structuredData}
       />
@@ -55,7 +55,9 @@ const FAQ = () => {
         {/* FAQPeopleToFollow Section */}
         <FAQPeopleToFollow />
         
-        
+        {/* FAQRecommendedExchanges Section */}
+        <FAQRecommendedExchanges />
+
         {/* FAQCoachingCTA Section */}
         <FAQCoachingCTA />
       </ErrorBoundary>

@@ -81,22 +81,34 @@ export const peopleToFollow = [
     link: "https://x.com/adam3us"
   },
   {
-    name: "Andreas M. Antonopoulos",
-    handle: "@aantonop",
-    bio: "Bitcoin educator, author of multiple Bitcoin books, renowned speaker and educator",
-    link: "https://x.com/aantonop"
+    name: "Lyn Alden",
+    handle: "@LynAldenContact",
+    bio: "Macroeconomist, investment strategist, and Bitcoin educator. Author of 'Broken Money'",
+    link: "https://x.com/LynAldenContact"
   },
   {
-    name: "Saifedean Ammous",
-    handle: "@saifedean",
-    bio: "Author of 'The Bitcoin Standard', economist and Bitcoin advocate",
-    link: "https://x.com/saifedean"
+    name: "Jack Mallers",
+    handle: "@jackmallers",
+    bio: "CEO of Strike, Lightning Network advocate, and Bitcoin payments innovator",
+    link: "https://x.com/jackmallers"
   },
   {
     name: "Michael Saylor",
     handle: "@saylor",
     bio: "Executive Chairman of MicroStrategy, prominent Bitcoin advocate and educator",
     link: "https://x.com/saylor"
+  },
+  {
+    name: "Preston Pysh",
+    handle: "@PrestonPysh",
+    bio: "Host of The Investor's Podcast, Bitcoin educator, and value investing expert",
+    link: "https://x.com/PrestonPysh"
+  },
+  {
+    name: "Marty Bent",
+    handle: "@MartyBent",
+    bio: "Host of Tales from the Crypt podcast and The Bent newsletter, Bitcoin content creator",
+    link: "https://x.com/MartyBent"
   }
 ];
 

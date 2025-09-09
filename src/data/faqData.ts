@@ -62,7 +62,7 @@ export const readingList = [
   {
     title: "The Bullish Case for Bitcoin",
     author: "Vijay Boyapati",
-    description: "The most widely read non-technical introduction to Bitcoin; frequently recommended to newcomers interested in learning more about this revolutionary technology.",
+    description: "The most widely read non-technical introduction to Bitcoin. Frequently recommended to newcomers interested in learning more about this revolutionary technology.",
     link: "https://www.bullishcaseforbitcoin.com/product-page/the-bullish-case-for-bitcoin-paperback-1"
   },
   {

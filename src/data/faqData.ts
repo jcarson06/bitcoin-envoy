@@ -120,7 +120,7 @@ export const recommendedExchanges = [
   {
     name: "River",
     description: "Bitcoin-only exchange focused on security, simplicity, and top-notch customer service",
-    features: ["Free dollar-cost averaging", "Institutional-grade security", "Bitcoin-only focus", "Educational resources"],
+    features: ["Free dollar-cost averaging", "Proof of reserves", "Bitcoin-only focus", "Educational resources"],
     link: "https://river.com"
   },
   {
@@ -132,7 +132,7 @@ export const recommendedExchanges = [
   {
     name: "Swan",
     description: "Bitcoin-only platform specializing in automated dollar-cost averaging",
-    features: ["Automated DCA", "Long-term accumulation", "Bitcoin-only", "Educational content"],
+    features: ["Automated DCA", "Retirement planning", "Bitcoin-only", "Educational content"],
     link: "https://swanbitcoin.com"
   }
 ];

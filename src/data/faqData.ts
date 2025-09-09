@@ -66,10 +66,10 @@ export const readingList = [
     link: "https://www.bullishcaseforbitcoin.com/product-page/the-bullish-case-for-bitcoin-paperback-1"
   },
   {
-    title: "The Internet of Money",
-    author: "Andreas M. Antonopoulos",
-    description: "Collection of talks explaining why Bitcoin matters and its potential impact on society.",
-    link: "https://aantonop.com/"
+    title: "Broken Money",
+    author: "Lyn Alden",
+    description: "Why is our financial system failing us? Learn about the history of money, from using sea shells to gold, and gain a better understanding of why NOTHING STOPS THIS TRAIN.",
+    link: "https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR"
   }
 ];
 

@@ -30,7 +30,7 @@ export const rulesData = [
   },
   {
     rule: "Do Your Own Research (DYOR)",
-    description: "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered financial advice. Take time to understand what you're investing in and verify information from multiple credible sources."
+    description: "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered traditional financial advice, and we are not financial advisors. Take time to understand what you're investing in and verify information from multiple credible sources."
   },
   {
     rule: "Only invest what you can afford to lose",

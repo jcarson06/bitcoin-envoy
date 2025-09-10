@@ -5,7 +5,7 @@ const CoachingBenefits = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">Why Choose Personal Coaching?</h2>
-          <p className="section-subtitle mx-auto">Learning about Bitcoin can be overwhelming. For some, having a guide to help you along the way is a smart decision.</p>
+          <p className="section-subtitle mx-auto">Learning about Bitcoin can be overwhelming. For some, having a trusted guide to help you along the way is a smart decision.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

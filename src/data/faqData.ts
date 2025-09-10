@@ -7,7 +7,7 @@ export const faqData = [
   },
   {
     question: "How do I get started with Bitcoin?",
-    answer: "Start by educating yourself (you're already doing that!), then consider setting up a secure wallet and/or creating an account on an exchange. Always do your own research and never invest more than you can afford to lose."
+    answer: "Start by educating yourself (you're already doing that!), then consider creating an account on an exchange and/or setting up a secure wallet. Always do your own research and never invest more than you can afford to lose."
   },
   {
     question: "Where can I buy Bitcoin?",

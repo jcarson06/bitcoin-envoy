@@ -15,7 +15,7 @@ const FAQRecommendedExchanges = () => {
           </p>
         </div>
         
-        <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
           {recommendedExchanges.map((exchange, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader>

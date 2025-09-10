@@ -128,11 +128,5 @@ export const recommendedExchanges = [
     description: "Lightning Network-powered platform for instant Bitcoin transactions",
     features: ["Lightning Network integration", "Bitcoin-backed loans", "Low fees", "Global payments"],
     link: "https://strike.me"
-  },
-  {
-    name: "Swan",
-    description: "Bitcoin-only platform specializing in automated dollar-cost averaging",
-    features: ["Automated DCA", "Retirement planning", "Bitcoin-only", "Educational content"],
-    link: "https://swanbitcoin.com"
   }
 ];

@@ -125,8 +125,8 @@ export const recommendedExchanges = [
   },
   {
     name: "Strike",
-    description: "Bitcoin-only exchange focused on helping their clients adopt a Bitcoin standard in their personal financial lives",
-    features: ["Lightning Network integration", "Bitcoin-backed loans", "Bill pay", "Direct deposit", "Instant/global payments"],
+    description: "Bitcoin-only exchange focused on helping their clients adopt a Bitcoin standard of their own",
+    features: ["Lightning Network integration", "Bitcoin-backed loans", "Direct deposit", "Bill pay", "Instant/global payments"],
     link: "https://strike.me"
   }
 ];

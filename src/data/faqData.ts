@@ -120,13 +120,13 @@ export const recommendedExchanges = [
   {
     name: "River",
     description: "Bitcoin-only exchange focused on security, simplicity, and top-notch customer service",
-    features: ["Free dollar-cost averaging", "Proof of reserves", "Bitcoin-only focus", "Educational resources"],
+    features: ["Free dollar-cost averaging", "Proof of reserves", "Low fees & spreads", "U.S. based customer service", "Educational resources"],
     link: "https://river.com"
   },
   {
     name: "Strike",
-    description: "Lightning Network-powered platform for instant Bitcoin transactions",
-    features: ["Lightning Network integration", "Bitcoin-backed loans", "Low fees", "Global payments"],
+    description: "Bitcoin-only exchange focused on helping their clients adopt a Bitcoin standard in their personal financial lives",
+    features: ["Lightning Network integration", "Bitcoin-backed loans", "Bill pay", "Direct deposit", "Instant/global payments"],
     link: "https://strike.me"
   }
 ];

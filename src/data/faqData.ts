@@ -34,11 +34,11 @@ export const rulesData = [
   },
   {
     rule: "Do Your Own Research (DYOR)",
-    description: "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered traditional financial advice, and we are not financial advisors. Take time to understand what you're investing in and verify information from multiple credible sources."
+    description: "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered financial advice, and we are not financial advisors. Take time to understand what you're investing in and verify information from multiple credible sources."
   },
   {
     rule: "There is no second best",
-    description: "Bitcoin is truly one-of-a-kind. No other digital asset has its attributes, namely absolute scarcity and decentralization. It's not the best because it was the first or because it's the biggest or because it's the most well-known, it's the best because it's the best."
+    description: "Bitcoin is truly one-of-a-kind. No other digital asset has its attributes, namely absolute scarcity and genuine decentralization. It's not the best because it was the first or because it's the biggest or because it's the most well-known, it's the best because it's the best."
   },
   {
     rule: "Only invest what you can afford to lose",

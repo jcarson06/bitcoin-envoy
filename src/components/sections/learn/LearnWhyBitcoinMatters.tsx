@@ -13,7 +13,7 @@ const LearnWhyBitcoinMatters = () => {
           <YouTubeEmbed videoId="R4gyS5mb9dE" title="Why Bitcoin is Important - Complete Overview" className="mb-6" />
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-2">Alex Gladstein, Human Rights Foundation</h3>
-            <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 min you'll spend learning about Bitcoin. Attribution: Bitcoin Policy Institute</p>
+            <p className="text-gray-600">An excellent introduction to all the many use cases of Bitcoin and how it's changing the world. This is hands down the best 20 minutes you'll spend learning about Bitcoin. Attribution: Bitcoin Policy Institute</p>
           </div>
         </div>
       </div>

@@ -1,12 +1,11 @@
 import React from "react";
 import { Section } from "@/components/common/Section";
-
 const CoachingBenefits = () => {
   return <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">Why Choose Personal Coaching?</h2>
-          <p className="section-subtitle mx-auto">Learning about Bitcoin can be overwhelming. This journey can be challenging at times, and for some, having a guide to help along the way is a smart move.</p>
+          <p className="section-subtitle mx-auto">Learning about Bitcoin can be overwhelming. For some, having a guide to help you along the way is a smart decision.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -68,5 +67,4 @@ const CoachingBenefits = () => {
       </div>
     </Section>;
 };
-
 export default CoachingBenefits;

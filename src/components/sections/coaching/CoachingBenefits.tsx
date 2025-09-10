@@ -4,7 +4,7 @@ const CoachingBenefits = () => {
   return <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-4">Why Choose Personal Coaching?</h2>
+          <h2 className="section-title mb-4">Learning about Bitcoin can be overwhelming. For some, having a trusted guide to help you along the way is a smart decision.</h2>
           <p className="section-subtitle mx-auto">Learning about Bitcoin can be overwhelming. For some, having a guide to help you along the way is a smart decision.</p>
         </div>
         

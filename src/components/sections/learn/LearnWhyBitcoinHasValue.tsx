@@ -1,14 +1,12 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 import YouTubeEmbed from '@/components/common/YouTubeEmbed';
-
 const LearnWhyBitcoinHasValue = () => {
-  return (
-    <Section id="why-bitcoin-has-value" spacing="lg" background="gray">
+  return <Section id="why-bitcoin-has-value" spacing="lg" background="gray">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Why Does Bitcoin Have Value?</h2>
-          <p className="section-subtitle mx-auto max-w-2xl">Now that you understand what Bitcoin is and how traditional money loses value, let's explore what gives Bitcoin its value and why more people are adopting it everyday. [3 min]</p>
+          <p className="section-subtitle mx-auto max-w-2xl">Now that you have an idea what Bitcoin is, let's explore what gives Bitcoin its value and why more people are adopting it everyday. [3 min]</p>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -18,8 +16,6 @@ const LearnWhyBitcoinHasValue = () => {
           </div>
         </div>
       </div>
-    </Section>
-  );
+    </Section>;
 };
-
 export default LearnWhyBitcoinHasValue;

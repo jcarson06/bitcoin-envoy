@@ -11,7 +11,7 @@ import LearnWhyBitcoinMatters from "@/components/sections/learn/LearnWhyBitcoinM
 import LearnFAQCTA from "@/components/sections/learn/LearnFAQCTA";
 const Learn = () => {
   return <div className="min-h-screen">
-      <SEO title="Learn Bitcoin - Free Educational Content" description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works." keywords="learn bitcoin, bitcoin education, cryptocurrency basics, bitcoin tutorial" />
+      <SEO title="Learn Bitcoin - Free Educational Content" description="Start your Bitcoin journey with the best educational content curated for beginners. Learn what Bitcoin is, why it matters, and how it works." keywords="learn bitcoin, bitcoin education, cryptocurrency basics, intro to bitcoin, bitcoin for beginners, bitcoin basics, bitcoin tutorial" />
       <ErrorBoundary>
         <Navbar />
         

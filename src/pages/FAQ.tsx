@@ -31,8 +31,8 @@ const FAQ = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bitcoin FAQ+ - Questions, Rules & Reading List"
-        description="Complete Bitcoin FAQ with frequently asked questions, rules of the road, essential reading list, recommended exchanges, and people to follow for your Bitcoin journey."
+        title="Bitcoin FAQ+ - Q&A, Rules of the Road, Reading List, and more"
+        description="Helpful extras including frequently asked questions, rules of the road, essential reading list, recommended exchanges, and people to follow for your Bitcoin journey."
         keywords="bitcoin faq, bitcoin rules, bitcoin reading list, bitcoin questions, bitcoin education, bitcoin exchanges"
         url="/faq"
         structuredData={structuredData}

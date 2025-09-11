@@ -16,7 +16,7 @@ const IndexWhyBitcoin = () => {
       delay: "0.4s"
     },
     {
-      title: "Bitcoin is supporting freedom around the world and is an essential tool for democracy advocates",
+      title: "Bitcoin is supporting freedom around the world and is an essential tool used by democracy advocates",
       tag: "Make A Difference",
       backgroundImage: "/background-section3.png", 
       delay: "0.6s"

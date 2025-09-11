@@ -38,7 +38,7 @@ export const rulesData = [
   },
   {
     rule: "There is no second best",
-    description: "Bitcoin is truly one-of-a-kind. No other digital asset has its attributes, namely absolute scarcity and genuine decentralization. It's not the best because it was the first or because it's the biggest or because it's the most well-known, it's the best because it's the best."
+    description: "Bitcoin is truly one-of-a-kind. No other digital asset has its attributes, namely absolute scarcity and genuine decentralization. It's not the best because it was the first or because it's the biggest or because it's the most well-known. It's the best because it's the best."
   },
   {
     rule: "Only invest what you can afford to lose",

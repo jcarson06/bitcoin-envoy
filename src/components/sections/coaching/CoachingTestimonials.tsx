@@ -45,7 +45,7 @@ const CoachingTestimonials = () => {
                 <p className="text-sm text-gray-500">Finance Manager</p>
               </div>
             </div>
-            <p className="text-gray-600">"Honestly, the educational content is so good that I didn't initially think I would need coaching. But eventually I signed up for a free consultation anyway because had a few questions, and the rest is history. Jeff is the absolute best. I'm a huge fan of Bitcoin Envoy!"</p>
+            <p className="text-gray-600">"Honestly, the educational content is so good that I didn't initially think I would need coaching. But eventually I signed up for a free consultation anyway because I had a few questions, and the rest is history. Jeff is the absolute best. I'm a huge fan of Bitcoin Envoy!"</p>
           </div>
         </div>
       </div>

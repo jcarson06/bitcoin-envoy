@@ -45,7 +45,7 @@ const IndexWhyBitcoin = () => {
               
               <div className="relative z-10 p-6 md:p-8 h-full flex items-end">
                 <div className="max-w-lg">
-                  <h3 className="sm:text-2xl md:text-3xl font-display text-white font-bold leading-tight text-3xl">
+                  <h3 className="sm:text-2xl md:text-3xl font-display text-white font-bold leading-tight text-2xl">
                     {card.title}
                   </h3>
                 </div>

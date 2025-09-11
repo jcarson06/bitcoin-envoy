@@ -24,7 +24,7 @@ const IndexWhyBitcoin = () => {
   ];
 
   return (
-    <Section spacing="lg" background="white" id="why-humanoid">
+    <Section spacing="lg" background="gray" id="why-humanoid">
       <div className="section-container">
         <div className="mb-8 md:mb-12">
           <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-4">

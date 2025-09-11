@@ -6,7 +6,7 @@ const IndexDollarHistory = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">A Tale of Two Graphics</h2>
-          <p className="section-subtitle mx-auto max-w-2xl">In the first (below) see how the Dollar has lost value over time — it's decreased by about 96% over the past century.</p>
+          <p className="section-subtitle mx-auto max-w-2xl">In the first (below) see how the Dollar has lost value over time — its purchasing power has decreased by about 96% over the past century.</p>
         </div>
         
         <div className="max-w-4xl mx-auto">

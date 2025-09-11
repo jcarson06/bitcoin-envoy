@@ -4,7 +4,7 @@ import { Section } from "@/components/common/Section";
 const IndexWhyBitcoin = () => {
   const cards = [
     {
-      title: "Understanding Bitcoin allows you to achieve financial independence",
+      title: "Understanding Bitcoin instills confidence and offers hope for the future",
       tag: "Build A Foundation",
       backgroundImage: "/background-section1.png",
       delay: "0.2s"

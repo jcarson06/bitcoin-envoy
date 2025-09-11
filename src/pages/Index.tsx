@@ -20,7 +20,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Bitcoin Envoy",
-    "description": "Bitcoin education designed for beginners to help you navigate the cryptocurrency landscape with confidence.",
+    "description": "Bitcoin education & coaching designed for beginners to help guide your Bitcoin journey.",
     "url": "https://bitcoinenvoy.co",
     "logo": "https://bitcoinenvoy.co/logo.svg",
     "contactPoint": {

@@ -21,7 +21,7 @@ const SEO: React.FC<SEOProps> = ({
   structuredData
 }) => {
   const siteTitle = "Bitcoin Envoy - Bitcoin Education & Coaching";
-  const fullTitle = title.includes("Pulse Robot") ? title : `${title} | ${siteTitle}`;
+  const fullTitle = title.includes("Bitcoin Envoy") ? title : `${title} | ${siteTitle}`;
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;

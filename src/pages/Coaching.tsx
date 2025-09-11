@@ -13,10 +13,10 @@ const Coaching = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Bitcoin Coaching Services",
-    "description": "Professional Bitcoin coaching and cryptocurrency education services. Get personalized guidance for your crypto investment journey.",
+    "description": "Professional Bitcoin coaching and education services. Get personalized guidance for your bitcoin journey.",
     "provider": {
       "@type": "Organization",
-      "name": "Pulse Robot"
+      "name": "Bitcoin Envoy"
     },
     "areaServed": "Worldwide",
     "availableChannel": {
@@ -28,8 +28,8 @@ const Coaching = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bitcoin Coaching Services - Professional Crypto Guidance"
-        description="Get professional Bitcoin coaching services with personalized guidance for your cryptocurrency investment journey. Expert coaching for all levels."
+        title="Bitcoin Coaching Services - Professional Guidance"
+        description="Get professional coaching services with personalized guidance for your Bitcoin investment journey. Expert coaching for all levels."
         keywords="bitcoin coaching services, crypto coaching, cryptocurrency guidance, bitcoin investment coaching, digital currency education"
         url="/coaching"
         structuredData={structuredData}

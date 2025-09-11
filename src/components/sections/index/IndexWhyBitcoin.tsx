@@ -4,19 +4,19 @@ import { Section } from "@/components/common/Section";
 const IndexWhyBitcoin = () => {
   const cards = [
     {
-      title: "Learning about Bitcoin instills confidence and offers hope for the future",
+      title: "Learning about Bitcoin instills confidence, offers hope, and encourages an appreciation for monetary history",
       tag: "Build A Foundation",
       backgroundImage: "/background-section1.png",
       delay: "0.2s"
     },
     {
-      title: "Bitcoin protects your savings from inflation and debasement",
+      title: "Bitcoin protects your savings from inflation and debasement and allows you to build for the future",
       tag: "Secure Your Future", 
       backgroundImage: "/background-section2.png",
       delay: "0.4s"
     },
     {
-      title: "Bitcoin is the future of sound money and is changing the world for the better",
+      title: "Bitcoin is supporting freedom and opportunity around the world and is an essential tool for democracy advocates",
       tag: "Make A Difference",
       backgroundImage: "/background-section3.png", 
       delay: "0.6s"

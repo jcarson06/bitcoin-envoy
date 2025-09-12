@@ -14,12 +14,7 @@ const CoachingAbout = () => {
           {/* Jeffrey Carson Photo */}
           <div className="flex justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-pulse-100 to-pulse-200">
-              <OptimizedImage
-                src="/lovable-uploads/jeffrey-carson-headshot.jpg"
-                alt="Jeffrey Carson, founder of Bitcoin Envoy and former U.S. Army Captain"
-                className="w-full h-full object-cover"
-                containerClassName="w-full h-full"
-              />
+              <OptimizedImage src="/lovable-uploads/jeffrey-carson-headshot.jpg" alt="Jeffrey Carson, founder of Bitcoin Envoy and former U.S. Army Captain" className="w-full h-full object-cover" containerClassName="w-full h-full" />
             </div>
           </div>
           
@@ -52,14 +47,12 @@ const CoachingAbout = () => {
               </a>
               
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Thanks for stopping by. I hope you liked my website and were able to learn something new today. If you have any more questions or you have feedback for me about the site, I'd be glad to hear from you. Feel free to send me an email. And remember to stay humble and stack sats.
-                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">"Thanks for stopping by my website! I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have any more questions or you have feedback about the site, I'd be glad to hear from you. Feel free to email me using the address above."</p>
               </div>
             </div>
           </div>
         </div>
       </Container>
-    </Section>
+    </Section>;
 };
 export default CoachingAbout;

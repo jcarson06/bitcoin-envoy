@@ -2,13 +2,11 @@ import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Container } from '@/components/common/Container';
 import { ExternalLink, Mail } from 'lucide-react';
-
 const CoachingAbout = () => {
-  return (
-    <Section spacing="lg" background="gray">
+  return <Section spacing="lg" background="gray">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="section-title mb-4">Meet Your Bitcoin Educator</h2>
+          <h2 className="section-title mb-4">Meet the Founder</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -30,23 +28,11 @@ const CoachingAbout = () => {
             
             {/* Social links */}
             <div className="flex space-x-6">
-              <a 
-                href="https://x.com/jeffreyscarson" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors"
-                aria-label="Follow Jeffrey on X"
-              >
+              <a href="https://x.com/jeffreyscarson" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors" aria-label="Follow Jeffrey on X">
                 <ExternalLink size={20} />
                 <span>Follow on X</span>
               </a>
-              <a 
-                href="https://www.linkedin.com/in/jscarson/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors"
-                aria-label="Connect on LinkedIn"
-              >
+              <a href="https://www.linkedin.com/in/jscarson/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors" aria-label="Connect on LinkedIn">
                 <ExternalLink size={20} />
                 <span>LinkedIn</span>
               </a>
@@ -54,11 +40,7 @@ const CoachingAbout = () => {
             
             {/* Contact */}
             <div className="pt-4">
-              <a 
-                href="mailto:jeff@bitcoinenvoy.co" 
-                className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors mb-4"
-                aria-label="Send email to Jeffrey"
-              >
+              <a href="mailto:jeff@bitcoinenvoy.co" className="flex items-center space-x-2 text-pulse-600 hover:text-pulse-700 transition-colors mb-4" aria-label="Send email to Jeffrey">
                 <Mail size={20} />
                 <span>jeff@bitcoinenvoy.co</span>
               </a>
@@ -72,8 +54,6 @@ const CoachingAbout = () => {
           </div>
         </div>
       </Container>
-    </Section>
-  );
+    </Section>;
 };
-
 export default CoachingAbout;

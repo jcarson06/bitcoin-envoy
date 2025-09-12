@@ -65,6 +65,6 @@ const CoachingBenefits = () => {
           </div>
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default CoachingBenefits;

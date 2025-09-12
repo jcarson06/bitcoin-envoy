@@ -54,6 +54,6 @@ const CoachingAbout = () => {
           </div>
         </div>
       </Container>
-    </Section>;
+    </Section>
 };
 export default CoachingAbout;

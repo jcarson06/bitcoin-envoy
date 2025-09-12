@@ -37,20 +37,24 @@ const Coaching = () => {
       />
       <Navbar />
       
-      <ErrorBoundary>
-        {/* CoachingIntro Section */}
+      {/* Individual Error Boundaries for each section */}
+      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load intro section</div>}>
         <CoachingIntro />
+      </ErrorBoundary>
 
-        {/* CoachingBenefits Section */}
+      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load benefits section</div>}>
         <CoachingBenefits />
+      </ErrorBoundary>
 
-        {/* CoachingSignUp Section */}
+      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load signup section</div>}>
         <CoachingSignUp />
+      </ErrorBoundary>
 
-        {/* CoachingTestimonials Section */}
+      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load testimonials section</div>}>
         <CoachingTestimonials />
+      </ErrorBoundary>
 
-        {/* CoachingAbout Section */}
+      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load about section</div>}>
         <CoachingAbout />
       </ErrorBoundary>
 

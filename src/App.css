@@ -27,14 +27,7 @@
   backface-visibility: hidden;
 }
 
-/* Card shadows */
-.shadow-elegant {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.shadow-elegant-hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
+/* Card shadows removed - using Tailwind config instead */
 
 /* Add new card animation */
 @keyframes card-enter {
@@ -73,72 +66,39 @@
     justify-content: center;
   }
   
-  /* Adjust text sizes for mobile */
+  /* Adjust text sizes for mobile - using responsive classes */
   .section-title {
-    font-size: 1.75rem !important;
-    line-height: 1.2 !important;
+    @apply text-2xl sm:text-4xl leading-tight;
   }
   
   .section-subtitle {
-    font-size: 1rem !important;
+    @apply text-base sm:text-lg;
   }
 }
 
-/* Robot Showcase Section */
-.robot-image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transition: transform 0.5s ease;
-}
-
-.robot-image-container:hover {
-  transform: scale(1.02);
-}
-
-.feature-item {
-  background-color: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
+/* Removed unused robot showcase styles */
 
 /* Enhanced mobile optimizations */
 @media (max-width: 640px) {
-  .robot-image-container {
-    border-radius: 16px;
-  }
-  
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-  
   /* Optimize spacing in card layouts */
   .card, .feature-card {
-    padding: 1.25rem;
+    @apply p-5;
   }
   
-  /* Better form inputs on mobile */
+  /* Better form inputs on mobile - prevents iOS zoom */
   input, textarea, select {
-    font-size: 16px !important; /* Prevents iOS zoom on focus */
-    padding: 0.75rem !important;
+    font-size: 16px;
+    @apply p-3;
   }
   
   /* Fix for mobile overflow issues */
   .overflow-hidden {
-    overflow-x: hidden;
+    @apply overflow-x-hidden;
   }
   
   /* Make rounded corners more subtle on mobile */
   .rounded-3xl {
-    border-radius: 1rem !important;
+    @apply rounded-2xl;
   }
 }
 

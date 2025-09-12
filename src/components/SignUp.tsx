@@ -33,82 +33,55 @@ const SignUp = () => {
     mode: "onChange"
   });
 
-  // Immediate format validation (no database calls)
+  // Simplified email validation
   const validateEmailFormat = (email: string): FieldValidation => {
-    if (!email) {
-      return {
-        isValid: false
-      };
-    }
+    if (!email) return { isValid: false };
+    
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (!emailRegex.test(email)) {
-      return {
-        isValid: false,
-        message: "Invalid email format"
-      };
+      return { isValid: false, message: "Invalid email format" };
     }
-
-    // Check for common typos
-    const commonDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
-    const domain = email.split('@')[1]?.toLowerCase();
-    if (domain && !commonDomains.includes(domain) && domain.includes('.co')) {
-      const suggestion = domain.replace('.co', '.com');
-      if (commonDomains.includes(suggestion)) {
-        return {
-          isValid: true,
-          message: `Did you mean ${email.split('@')[0]}@${suggestion}?`
-        };
-      }
-    }
-    return {
-      isValid: true
-    };
+    
+    return { isValid: true };
   };
 
-  // Database validation for duplicates (debounced)
+  // Simplified database validation for duplicates
   const validateEmailDuplicate = async (email: string): Promise<FieldValidation> => {
     const formatValidation = validateEmailFormat(email);
-    if (!formatValidation.isValid) {
-      return formatValidation;
-    }
+    if (!formatValidation.isValid) return formatValidation;
 
-    // Check for duplicate email
     try {
-      const {
-        data,
-        error
-      } = await supabase.from('signups').select('email').eq('email', email).limit(1);
+      const { data, error } = await supabase
+        .from('signups')
+        .select('email')
+        .eq('email', email)
+        .limit(1);
+        
       if (error) {
         logger.warn('Error checking duplicate email:', error);
-        return formatValidation; // Return format validation if DB check fails
-      } else if (data && data.length > 0) {
-        return {
-          isValid: false,
-          message: "This email has already been submitted"
-        };
+        return formatValidation;
       }
+      
+      if (data && data.length > 0) {
+        return { isValid: false, message: "This email has already been submitted" };
+      }
+      
+      return { isValid: true };
     } catch (error) {
       logger.warn('Error checking duplicate email:', error);
-      return formatValidation; // Return format validation if DB check fails
+      return formatValidation;
     }
-    return formatValidation;
   };
+  // Simplified name validation
   const validateName = (name: string): FieldValidation => {
-    if (!name || name.trim().length < 2) {
-      return {
-        isValid: false,
-        message: "Name must be at least 2 characters"
-      };
+    const trimmed = name?.trim();
+    if (!trimmed || trimmed.length < 2) {
+      return { isValid: false, message: "Name must be at least 2 characters" };
     }
-    if (name.trim().length > 50) {
-      return {
-        isValid: false,
-        message: "Name must be less than 50 characters"
-      };
+    if (trimmed.length > 50) {
+      return { isValid: false, message: "Name must be less than 50 characters" };
     }
-    return {
-      isValid: true
-    };
+    return { isValid: true };
   };
 
   // Debounced database validation

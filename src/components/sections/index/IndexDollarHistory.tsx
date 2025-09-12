@@ -18,6 +18,6 @@ const IndexDollarHistory = () => {
           </div>
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default IndexDollarHistory;

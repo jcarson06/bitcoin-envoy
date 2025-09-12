@@ -8,6 +8,6 @@ const LearnFAQCTA = () => {
         <p className="section-subtitle mb-8 max-w-2xl mx-auto">Check out our FAQ+ page for a wealth of free resources including frequently asked questions, rules of the road, reading list, and more.</p>
         <Link to="/faq" className="button-primary">Go to FAQ+</Link>
       </div>
-    </Section>;
+    </Section>
 };
 export default LearnFAQCTA;

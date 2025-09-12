@@ -231,6 +231,6 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </Container>;
+    </Container>
 };
 export default SignUp;

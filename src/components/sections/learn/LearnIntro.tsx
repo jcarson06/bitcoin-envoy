@@ -6,6 +6,6 @@ const LearnIntro = () => {
         <h1 className="section-title mb-6">Let's Get Started</h1>
         <p className="section-subtitle mx-auto mb-8 max-w-2xl">This page contains about 30 minutes of the very best bitcoin educational content on the internet today — specifically curated for beginners.</p>
       </div>
-    </Section>;
+    </Section>
 };
 export default LearnIntro;

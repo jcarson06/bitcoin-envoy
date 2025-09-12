@@ -16,6 +16,6 @@ const IndexBitcoinHistory = () => {
           </div>
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default IndexBitcoinHistory;

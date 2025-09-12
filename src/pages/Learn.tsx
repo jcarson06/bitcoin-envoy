@@ -35,6 +35,6 @@ const Learn = () => {
         
         <Footer />
       </ErrorBoundary>
-    </div>;
+    </div>
 };
 export default Learn;

@@ -10,6 +10,6 @@ const FAQCoachingCTA = () => {
           Learn About Coaching
         </Link>
       </div>
-    </Section>;
+    </Section>
 };
 export default FAQCoachingCTA;

@@ -32,6 +32,6 @@ const FAQReadingList = () => {
             </Card>)}
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default FAQReadingList;

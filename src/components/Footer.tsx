@@ -18,6 +18,6 @@ const Footer = () => {
           This website takes inspiration from DesignJoy's BUILD WARS design, updated with Lovable by Rezaul Arif.
         </p>
       </div>
-    </footer>;
+    </footer>
 };
 export default Footer;

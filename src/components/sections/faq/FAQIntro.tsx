@@ -6,6 +6,6 @@ const FAQIntro = () => {
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Helpful Extras</h1>
         <p className="section-subtitle max-w-3xl mx-auto">Continue your journey with these helpful extras including common questions & answers, essential rules of the road, and a recommended reading list.</p>
       </div>
-    </Section>;
+    </Section>
 };
 export default FAQIntro;

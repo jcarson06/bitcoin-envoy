@@ -16,6 +16,6 @@ const LearnWhyBitcoinHasValue = () => {
           </div>
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default LearnWhyBitcoinHasValue;

@@ -19,7 +19,7 @@ const LearnWhatIsBitcoin = () => {
         </div>
       </div>
     </Section>
-  );
+  )
 };
 
 export default LearnWhatIsBitcoin;

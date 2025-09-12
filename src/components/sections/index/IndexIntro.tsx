@@ -64,7 +64,7 @@ const IndexIntro = memo(() => {
         </div>
       </div>
     </div>
-  </section>;
+  </section>
 });
 
 IndexIntro.displayName = 'IndexIntro';

@@ -19,7 +19,7 @@ const IndexCTA = memo(() => {
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
 });
 
 IndexCTA.displayName = 'IndexCTA';

@@ -17,6 +17,6 @@ const LearnWhyBitcoinMatters = () => {
           </div>
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default LearnWhyBitcoinMatters;

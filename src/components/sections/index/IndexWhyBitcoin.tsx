@@ -53,6 +53,6 @@ const IndexWhyBitcoin = () => {
             </div>)}
         </div>
       </div>
-    </Section>;
+    </Section>
 };
 export default IndexWhyBitcoin;

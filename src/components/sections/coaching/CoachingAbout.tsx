@@ -24,7 +24,7 @@ const CoachingAbout = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Jeffrey Carson</h3>
-              <p className="text-gray-700 leading-relaxed">Jeff is a </p>
+              <p className="text-gray-700 leading-relaxed">Jeff i</p>
             </div>
             
             {/* Social links */}

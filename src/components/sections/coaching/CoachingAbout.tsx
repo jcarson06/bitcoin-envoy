@@ -24,9 +24,7 @@ const CoachingAbout = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Jeffrey Carson</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Jeff is a former U.S. Army Captain and Iraq War veteran with over a decade of experience leading operations and human resources efforts across political campaigns, startups, and nonprofit organizations. He's seen firsthand how utterly broken our political system has become, so he's set out to help build something new. He's passionate about helping others succeed and driven by an innate desire to maximize individual freedom and materially reduce the size and scope of government. As the saying goes, fix the money, fix the world.
-              </p>
+              <p className="text-gray-700 leading-relaxed">Jeff is a former U.S. Army Captain and Iraq War veteran with almost two decades of professional experience — spanning from his military service to earning an MBA to the corporate world to politics (LinkedIn profile included below). But what he's really passionate about is helping others learn about Bitcoin. He's driven by an innate desire to maximize individual freedom and materially reduce the size and scope of government. As the saying goes, fix the money, fix the world.</p>
             </div>
             
             {/* Social links */}

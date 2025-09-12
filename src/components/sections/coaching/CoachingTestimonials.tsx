@@ -49,6 +49,6 @@ const CoachingTestimonials = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </Section>;
 };
 export default CoachingTestimonials;

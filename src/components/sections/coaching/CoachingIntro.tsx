@@ -9,6 +9,6 @@ const CoachingIntro = () => {
         <h1 className="section-title mb-6">Bitcoin Coaching</h1>
         <p className="section-subtitle mx-auto mb-8 max-w-2xl">Get personalized guidance and support from trusted bitcoin educators who are here to help you on your journey.</p>
       </div>
-    </Section>
+    </Section>;
 };
 export default CoachingIntro;

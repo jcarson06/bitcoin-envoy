@@ -11,7 +11,6 @@ import { Container } from "@/components/common/Container";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { logger } from "@/utils/logger";
-import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 interface Signup {
   id: string;
@@ -195,144 +194,142 @@ const Admin = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <ErrorBoundary>
-        <Container>
-          <div className="py-8">
-            <div className="flex justify-between items-center mb-8">
-              <div>
-                <h1 className="text-3xl font-display font-bold">Admin Dashboard</h1>
-                <p className="text-muted-foreground">Manage consultation signups</p>
-              </div>
-              <div className="flex gap-2">
-                <Button onClick={exportData} variant="outline" size="sm">
-                  <Download className="h-4 w-4 mr-2" />
-                  Export CSV
-                </Button>
-                <Button onClick={() => setIsAuthenticated(false)} variant="destructive" size="sm">
-                  Logout
-                </Button>
-              </div>
+      <Container>
+        <div className="py-8">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-3xl font-display font-bold">Admin Dashboard</h1>
+              <p className="text-muted-foreground">Manage consultation signups</p>
             </div>
-
-            {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-              <Card>
-                <CardContent className="p-4">
-                  <div className="text-2xl font-bold">{signups.length}</div>
-                  <p className="text-sm text-muted-foreground">Total Signups</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-4">
-                  <div className="text-2xl font-bold">{signups.filter(s => s.status === 'new').length}</div>
-                  <p className="text-sm text-muted-foreground">New</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-4">
-                  <div className="text-2xl font-bold">{signups.filter(s => s.status === 'contacted').length}</div>
-                  <p className="text-sm text-muted-foreground">Contacted</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-4">
-                  <div className="text-2xl font-bold">{signups.filter(s => s.status === 'completed').length}</div>
-                  <p className="text-sm text-muted-foreground">Completed</p>
-                </CardContent>
-              </Card>
+            <div className="flex gap-2">
+              <Button onClick={exportData} variant="outline" size="sm">
+                <Download className="h-4 w-4 mr-2" />
+                Export CSV
+              </Button>
+              <Button onClick={() => setIsAuthenticated(false)} variant="destructive" size="sm">
+                Logout
+              </Button>
             </div>
+          </div>
 
-            {/* Filters */}
-            <Card className="mb-6">
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <Card>
               <CardContent className="p-4">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      placeholder="Search by name or email..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10"
-                    />
-                  </div>
-                  <Select value={statusFilter} onValueChange={setStatusFilter}>
-                    <SelectTrigger className="w-full sm:w-48">
-                      <Filter className="h-4 w-4 mr-2" />
-                      <SelectValue placeholder="Filter by status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Status</SelectItem>
-                      <SelectItem value="new">New</SelectItem>
-                      <SelectItem value="contacted">Contacted</SelectItem>
-                      <SelectItem value="completed">Completed</SelectItem>
-                      <SelectItem value="archived">Archived</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <div className="text-2xl font-bold">{signups.length}</div>
+                <p className="text-sm text-muted-foreground">Total Signups</p>
               </CardContent>
             </Card>
-
-            {/* Signups Table */}
             <Card>
-              <CardContent className="p-0">
-                {loading ? (
-                  <div className="p-8 text-center">Loading...</div>
-                ) : (
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Created</TableHead>
-                        <TableHead>Actions</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredSignups.length === 0 ? (
-                        <TableRow>
-                          <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
-                            No signups found
-                          </TableCell>
-                        </TableRow>
-                      ) : (
-                        filteredSignups.map((signup) => (
-                          <TableRow key={signup.id}>
-                            <TableCell className="font-medium">{signup.name || 'N/A'}</TableCell>
-                            <TableCell>{signup.email || 'N/A'}</TableCell>
-                            <TableCell>
-                              <Badge variant={getStatusBadgeVariant(signup.status)}>
-                                {signup.status}
-                              </Badge>
-                            </TableCell>
-                            <TableCell>{new Date(signup.created_at).toLocaleDateString()}</TableCell>
-                            <TableCell>
-                              <Select
-                                value={signup.status}
-                                onValueChange={(value) => updateStatus(signup.id, value)}
-                              >
-                                <SelectTrigger className="w-32">
-                                  <SelectValue />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="new">New</SelectItem>
-                                  <SelectItem value="contacted">Contacted</SelectItem>
-                                  <SelectItem value="completed">Completed</SelectItem>
-                                  <SelectItem value="archived">Archived</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </TableCell>
-                          </TableRow>
-                        ))
-                      )}
-                    </TableBody>
-                  </Table>
-                )}
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold">{signups.filter(s => s.status === 'new').length}</div>
+                <p className="text-sm text-muted-foreground">New</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold">{signups.filter(s => s.status === 'contacted').length}</div>
+                <p className="text-sm text-muted-foreground">Contacted</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4">
+                <div className="text-2xl font-bold">{signups.filter(s => s.status === 'completed').length}</div>
+                <p className="text-sm text-muted-foreground">Completed</p>
               </CardContent>
             </Card>
           </div>
-        </Container>
-      </ErrorBoundary>
+
+          {/* Filters */}
+          <Card className="mb-6">
+            <CardContent className="p-4">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search by name or email..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+                <Select value={statusFilter} onValueChange={setStatusFilter}>
+                  <SelectTrigger className="w-full sm:w-48">
+                    <Filter className="h-4 w-4 mr-2" />
+                    <SelectValue placeholder="Filter by status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Status</SelectItem>
+                    <SelectItem value="new">New</SelectItem>
+                    <SelectItem value="contacted">Contacted</SelectItem>
+                    <SelectItem value="completed">Completed</SelectItem>
+                    <SelectItem value="archived">Archived</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Signups Table */}
+          <Card>
+            <CardContent className="p-0">
+              {loading ? (
+                <div className="p-8 text-center">Loading...</div>
+              ) : (
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Name</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Created</TableHead>
+                      <TableHead>Actions</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredSignups.length === 0 ? (
+                      <TableRow>
+                        <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
+                          No signups found
+                        </TableCell>
+                      </TableRow>
+                    ) : (
+                      filteredSignups.map((signup) => (
+                        <TableRow key={signup.id}>
+                          <TableCell className="font-medium">{signup.name || 'N/A'}</TableCell>
+                          <TableCell>{signup.email || 'N/A'}</TableCell>
+                          <TableCell>
+                            <Badge variant={getStatusBadgeVariant(signup.status)}>
+                              {signup.status}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>{new Date(signup.created_at).toLocaleDateString()}</TableCell>
+                          <TableCell>
+                            <Select
+                              value={signup.status}
+                              onValueChange={(value) => updateStatus(signup.id, value)}
+                            >
+                              <SelectTrigger className="w-32">
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="new">New</SelectItem>
+                                <SelectItem value="contacted">Contacted</SelectItem>
+                                <SelectItem value="completed">Completed</SelectItem>
+                                <SelectItem value="archived">Archived</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </TableCell>
+                        </TableRow>
+                      ))
+                    )}
+                  </TableBody>
+                </Table>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </Container>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Container } from '@/components/common/Container';
+import { OptimizedImage } from '@/components/common/OptimizedImage';
 import { ExternalLink, Mail } from 'lucide-react';
 const CoachingAbout = () => {
   return <Section spacing="lg" background="gray">
@@ -10,11 +11,14 @@ const CoachingAbout = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Photo placeholder */}
+          {/* Professional headshot */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-pulse-100 to-pulse-200 flex items-center justify-center">
-              <span className="text-6xl font-medium text-pulse-600">JC</span>
-            </div>
+            <OptimizedImage
+              src="/lovable-uploads/bef89668-4ea4-4990-9810-26e3a3bc7a33.png"
+              alt="Jeffrey Carson - Bitcoin Coach and Educator"
+              className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-white"
+              fallbackSrc=""
+            />
           </div>
           
           {/* Bio content */}

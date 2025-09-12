@@ -14,11 +14,19 @@ const CoachingAbout = () => {
           {/* Professional headshot */}
           <div className="flex justify-center">
             <OptimizedImage
-              src="/lovable-uploads/bef89668-4ea4-4990-9810-26e3a3bc7a33.png"
+              src="/lovable-uploads/0af39731-ab1e-4c85-82e0-547ac91d2d05.png"
               alt="Jeffrey Carson - Bitcoin Coach and Educator"
               className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-white"
-              fallbackSrc=""
+              containerClassName="w-64 h-64"
+              onError={() => {
+                // Fallback to initials if image fails to load
+                const container = document.querySelector('.headshot-fallback');
+                if (container) {
+                  container.innerHTML = '<div class="w-64 h-64 rounded-full bg-gradient-to-br from-pulse-100 to-pulse-200 flex items-center justify-center border-4 border-white shadow-lg"><span class="text-6xl font-medium text-pulse-600">JC</span></div>';
+                }
+              }}
             />
+            <div className="headshot-fallback"></div>
           </div>
           
           {/* Bio content */}

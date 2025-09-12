@@ -6,7 +6,7 @@ const CoachingAbout = () => {
   return <Section spacing="lg" background="gray">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="section-title mb-4">Meet the Founder</h2>
+          <h2 className="section-title mb-4">About the Founder</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">

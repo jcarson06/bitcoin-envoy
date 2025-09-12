@@ -6,7 +6,6 @@ import { ExternalLink, Mail } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 const CoachingAbout = () => {
   const isMobile = useIsMobile();
-  
   return <Section spacing="lg" background="gray">
       <Container>
         <div className="text-center mb-12">
@@ -50,7 +49,7 @@ const CoachingAbout = () => {
               </a>
               
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="text-gray-700 text-sm leading-relaxed">Thanks for stopping by my website. I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have more questions or you have feedback about the site, I'd be glad to hear from you. Feel free to email me using the address above.</p>
+                <p className="text-gray-700 text-sm leading-relaxed">Thanks for stopping by my website. I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have any more questions or you have feedback about the site, I'd be glad to hear from you. Feel free to email me using the address above.</p>
               </div>
             </div>
           </div>

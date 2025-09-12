@@ -35,30 +35,17 @@ const Coaching = () => {
         url="/coaching"
         structuredData={structuredData}
       />
-      <Navbar />
-      
-      {/* Individual Error Boundaries for each section */}
-      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load intro section</div>}>
+      <ErrorBoundary>
+        <Navbar />
+        
         <CoachingIntro />
-      </ErrorBoundary>
-
-      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load benefits section</div>}>
         <CoachingBenefits />
-      </ErrorBoundary>
-
-      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load signup section</div>}>
         <CoachingSignUp />
-      </ErrorBoundary>
-
-      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load testimonials section</div>}>
         <CoachingTestimonials />
-      </ErrorBoundary>
-
-      <ErrorBoundary fallback={<div className="py-12 text-center text-muted-foreground">Unable to load about section</div>}>
         <CoachingAbout />
-      </ErrorBoundary>
 
-      <Footer />
+        <Footer />
+      </ErrorBoundary>
     </div>
   );
 };

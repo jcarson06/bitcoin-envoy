@@ -37,9 +37,9 @@ const FAQ = () => {
         url="/faq"
         structuredData={structuredData}
       />
-      <Navbar />
-      
       <ErrorBoundary>
+        <Navbar />
+        
         {/* FAQIntro Section */}
         <FAQIntro />
         
@@ -60,9 +60,9 @@ const FAQ = () => {
 
         {/* FAQCoachingCTA Section */}
         <FAQCoachingCTA />
-      </ErrorBoundary>
 
-      <Footer />
+        <Footer />
+      </ErrorBoundary>
     </div>
   );
 };

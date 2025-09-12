@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const PrivacyPolicy: React.FC = () => {
   const canonicalUrl = typeof window !== "undefined"
@@ -30,7 +31,8 @@ const PrivacyPolicy: React.FC = () => {
         </script>
       </Helmet>
 
-      <main className="min-h-screen bg-white">
+      <ErrorBoundary>
+        <main className="min-h-screen bg-white">
         <header className="section-container py-12">
           <h1 className="text-3xl font-semibold">Privacy Policy</h1>
           <p className="mt-2 text-sm text-muted-foreground">Last updated: August 11, 2025</p>
@@ -108,7 +110,8 @@ const PrivacyPolicy: React.FC = () => {
             </p>
           </article>
         </section>
-      </main>
+        </main>
+      </ErrorBoundary>
     </>
   );
 };

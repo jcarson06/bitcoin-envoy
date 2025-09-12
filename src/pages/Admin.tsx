@@ -11,6 +11,7 @@ import { Container } from "@/components/common/Container";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { logger } from "@/utils/logger";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 interface Signup {
   id: string;
@@ -194,7 +195,8 @@ const Admin = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <Container>
+      <ErrorBoundary>
+        <Container>
         <div className="py-8">
           <div className="flex justify-between items-center mb-8">
             <div>
@@ -329,7 +331,8 @@ const Admin = () => {
             </CardContent>
           </Card>
         </div>
-      </Container>
+        </Container>
+      </ErrorBoundary>
     </div>
   );
 };

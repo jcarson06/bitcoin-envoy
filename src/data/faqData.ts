@@ -18,12 +18,12 @@ export const faqData = [
     answer: "Nope, you’re not too late at all. People said the same thing when it was $500, then again at $5,000 — and here we are. The good news is you don’t have to buy a whole Bitcoin. It’s broken down into tiny pieces called satoshis, so you can start with as little as $5 and still begin stacking. Bitcoiners call this 'stacking sats'."
   },
   {
-    question: "Is Bitcoin just for tech-savvy people?",
-    answer: "Not at all! While Bitcoin has technical aspects, modern wallets and exchanges have made it much more user-friendly. Millions of regular people worldwide use Bitcoin daily. With proper education and guidance, anyone can learn to use Bitcoin safely."
-  },
-  {
     question: "How much should I invest in Bitcoin?",
     answer: "This depends entirely on your personal financial situation, risk tolerance, and investment goals. A common approach is to start small, utilize dollar-cost-averaging, and never invest more than you can afford to lose."
+  },
+  {
+    question: "Is Bitcoin just for tech-savvy people?",
+    answer: "Not at all! While Bitcoin has technical aspects, modern wallets and exchanges have made it much more user-friendly. Millions of regular people worldwide use Bitcoin daily. With proper education and guidance, anyone can learn to use Bitcoin safely."
   },
   {
     question: "Can Bitcoin be hacked or shut down?",

@@ -1,47 +1,49 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, ExternalLink } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ExternalLink, CheckCircle } from 'lucide-react';
 import { recommendedHardwareWallets } from '@/data/faqData';
 
 const FAQRecommendedHardwareWallets = () => {
   return (
-    <Section id="recommended-hardware-wallets" spacing="lg" background="white">
+    <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="section-title">Hardware Wallets We Recommend</h2>
-          <p className="section-subtitle">
-            Secure hardware devices to safely store your Bitcoin offline
+          <h2 className="section-title mb-4">Hardware Wallets We Recommend</h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            Secure hardware devices to safely store your Bitcoin offline.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
           {recommendedHardwareWallets.map((wallet, index) => (
-            <Card key={index} className="h-full hover:shadow-lg transition-shadow">
+            <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between mb-2">
-                  <CardTitle className="text-xl">{wallet.name}</CardTitle>
-                  <a
-                    href={wallet.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary-hover transition-colors flex-shrink-0 ml-2"
-                    aria-label={`Visit ${wallet.name}`}
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </a>
-                </div>
-                <CardDescription>{wallet.description}</CardDescription>
+                <CardTitle className="flex items-start justify-between">
+                  <span>{wallet.name}</span>
+                  <ExternalLink className="ml-2 flex-shrink-0 text-primary" size={20} />
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <p className="text-gray-600 mb-4">{wallet.description}</p>
+                
+                <div className="space-y-2 mb-4">
                   {wallet.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
+                    <div key={featureIndex} className="flex items-center text-sm">
+                      <CheckCircle className="text-green-500 mr-2 flex-shrink-0" size={16} />
+                      <span>{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
+                
+                <a 
+                  href={wallet.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+                >
+                  Visit {wallet.name} <ExternalLink className="ml-1" size={16} />
+                </a>
               </CardContent>
             </Card>
           ))}

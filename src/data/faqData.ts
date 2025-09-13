@@ -14,6 +14,10 @@ export const faqData = [
     answer: "On a reputable exchange, such as River or Strike. To learn more about exchanges, keep scrolling."
   },
   {
+    question: "Bitcoin is over $100,000 now… isn’t that way too expensive? Am I too late?",
+    answer: "Nope, you’re not too late at all. People said the same thing when it was $500, then again at $5,000 — and here we are. The good news is you don’t have to buy a whole Bitcoin. It’s broken down into tiny pieces called satoshis, so you can start with as little as $5 and still begin stacking."
+  },
+  {
     question: "Is Bitcoin just for tech-savvy people?",
     answer: "Not at all! While Bitcoin has technical aspects, modern wallets and exchanges have made it much more user-friendly. Millions of regular people worldwide use Bitcoin daily. With proper education and guidance, anyone can learn to use Bitcoin safely."
   },

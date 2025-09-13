@@ -142,3 +142,18 @@ export const recommendedExchanges = [
     link: "https://strike.me"
   }
 ];
+
+export const recommendedHardwareWallets = [
+  {
+    name: "Trezor Safe 3 Bitcoin-only",
+    description: "Entry-level Bitcoin-focused hardware wallet with secure element protection and simple interface",
+    features: ["Secure element chip", "12-word recovery phrase", "Bitcoin-only firmware", "Easy to use interface", "Open-source software"],
+    link: "https://trezor.io/trezor-safe-3-bitcoin-only"
+  },
+  {
+    name: "Trezor Safe 5 Bitcoin-only",
+    description: "Premium Bitcoin hardware wallet with color touchscreen and advanced backup options",
+    features: ["Color touchscreen", "Haptic feedback", "Advanced backup options", "Secure element chip", "Bitcoin-only firmware"],
+    link: "https://trezor.io/trezor-safe-5-bitcoin-only"
+  }
+];

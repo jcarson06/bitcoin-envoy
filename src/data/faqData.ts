@@ -15,7 +15,7 @@ export const faqData = [
   },
   {
     question: "Bitcoin is over $100,000 now… isn’t that way too expensive? Am I too late?",
-    answer: "Nope, you’re not too late at all. People said the same thing when it was $500, then again at $5,000 — and here we are. The good news is you don’t have to buy a whole Bitcoin. It’s broken down into tiny pieces called satoshis, so you can start with as little as $5 and still begin stacking."
+    answer: "Nope, you’re not too late at all. People said the same thing when it was $500, then again at $5,000 — and here we are. The good news is you don’t have to buy a whole Bitcoin. It’s broken down into tiny pieces called satoshis, so you can start with as little as $5 and still begin stacking. Bitcoiners call this 'stacking sats'."
   },
   {
     question: "Is Bitcoin just for tech-savvy people?",

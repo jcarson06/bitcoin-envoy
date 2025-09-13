@@ -28,6 +28,10 @@ export const faqData = [
   {
     question: "Can Bitcoin be hacked or shut down?",
     answer: "Bitcoin's decentralized network makes it extremely resistant to hacking or shutdown. While individual exchanges or wallets can be compromised, the Bitcoin network itself has never been successfully attacked. It's designed to be censorship-resistant and operates across thousands of nodes worldwide."
+  },
+  {
+    question: "How do I store my Bitcoin safely and responsibly?",
+    answer: "The safest way to hold Bitcoin is through self-custody — using tools like hardware wallets that put you fully in control of your money. That said, there’s no such thing as perfect security, and you shouldn’t let the pursuit of 'perfect' stop you from getting started. Many people begin by buying and holding Bitcoin with a reputable exchange, and then move to self-custody once they feel more confident. This step-by-step approach is both common and practical — we know, because it’s the same path we took ourselves."
   }
 ];
 

@@ -153,7 +153,7 @@ export const recommendedHardwareWallets = [
   {
     name: "Trezor Safe 5 Bitcoin-only",
     description: "Premium Bitcoin hardware wallet offering ultimate convenience with color touchscreen and advanced backup options",
-    features: ["All of the benefits/security of Trezor Safe 3 plus...", "Color touchscreen", "Haptic feedback", "Advanced backup options"],
+    features: ["All of the benefits/security of Trezor Safe 3 plus...", "Vibrant color touchscreen", "Trezor Touch haptic feedback", "Advanced backup options"],
     link: "https://trezor.io/trezor-safe-5-bitcoin-only"
   }
 ];

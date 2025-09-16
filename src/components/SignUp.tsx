@@ -223,7 +223,7 @@ const SignUp = () => {
                     {isSubmitting ? <>
                         <Loader2 className="h-4 w-4 animate-spin" />
                         Submitting...
-                      </> : "Get Bitcoin Coaching"}
+                      </> : "Get Free Bitcoin Coaching"}
                   </Button>
                 </form>
               </Form>

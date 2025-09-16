@@ -66,7 +66,7 @@ export const readingList = [
   {
     title: "Bitcoin in 21 Minutes",
     author: "River Financial",
-    description: "River's educational content is excellent, offering a more in-depth dive to beginners who are hungry to learn more. Spending 21 minutes at River exploring the fundamentals of Bitcoin is almost certainly your next best step.",
+    description: "If you’re ready to go a little deeper, River offers one of the best beginner-friendly guides out there. Their 'Bitcoin in 21 Minutes' series breaks down the fundamentals in a clear, approachable way — making it the perfect next step for anyone who wants to quickly build a solid foundation.",
     link: "https://river.com/learn/bitcoin-in-21-minutes/"
   },
   {

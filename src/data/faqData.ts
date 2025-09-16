@@ -64,6 +64,12 @@ export const rulesData = [
 
 export const readingList = [
   {
+    title: "Bitcoin in 21 Minutes",
+    author: "River Financial",
+    description: "River's educational content is excellent and offers a more in-depth dive to beginners who are hungry to learn more. Spending 21 minutes here exploring the fundamentals of Bitcoin is almost certainly your next best step.",
+    link: "https://bitcoin.org/bitcoin.pdf"
+  },
+  {
     title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
     author: "Satoshi Nakamoto",
     description: "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you don't understand a lot of it. That's totally normal. It's still very much worth your time. Plus, it's only 8 pages.",
@@ -74,6 +80,12 @@ export const readingList = [
     author: "Vijay Boyapati",
     description: "The most widely read non-technical introduction to Bitcoin. Frequently recommended to newcomers interested in learning more about this revolutionary technology. It's an easy read that should only take you a few hours to finish.",
     link: "https://www.bullishcaseforbitcoin.com/product-page/the-bullish-case-for-bitcoin-paperback-1"
+  },
+  {
+    title: "Inventing Bitcoin",
+    author: "Yan Pritzker",
+    description: "Bitcoin may well be the greatest invention of our time, and most people have no idea what it is, or how it works. Walking through its invention step by step, this short 100-page read offers an invaluable foundation to understanding Bitcoin. No technical expertise required!",
+    link: "https://www.amazon.com/Inventing-Bitcoin-Technology-Decentralized-Explained/dp/1794326316"
   },
   {
     title: "The Bitcoin Standard",

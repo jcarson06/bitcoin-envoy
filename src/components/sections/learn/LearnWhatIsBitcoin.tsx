@@ -12,7 +12,7 @@ const LearnWhatIsBitcoin = () => {
         <div className="max-w-4xl mx-auto">
           <YouTubeEmbed videoId="EKLr0II_BVE" title="What is Bitcoin? - Foundational Overview" className="mb-6" />
           <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">This foundational video explains the basics of Bitcoin in simple terms, perfect for beginners who want to understand what Bitcoin is before diving deeper into how it works or why it matters. Attribution: iShares, by BlackRock.</p>
+            <p className="text-gray-600 max-w-3xl mx-auto">This foundational video explains the basics of Bitcoin in simple terms, perfect for beginners. Attribution: iShares, by BlackRock.</p>
           </div>
         </div>
       </div>

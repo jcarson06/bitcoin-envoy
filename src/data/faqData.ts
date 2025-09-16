@@ -66,13 +66,13 @@ export const readingList = [
   {
     title: "Bitcoin in 21 Minutes",
     author: "River Financial",
-    description: "River's educational content is excellent and offers a more in-depth dive to beginners who are hungry to learn more. Spending 21 minutes here exploring the fundamentals of Bitcoin is almost certainly your next best step.",
-    link: "https://bitcoin.org/bitcoin.pdf"
+    description: "River's educational content is excellent, offering a more in-depth dive to beginners who are hungry to learn more. Spending 21 minutes at River exploring the fundamentals of Bitcoin is almost certainly your next best step.",
+    link: "https://river.com/learn/bitcoin-in-21-minutes/"
   },
   {
     title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
     author: "Satoshi Nakamoto",
-    description: "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you don't understand a lot of it. That's totally normal. It's still very much worth your time. Plus, it's only 8 pages.",
+    description: "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you don't understand a lot of it. That's totally normal, and it's still very much worth your time. Plus, it's only 8 pages.",
     link: "https://bitcoin.org/bitcoin.pdf"
   },
   {
@@ -84,7 +84,7 @@ export const readingList = [
   {
     title: "Inventing Bitcoin",
     author: "Yan Pritzker",
-    description: "Bitcoin may well be the greatest invention of our time, and most people have no idea what it is, or how it works. Walking through its invention step by step, this short 100-page read offers an invaluable foundation to understanding Bitcoin. No technical expertise required!",
+    description: "Bitcoin may well be the greatest invention of our time, and most people have no idea what it is, or how it works. Walking through its invention step by step, this short 100-page read offers an invaluable foundation to understanding Bitcoin.",
     link: "https://www.amazon.com/Inventing-Bitcoin-Technology-Decentralized-Explained/dp/1794326316"
   },
   {

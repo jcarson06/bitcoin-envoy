@@ -35,8 +35,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bitcoin Education & Coaching - Trusted Guidance for Your Bitcoin Journey"
-        description="Get Bitcoin education designed for beginners to navigate the cryptocurrency landscape with confidence. Plus, trusted and experienced coaches to help guide you on your journey."
+        title="Bitcoin Education & Coaching - A Trusted Guide for Your Bitcoin Journey"
+        description="Bitcoin education designed for beginners to help you understand the basics. Trusted and experienced coaches to help guide your journey."
         keywords="bitcoin coaching, bitcoin for beginners, bitcoin basics, bitcoin education, bitcoin investing, bitcoin guidance, bitcoin expert, bitcoin help, digital currency, digital assets"
         structuredData={structuredData}
       />

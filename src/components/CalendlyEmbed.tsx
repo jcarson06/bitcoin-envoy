@@ -40,12 +40,6 @@ const CalendlyEmbed = () => {
 
             {/* Calendly Embed Section */}
             <div className="bg-white border border-gray-100">
-              <div className="p-4 sm:p-6">
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Choose a convenient time for your free 45-minute consultation. We'll answer your questions and discuss how our coaching can help you achieve your goals.
-                </p>
-              </div>
-              
               {/* Calendly Inline Widget */}
               <div
                 className="calendly-inline-widget"

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Section } from '@/components/common/Section';
-import SignUp from '@/components/SignUp';
+import CalendlyEmbed from '@/components/CalendlyEmbed';
 
 const CoachingSignUp = () => {
   return (
     <Section spacing="lg" background="gray">
-      <SignUp />
+      <CalendlyEmbed />
     </Section>
   )
 };

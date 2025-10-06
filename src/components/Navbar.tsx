@@ -33,7 +33,7 @@ const Navbar = memo(() => {
       <header className={cn("fixed top-0 left-0 right-0 z-40 py-2 sm:py-3 md:py-4 transition-all duration-300", isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
         <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Education & Coaching" onClick={scrollToTop}>
-            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-7 w-7 hover:scale-110 transition-transform brightness-110 saturate-150 hue-rotate-[-15deg]" />
+            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-7 w-7 hover:scale-110 transition-transform" />
             <span className="font-brockmann text-2xl font-bold text-pulse-500 hover:text-pulse-600 transition-colors">
               Bitcoin Envoy
             </span>
@@ -67,7 +67,7 @@ const Navbar = memo(() => {
         {/* Header in sidebar */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
-            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-6 w-6 brightness-110 saturate-150 hue-rotate-[-15deg]" />
+            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-6 w-6" />
             <span className="font-brockmann text-lg font-bold text-pulse-500">
               Bitcoin Envoy
             </span>

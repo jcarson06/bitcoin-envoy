@@ -1,7 +1,7 @@
 import React, { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Menu, X, Coins } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 
@@ -33,7 +33,7 @@ const Navbar = memo(() => {
       <header className={cn("fixed top-0 left-0 right-0 z-40 py-2 sm:py-3 md:py-4 transition-all duration-300", isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
         <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Education & Coaching" onClick={scrollToTop}>
-            <Coins className="h-7 w-7 text-amber-500 hover:text-amber-600 transition-colors" />
+            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-7 w-7 hover:scale-110 transition-transform" />
             <span className="font-brockmann text-2xl font-bold text-pulse-600 hover:text-pulse-700 transition-colors">
               Bitcoin Envoy
             </span>
@@ -67,7 +67,7 @@ const Navbar = memo(() => {
         {/* Header in sidebar */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
-            <Coins className="h-6 w-6 text-amber-500" />
+            <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-6 w-6" />
             <span className="font-brockmann text-lg font-bold text-pulse-600">
               Bitcoin Envoy
             </span>

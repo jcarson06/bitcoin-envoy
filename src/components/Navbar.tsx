@@ -34,7 +34,7 @@ const Navbar = memo(() => {
         <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Education & Coaching" onClick={scrollToTop}>
             <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-7 w-7 hover:scale-110 transition-transform" />
-            <span className="font-brockmann text-2xl font-bold text-pulse-500 hover:text-pulse-600 transition-colors">
+            <span className="font-brockmann text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors">
               Bitcoin Envoy
             </span>
           </Link>
@@ -68,7 +68,7 @@ const Navbar = memo(() => {
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
             <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-6 w-6" />
-            <span className="font-brockmann text-lg font-bold text-pulse-500">
+            <span className="font-brockmann text-lg font-bold text-orange-500">
               Bitcoin Envoy
             </span>
           </Link>

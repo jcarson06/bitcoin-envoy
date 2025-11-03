@@ -15,7 +15,6 @@ import ScrollToTop from "./components/ScrollToTop";
 const Learn = lazy(() => import("./pages/Learn"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const Coaching = lazy(() => import("./pages/Coaching"));
-const Admin = lazy(() => import("./pages/Admin"));
 
 // Loading component
 const PageLoader = () => (
@@ -41,7 +40,6 @@ const App = () => {
                 <Route path="/learn" element={<Learn />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/coaching" element={<Coaching />} />
-                <Route path="/admin" element={<Admin />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CoachingAbout from "@/components/sections/coaching/CoachingAbout";
+import CoachingSignUp from "@/components/sections/coaching/CoachingSignUp";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
@@ -32,6 +33,7 @@ const About = () => {
         <Navbar />
         
         <CoachingAbout />
+        <CoachingSignUp />
 
         <Footer />
       </ErrorBoundary>

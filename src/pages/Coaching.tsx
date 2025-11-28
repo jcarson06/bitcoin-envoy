@@ -8,7 +8,6 @@ import CoachingTestimonials from "@/components/sections/coaching/CoachingTestimo
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import CoachingSignUp from "@/components/sections/coaching/CoachingSignUp";
-import CoachingAbout from "@/components/sections/coaching/CoachingAbout";
 
 const Coaching = () => {
   const structuredData = {
@@ -44,7 +43,6 @@ const Coaching = () => {
         <CoachingPricing />
         <CoachingSignUp />
         <CoachingTestimonials />
-        <CoachingAbout />
 
         <Footer />
       </ErrorBoundary>

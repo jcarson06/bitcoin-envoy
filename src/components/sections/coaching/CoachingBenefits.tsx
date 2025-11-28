@@ -34,7 +34,7 @@ const CoachingBenefits = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Expert Guidance</h3>
-              <p className="text-gray-600">Learn from trusted bitcoin educators with years of practical experience.</p>
+              <p className="text-gray-600">Learn from trusted Bitcoin educators with years of practical experience.</p>
             </div>
           </div>
 
@@ -65,6 +65,6 @@ const CoachingBenefits = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </Section>;
 };
 export default CoachingBenefits;

@@ -35,6 +35,9 @@ const CoachingPricing = () => {
           {/* Single Session */}
           <Card className="relative shadow-elegant border-gray-100">
             <CardHeader>
+              <Badge className="mb-4 w-fit bg-pulse-100 text-pulse-600 hover:bg-pulse-100">
+                Most Flexible
+              </Badge>
               <CardTitle className="text-2xl mb-2">Coaching Session</CardTitle>
               <div className="text-4xl font-bold text-pulse-600 mb-2">$100</div>
               <div className="text-sm text-muted-foreground">45 minutes</div>

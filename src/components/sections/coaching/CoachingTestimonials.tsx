@@ -5,7 +5,7 @@ const CoachingTestimonials = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">What Our Clients Say</h2>
-          <p className="section-subtitle mx-auto">Real stories from people who've transformed their understanding of bitcoin and changed their lives for the better.</p>
+          <p className="section-subtitle mx-auto">Real stories from people who've transformed their understanding of Bitcoin and changed their lives for the better.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -49,6 +49,6 @@ const CoachingTestimonials = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </Section>;
 };
 export default CoachingTestimonials;

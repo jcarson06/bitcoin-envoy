@@ -4,7 +4,7 @@ import CalendlyEmbed from '@/components/CalendlyEmbed';
 
 const CoachingSignUp = () => {
   return (
-    <Section spacing="lg" background="gray">
+    <Section spacing="lg" background="white">
       <CalendlyEmbed />
     </Section>
   )

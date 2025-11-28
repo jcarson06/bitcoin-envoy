@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CoachingIntro from "@/components/sections/coaching/CoachingIntro";
 import CoachingBenefits from "@/components/sections/coaching/CoachingBenefits";
+import CoachingPricing from "@/components/sections/coaching/CoachingPricing";
 import CoachingTestimonials from "@/components/sections/coaching/CoachingTestimonials";
 import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
@@ -40,6 +41,7 @@ const Coaching = () => {
         
         <CoachingIntro />
         <CoachingBenefits />
+        <CoachingPricing />
         <CoachingSignUp />
         <CoachingTestimonials />
         <CoachingAbout />

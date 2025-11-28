@@ -41,8 +41,8 @@ const Coaching = () => {
         <CoachingIntro />
         <CoachingBenefits />
         <CoachingPricing />
-        <CoachingSignUp />
         <CoachingTestimonials />
+        <CoachingSignUp />
 
         <Footer />
       </ErrorBoundary>

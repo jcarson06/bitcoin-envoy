@@ -2,15 +2,13 @@ import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
 const CoachingPricing = () => {
-  return (
-    <Section spacing="lg" background="gray">
+  return <Section spacing="lg" background="gray">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">How Much Does It Cost?</h2>
           <p className="section-subtitle mx-auto">
-            Simple, Transparent Pricing — No hidden fees. No confusing packages. Just straightforward support to help you build confidence with Bitcoin.
+            Simple, transparent pricing. No hidden fees. No confusing packages. Just straightforward support to help you build confidence with Bitcoin.
           </p>
         </div>
 
@@ -85,8 +83,6 @@ const CoachingPricing = () => {
           </p>
         </div>
       </div>
-    </Section>
-  );
+    </Section>;
 };
-
 export default CoachingPricing;

@@ -25,7 +25,7 @@ const CoachingPricing = () => {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                Get started with a complimentary call. We'll answer your questions, help you cut through the noise, and show you how Bitcoin fits into your financial life.
+                Get started with a complimentary call. I'll answer your questions, help you cut through the noise, and show you how Bitcoin fits into your financial life.
               </p>
             </CardContent>
           </Card>

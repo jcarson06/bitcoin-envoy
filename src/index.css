@@ -179,6 +179,21 @@
     padding: 16px 24px;
     border: 1px solid white;
   }
+
+  .hero-cta-button-secondary {
+    @apply inline-flex items-center justify-center w-full sm:w-auto text-center transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    background-color: transparent;
+    border-radius: 999px;
+    color: hsl(var(--primary));
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px 24px;
+    border: 1px solid hsl(var(--primary));
+  }
+
+  .hero-cta-button-secondary:hover {
+    background-color: hsl(var(--primary) / 0.1);
+  }
   
   .nav-link {
     @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;

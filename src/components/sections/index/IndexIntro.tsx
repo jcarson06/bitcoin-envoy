@@ -30,6 +30,9 @@ const IndexIntro = memo(() => {
               Start Learning
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
+            <Link to="/about" className="hero-cta-button-secondary">
+              About Me
+            </Link>
           </div>
         </div>
         

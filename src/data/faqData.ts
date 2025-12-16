@@ -137,6 +137,12 @@ export const peopleToFollow = [
     handle: "@natbrunell",
     bio: "Award-winning journalist, host of Coin Stories podcast, and Bitcoin educator",
     link: "https://x.com/natbrunell"
+  },
+  {
+    name: "Efrat Fenigson",
+    handle: "@efenigson",
+    bio: "Podcast host @YoureTheVoiceEF, independent journalist, and freedom & Bitcoin maxi",
+    link: "https://x.com/efenigson"
   }
 ];
 

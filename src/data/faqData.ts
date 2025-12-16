@@ -87,7 +87,7 @@ export const readingList = [
     title: "Bitcoin: A Peer-to-Peer Electronic Cash System",
     author: "Satoshi Nakamoto",
     description:
-      "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't worry if you don't understand a lot of it. That's totally normal, and it's still very much worth your time. Plus, it's only 8 pages.",
+      "The original Bitcoin whitepaper that started it all. Essential reading for understanding Bitcoin's core concepts. Pro tip: don't sweat if you don't understand everything. That's totally normal, and it's still worth your time. Plus, it's only 8 pages.",
     link: "https://bitcoin.org/bitcoin.pdf",
   },
   {
@@ -115,7 +115,7 @@ export const readingList = [
     title: "Bitcoin is for Everyone",
     author: "Natalie Brunell",
     description:
-      "With Natalie's guidance, exploring Bitcoin becomes a compelling and inspiring journey of discovery and insight. The book doesn't just look squarely at the causes and consequences of \"broken money.\" It shows how Bitcoin fixes it.",
+      "With Natalie's guidance, exploring Bitcoin becomes a compelling and inspiring journey of discovery and insight. A must-read for anyone who wants to reclaim freedom, economic empowerment, and hope in the digital age.",
     link: "https://www.amazon.com/dp/1804091138",
   },
 ];

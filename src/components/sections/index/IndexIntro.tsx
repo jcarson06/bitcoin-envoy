@@ -23,15 +23,11 @@ const IndexIntro = memo(() => {
             Welcome To Your Bitcoin Journey
           </h1>
           
-          <p className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed animate-fade-in stagger-2 text-gray-950 font-normal text-base sm:text-lg text-left">Have you ever been curious about Bitcoin but unsure where to start? If so, you came to the right place. I built this website to help newcomers learn the basics. Actually, I built this site for me — the version of me that existed 12 years ago who couldn't be bothered to start learning about Bitcoin (in part because I didn't know where to start).                                                                                                                 </p>
+          <p className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed animate-fade-in stagger-2 text-gray-950 font-normal text-base sm:text-lg text-left">Have you ever been curious about Bitcoin but unsure where to start? Or who to trust? If so, you came to the right place. I built this website to help newcomers learn the basics — and to do so in an little as an hour.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in stagger-3">
             <Link to="/learn" className="hero-cta-button group">
               Start Learning
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link to="/about" className="hero-cta-button group">
-              About Me
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

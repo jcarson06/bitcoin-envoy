@@ -143,6 +143,12 @@ export const peopleToFollow = [
     handle: "@efenigson",
     bio: "Podcast host @YoureTheVoiceEF, independent journalist, and freedom & Bitcoin maxi",
     link: "https://x.com/efenigson"
+  },
+  {
+    name: "Preston Pysh",
+    handle: "@PrestonPysh",
+    bio: "Co-founder of The Investor's Podcast Network, Bitcoin advocate, and financial educator",
+    link: "https://x.com/PrestonPysh"
   }
 ];
 

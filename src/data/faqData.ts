@@ -98,6 +98,12 @@ export const readingList = [
     author: "Lyn Alden",
     description: "This book examines the flaws in past and present monetary systems, showing how technology and policy have shaped their failures. It makes the case for Bitcoin as a durable alternative that could repair today’s broken financial system.",
     link: "https://www.amazon.com/Broken-Money-Financial-System-Failing/dp/B0CG8985FR"
+  },
+  {
+    title: "Bitcoin is for Everyone",
+    author: "Natalie Brunell",
+    description: "With Natalie's guidance, exploring Bitcoin becomes a compelling and inspiring journey of discovery and insight. The book doesn't just look squarely at the causes and consequences of \"broken money.\" It shows how Bitcoin fixes it.",
+    link: "https://www.amazon.com/dp/1804091138"
   }
 ];
 

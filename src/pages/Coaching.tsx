@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CoachingIntro from "@/components/sections/coaching/CoachingIntro";
-import CoachingBenefits from "@/components/sections/coaching/CoachingBenefits";
 import CoachingPricing from "@/components/sections/coaching/CoachingPricing";
 import CoachingTestimonials from "@/components/sections/coaching/CoachingTestimonials";
 import SEO from "@/components/SEO";
@@ -39,7 +38,6 @@ const Coaching = () => {
         <Navbar />
         
         <CoachingIntro />
-        <CoachingBenefits />
         <CoachingPricing />
         <CoachingTestimonials />
         <CoachingSignUp />

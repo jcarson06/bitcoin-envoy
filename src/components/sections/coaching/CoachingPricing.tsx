@@ -18,7 +18,7 @@ const CoachingPricing = () => {
               </Badge>
               <CardTitle className="text-2xl mb-2">Coaching Session</CardTitle>
               <div className="text-4xl font-bold text-pulse-600 mb-2">FREE</div>
-              <div className="text-sm text-muted-foreground">45 minutes</div>
+              <div className="text-sm text-muted-foreground">30 minutes</div>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">Whether it's buying your first Bitcoin, setting up secure storage, or learning best practices, you'll walk away with clarity and a clear action plan.</p>

@@ -4,7 +4,7 @@ const CoachingTestimonials = () => {
   return <Section spacing="lg" background="white">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title mb-4">What Our Clients Say</h2>
+          <h2 className="section-title mb-4">What My Clients Say</h2>
           <p className="section-subtitle mx-auto">Real stories from people who've transformed their understanding of Bitcoin and changed their lives for the better.</p>
         </div>
         

@@ -34,7 +34,7 @@ const CalendlyEmbed = () => {
             {/* Calendly Embed Section */}
             <div className="bg-white border border-gray-100">
               {/* Calendly Inline Widget */}
-              <div className="calendly-inline-widget" data-url="https://calendly.com/jeff-bitcoinenvoy/45min" style={{
+              <div className="calendly-inline-widget" data-url="https://calendly.com/jeff-bitcoinenvoy/coaching" style={{
               minWidth: "320px",
               height: "700px"
             }} />

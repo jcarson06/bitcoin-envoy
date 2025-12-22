@@ -22,9 +22,7 @@ const CoachingPricing = () => {
               <div className="text-sm text-muted-foreground">45 minutes</div>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
-                Get started with a complimentary call. I'll answer your questions, help you cut through the noise, and show you how Bitcoin fits into your financial life.
-              </p>
+              <p className="text-gray-600">Get started with an initial consultation where I'll answer your most pressing questions and help you cut through the noise.</p>
             </CardContent>
           </Card>
 
@@ -39,9 +37,7 @@ const CoachingPricing = () => {
               <div className="text-sm text-muted-foreground">45 minutes</div>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
-                One-on-one, 45-minute call tailored to your needs. Whether it's buying your first Bitcoin, setting up secure storage, or learning best practices, you'll walk away with clarity and a clear action plan.
-              </p>
+              <p className="text-gray-600">Whether it's buying your first Bitcoin, setting up secure storage, or learning best practices, you'll walk away with clarity and a clear action plan.</p>
             </CardContent>
           </Card>
 

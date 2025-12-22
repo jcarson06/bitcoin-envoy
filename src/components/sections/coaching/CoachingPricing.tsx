@@ -76,9 +76,7 @@ const CoachingPricing = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-lg text-gray-700">
-            👉 Start with the free consultation, then when you're ready choose the level of support that feels right for you.
-          </p>
+          <p className="text-lg text-gray-700">👉 Scroll down to schedule a free coaching session at a time that's convenient for you.</p>
         </div>
       </div>
     </Section>;

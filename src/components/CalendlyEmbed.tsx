@@ -26,9 +26,7 @@ const CalendlyEmbed = () => {
               <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4">
                 Free Consultation
               </div>
-              <h2 className="text-2xl sm:text-3xl font-display text-white font-bold mt-auto">
-                Schedule your free coaching session 
-              </h2>
+              <h2 className="text-2xl sm:text-3xl font-display text-white font-bold mt-auto">Schedule a free coaching session</h2>
             </div>
 
             {/* Calendly Embed Section */}

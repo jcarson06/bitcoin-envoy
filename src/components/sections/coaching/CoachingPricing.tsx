@@ -7,7 +7,7 @@ const CoachingPricing = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">How Much Does It Cost?</h2>
-          <p className="section-subtitle mx-auto">It's 100% free. Wait, what's the catch? There isn't one — I just really like talking with people about Bitcoin.</p>
+          <p className="section-subtitle mx-auto">It's 100% free. What's the catch? There isn't one — I just really like talking with people about Bitcoin.</p>
         </div>
 
         <div className="max-w-md mx-auto mb-12">

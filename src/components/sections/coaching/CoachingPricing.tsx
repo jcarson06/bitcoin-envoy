@@ -7,9 +7,7 @@ const CoachingPricing = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title mb-4">How Much Does It Cost?</h2>
-          <p className="section-subtitle mx-auto">
-            Simple, transparent pricing. No hidden fees. No confusing packages. Just straightforward support to help you build confidence with Bitcoin.
-          </p>
+          <p className="section-subtitle mx-auto">It's 100% free. Wait, what's the catch? There isn't one — I just really like talking with people about Bitcoin.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

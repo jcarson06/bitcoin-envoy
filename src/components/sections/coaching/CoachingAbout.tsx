@@ -47,7 +47,7 @@ const CoachingAbout = () => {
               </a>
               
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="text-gray-700 text-sm leading-relaxed italic">Thanks for stopping by my website. I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have any questions or feedback about the site, I'd be glad to hear from you. Feel free to reach out using the email address above.</p>
+                <p className="text-gray-700 text-sm leading-relaxed italic">Thanks for stopping by my website. I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have any questions or feedback about the site, I'd be glad to hear from you!</p>
               </div>
             </div>
           </div>

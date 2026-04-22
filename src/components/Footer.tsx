@@ -1,11 +1,11 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 const Footer = () => {
-  return <footer className="w-full bg-white py-4">
+  return (
+    <footer className="w-full bg-white py-4">
       <div className="section-container">
         <p className="text-center text-gray-600 text-sm">
-          © 2025 Bitcoin Envoy. All rights reserved. 
+          © 2026 Bitcoin Envoy. All rights reserved.
           <Link to="/privacy-policy" className="text-pulse-500 hover:underline ml-2">
             Privacy Policy
           </Link>{" "}
@@ -19,5 +19,6 @@ const Footer = () => {
         </p>
       </div>
     </footer>
+  );
 };
 export default Footer;

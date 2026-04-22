@@ -16,7 +16,7 @@ export const faqData = [
     answer: "On a reputable exchange, such as River or Strike. To learn more about exchanges, keep scrolling.",
   },
   {
-    question: "Bitcoin is over $100,000 now… isn’t that way too expensive? Am I too late?",
+    question: "Is the price too high? Am I too late?",
     answer:
       "Nope, you’re not too late at all. People said the same thing when it was $500, then again at $5,000 — and here we are. The good news is you don’t have to buy a whole Bitcoin. It’s broken down into tiny pieces called satoshis, so you can start with as little as $5 and still begin stacking. Bitcoiners call this 'stacking sats'.",
   },
@@ -38,7 +38,7 @@ export const faqData = [
   {
     question: "How do I store my Bitcoin safely and responsibly?",
     answer:
-      "The safest way to hold Bitcoin is through self-custody — using tools like hardware wallets that put you fully in control of your money. That said, there’s no such thing as perfect security, and you shouldn’t let the pursuit of 'perfect' stop you from getting started. Many people begin by buying and holding Bitcoin with a reputable exchange, and then move to self-custody once they feel more confident. This step-by-step approach is both common and practical — we know, because it’s the same path we took ourselves.",
+      "The safest way to hold Bitcoin is through self-custody — using tools like hardware wallets that put you fully in control of your money. That said, there’s no such thing as perfect security, and you shouldn’t let the pursuit of 'perfect' stop you from getting started. Many people begin by buying and holding Bitcoin with a reputable exchange, and then move to self-custody once they feel more confident. This step-by-step approach is both common and practical.",
   },
 ];
 
@@ -51,7 +51,7 @@ export const rulesData = [
   {
     rule: "Do Your Own Research (DYOR)",
     description:
-      "Never invest based solely on someone else's advice, including ours. Furthermore, none of what you're reading should be considered financial advice, and we are not financial advisors. Take time to understand what you're investing in and verify information from multiple credible sources.",
+      "Never invest based solely on someone else's advice, including mine. Furthermore, none of what you're reading should be considered financial advice, and I am not a financial advisor. Take the time to understand what you're investing in and verify information from multiple credible sources.",
   },
   {
     rule: "There is no second best",

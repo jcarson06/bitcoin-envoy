@@ -1,80 +1,87 @@
+## Goal
 
+Convert the site so each route (`/`, `/learn`, `/faq`, `/coaching`, `/about`, `/privacy-policy`, `/terms-of-service`) is published as a fully-rendered HTML file. Search engine and AI crawlers will see the complete content — headings, paragraphs, links, FAQ schema — without executing any JavaScript. React still hydrates on top for interactivity (mobile menu, smooth scroll, accordion).
 
-## Plan: Full dead code sweep
+## Approach: Prerendering via `vite-plugin-prerender-spa` style flow
 
-### Background
-Reverse-reachability scan from `App.tsx` and all routed pages. A file is "dead" only if nothing reachable from the app entry imports it.
+Since this is a pure static marketing site (no auth, no per-user data, no API calls), the cleanest fit is **build-time prerendering**, not a framework migration. We keep Vite + React Router exactly as-is and add a post-build step that:
 
-### Files to delete
+1. Runs the normal `vite build` to produce the SPA bundle in `dist/`.
+2. Boots a headless renderer that loads each route, waits for React to finish, then snapshots the resulting HTML.
+3. Writes `dist/index.html`, `dist/learn/index.html`, `dist/faq/index.html`, etc. — each containing the full markup plus the existing `<script>` tags that hydrate React on the client.
 
-**App-level dead code (4 files)**
-- `src/components/LottieAnimation.tsx` — never imported
-- `src/components/common/AnimatedCard.tsx` — never imported
-- `src/components/common/Chip.tsx` — never imported
-- `src/hooks/useScrollToTop.ts` — duplicate of the active `src/components/ScrollToTop.tsx`; never imported
+We will use **`react-snap`** (or equivalently a small custom Puppeteer script) wired into a `postbuild` npm script. `react-snap` is the de-facto standard for this exact pattern with Vite + React Router + react-helmet-async, and it correctly handles `<Helmet>` tags, lazy-loaded routes (via `Suspense`), and hash links.
 
-**Unused shadcn UI components (34 files)**
+### Why not Next.js / Astro / vite-ssg?
+- Next.js / Astro = full framework migration. Out of scope and risky.
+- `vite-ssg` requires switching to its own router setup. Workable but invasive.
+- `react-snap` is drop-in: zero source changes required for content to appear in HTML; just add the package + a build script.
 
-Directly unused:
-`alert-dialog`, `alert`, `aspect-ratio`, `avatar`, `breadcrumb`, `calendar`, `carousel`, `chart`, `checkbox`, `collapsible`, `command`, `context-menu`, `drawer`, `dropdown-menu`, `form`, `hover-card`, `input-otp`, `menubar`, `navigation-menu`, `pagination`, `popover`, `progress`, `radio-group`, `resizable`, `scroll-area`, `select`, `sidebar`, `slider`, `switch`, `table`, `tabs`, `textarea`, `toggle-group`
+## Changes
 
-Transitively dead once the above are removed:
-- `sheet.tsx` — only consumed by the unused `sidebar`
-- `toggle.tsx` — only consumed by the unused `toggle-group`
+### 1. Add dependency
+- `react-snap` (devDependency).
+- Puppeteer (its peer dep) downloads Chromium during install.
 
-Re-export shim that becomes pointless:
-- `src/components/ui/use-toast.ts` — just re-exports from `@/hooks/use-toast`; nothing in `src/` imports it (the hook is imported directly)
+### 2. `package.json` scripts
+```json
+"build": "vite build && react-snap",
+"postbuild": "react-snap"
+```
+Plus a `reactSnap` config block listing every route to crawl:
+```json
+"reactSnap": {
+  "source": "dist",
+  "include": ["/", "/learn", "/faq", "/coaching", "/about", "/privacy-policy", "/terms-of-service"],
+  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+  "inlineCss": false,
+  "minifyHtml": { "collapseWhitespace": true, "removeComments": true }
+}
+```
 
-### Components verified KEPT (in active use)
-`button`, `card`, `accordion`, `badge`, `dialog`, `separator`, `skeleton`, `sonner`, `toast`, `toaster`, `tooltip`, `input`, `label`, plus the hook `src/hooks/use-toast.ts`.
+### 3. Hydration entry point (`src/main.tsx`)
+Switch from `createRoot(...).render(...)` to:
+```ts
+const root = document.getElementById("root")!;
+if (root.hasChildNodes()) {
+  hydrateRoot(root, <App />);
+} else {
+  createRoot(root).render(<App />);
+}
+```
+This lets the prerendered HTML be reused on the client instead of being thrown away.
 
-### npm dependencies to remove from `package.json`
+### 4. Guard browser-only code
+Audit and wrap any direct `window` / `document` access that runs during render so it doesn't crash the headless prerender:
+- `src/components/SEO.tsx` already uses `typeof window !== 'undefined'` — fine.
+- `src/main.tsx` `window.addEventListener('beforeunload', ...)` — already top-level after render, runs only in browser, but we'll move it behind a `typeof window` check for safety during the snapshot.
+- `useScrollToSection`, `useThrottledScroll`, `useOptimizedIntersectionObserver` — confirm all DOM access is inside `useEffect` (which doesn't fire during SSR/prerender). Quick read-through; add guards if any escape.
+- `IndexIntro`, `IndexCTA`, `IndexDollarHistory`, `Navbar` — verify `useState`/`useEffect` patterns are SSR-safe.
 
-Truly unreferenced in source:
-- `date-fns`
-- `zod`
-- `@hookform/resolvers`
+### 5. Static asset paths
+`public/robots.txt`, `public/llms.txt`, `public/logo.svg`, favicon, fonts — already copied verbatim by Vite. No change.
 
-Removed because their only consumer was a deleted UI component:
-- `@radix-ui/react-alert-dialog` (alert-dialog)
-- `@radix-ui/react-aspect-ratio` (aspect-ratio)
-- `@radix-ui/react-avatar` (avatar)
-- `@radix-ui/react-checkbox` (checkbox)
-- `@radix-ui/react-collapsible` (collapsible)
-- `@radix-ui/react-context-menu` (context-menu)
-- `@radix-ui/react-dropdown-menu` (dropdown-menu)
-- `@radix-ui/react-hover-card` (hover-card)
-- `@radix-ui/react-menubar` (menubar)
-- `@radix-ui/react-navigation-menu` (navigation-menu)
-- `@radix-ui/react-popover` (popover)
-- `@radix-ui/react-progress` (progress)
-- `@radix-ui/react-radio-group` (radio-group)
-- `@radix-ui/react-scroll-area` (scroll-area)
-- `@radix-ui/react-select` (select)
-- `@radix-ui/react-slider` (slider)
-- `@radix-ui/react-switch` (switch)
-- `@radix-ui/react-tabs` (tabs)
-- `@radix-ui/react-toggle` + `@radix-ui/react-toggle-group` (toggle/toggle-group)
-- `react-day-picker` (calendar)
-- `react-hook-form` (form)
-- `embla-carousel-react` (carousel)
-- `recharts` (chart)
-- `cmdk` (command)
-- `input-otp` (input-otp)
-- `vaul` (drawer)
-- `react-resizable-panels` (resizable)
+### 6. Verify after build
+Run `npm run build`, then for each route inspect `dist/<route>/index.html`:
+- Confirm headings, body copy, FAQ Q&A text, About bio, pricing, footer all appear as plain HTML.
+- Confirm the `<title>`, meta description, OG tags, and JSON-LD from `<SEO>` are present in `<head>` (react-helmet-async + react-snap supports this).
+- Confirm `<script type="module" src="/assets/index-*.js">` is still there so the client hydrates.
 
-KEEP: `tailwindcss-animate` (referenced in `tailwind.config.ts`), all radix packages backing the kept UI components, `react-helmet-async`, `react-router-dom`, `react`, `react-dom`, `@tanstack/react-query`, `tailwind-merge`, `clsx`, `class-variance-authority`, `lucide-react`, `next-themes`, `sonner`, `lottie-react` (used by `index.css`/elsewhere — actually let me note: `lottie-react` was only used by the deleted `LottieAnimation.tsx`, so it can also be removed).
+Spot-check with `curl https://bitcoinenvoy.co/learn` (after deploy) and "View Page Source" — content should be visible without JS.
 
-Adding to removal list:
-- `lottie-react`
+### 7. Hosting note
+Lovable's static hosting already serves `dist/<route>/index.html` for `/route` requests, so no rewrite rule changes needed. Existing `_redirects`/SPA fallback continues to work for unknown routes (NotFound).
 
-### Impact
-- ~38 files deleted, ~30 npm packages removed.
-- No runtime behavior changes — every removed item is verified unreachable from `App.tsx`.
-- Smaller install, faster `npm install`, cleaner search results, fewer audit false positives.
-- Single deletion pass; if shadcn components are needed later, `npx shadcn@latest add <name>` recreates them.
+## What this does NOT change
 
-### Verification step after changes
-Build the project (`vite build`) to confirm no broken imports. If anything fails, restore that one file/dep.
+- No source-level rewrite of any page or component.
+- No router change — `react-router-dom` stays.
+- No styling, copy, or behavior change.
+- All current interactivity (mobile nav, accordions, Calendly embed, smooth scroll) keeps working after hydration.
 
+## Result
+
+- Every page's full content is in the initial HTML response.
+- Google, Bing, GPTBot, ClaudeBot, PerplexityBot etc. (already allowed in your `robots.txt`) can index the content without running JS.
+- Page load is also faster (content paints before JS parses).
+- Build time increases by ~10–30s for the prerender step.

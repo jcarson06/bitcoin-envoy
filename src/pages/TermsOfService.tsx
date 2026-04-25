@@ -3,9 +3,7 @@ import { Helmet } from "react-helmet-async";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const TermsOfService: React.FC = () => {
-  const canonicalUrl = typeof window !== "undefined"
-    ? `${window.location.origin}/terms-of-service`
-    : "https://bitcoinenvoy.co/terms-of-service";
+  const canonicalUrl = "https://bitcoinenvoy.co/terms-of-service";
 
   return (
     <>

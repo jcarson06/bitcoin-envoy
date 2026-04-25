@@ -29,11 +29,6 @@ function setMetaTag(attr: "name" | "property", key: string, content: string) {
 
 function setLinkTag(rel: string, href: string) {
   if (typeof document === "undefined") return;
-  // Remove any default placeholder tag first (e.g. the canonical baked
-  // into index.html at build time) so we don't end up with duplicates.
-  document.head
-    .querySelectorAll<HTMLLinkElement>(`link[rel="${rel}"][data-default-canonical]`)
-    .forEach((n) => n.remove());
   let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
   if (!el) {
     el = document.createElement("link");

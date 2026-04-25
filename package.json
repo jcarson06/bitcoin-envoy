@@ -24,7 +24,7 @@
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "inlineCss": false,
-    "waitFor": 2000,
+    "waitFor": 5000,
     "minifyHtml": {
       "collapseWhitespace": true,
       "removeComments": true

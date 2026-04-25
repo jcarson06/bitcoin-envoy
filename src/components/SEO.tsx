@@ -65,8 +65,15 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = "Bitcoin Envoy - Bitcoin Education & Coaching";
   const fullTitle = title.includes("Bitcoin Envoy") ? title : `${title} | ${siteTitle}`;
-  const siteUrl =
-    typeof window !== "undefined" ? window.location.origin : "https://bitcoinenvoy.co";
+  // Use the production origin for canonical/OG URLs so prerendered HTML
+  // doesn't leak the puppeteer/dev host (e.g. http://localhost:45678).
+  // For images we still allow the runtime origin as a fallback.
+  const PROD_ORIGIN = "https://bitcoinenvoy.co";
+  const runtimeOrigin =
+    typeof window !== "undefined" ? window.location.origin : PROD_ORIGIN;
+  const isLocalhost =
+    runtimeOrigin.includes("localhost") || runtimeOrigin.includes("127.0.0.1");
+  const siteUrl = isLocalhost ? PROD_ORIGIN : runtimeOrigin;
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 

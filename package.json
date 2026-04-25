@@ -7,8 +7,27 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "include": [
+      "/",
+      "/learn",
+      "/faq",
+      "/coaching",
+      "/about",
+      "/privacy-policy",
+      "/terms-of-service"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "inlineCss": false,
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "removeComments": true
+    }
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

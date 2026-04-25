@@ -1,0 +1,35 @@
+# Bitcoin Envoy
+
+> Bitcoin education for beginners and curious people. Learn the most important Bitcoin fundamentals in about one hour — no jargon, no technical background required.
+
+## About
+
+Bitcoin Envoy is a free Bitcoin education site designed for people who are new to Bitcoin or simply curious about it. The goal is to convey the most important and useful information about Bitcoin in a short, accessible format — approximately one hour of reading.
+
+## Who This Is For
+
+- Complete beginners with no prior knowledge of Bitcoin or cryptocurrency
+
+- People who have heard about Bitcoin and want to understand it properly
+
+- Anyone who wants a trustworthy, clear, unbiased introduction to Bitcoin
+
+## What You Will Learn
+
+- What Bitcoin is and why it was created
+
+- How Bitcoin works at a fundamental level
+
+- Why Bitcoin is different from traditional money and other cryptocurrencies
+
+- How to safely buy, store, and use Bitcoin
+
+- Common misconceptions and how to avoid scams
+
+## Content Philosophy
+
+Bitcoin Envoy presents Bitcoin education honestly and clearly — without hype, without financial advice, and without unnecessary complexity. The goal is understanding, not selling.
+
+## Site URL
+
+https://bitcoinenvoy.co

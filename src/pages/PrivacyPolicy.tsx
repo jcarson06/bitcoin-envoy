@@ -1,33 +1,30 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const PrivacyPolicy: React.FC = () => {
-  const canonicalUrl = "https://bitcoinenvoy.co/privacy-policy";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Privacy Policy",
+    url: "https://bitcoinenvoy.co/privacy-policy",
+    description:
+      "Read Bitcoin Envoy's Privacy Policy to learn how we collect, use, and protect your information.",
+    publisher: {
+      "@type": "Organization",
+      name: "Bitcoin Envoy",
+      email: "contact@bitcoinenvoy.co",
+    },
+  };
 
   return (
     <>
-      <Helmet>
-        <title>Privacy Policy | Bitcoin Envoy</title>
-        <meta name="description" content="Read Bitcoin Envoy's Privacy Policy to learn how we collect, use, and protect your information." />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta name="robots" content="index,follow" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Privacy Policy",
-            url: canonicalUrl,
-            description:
-              "Read Bitcoin Envoy's Privacy Policy to learn how we collect, use, and protect your information.",
-            publisher: {
-              "@type": "Organization",
-              name: "Bitcoin Envoy",
-              email: "contact@bitcoinenvoy.co",
-            },
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title="Privacy Policy"
+        description="Read Bitcoin Envoy's Privacy Policy to learn how we collect, use, and protect your information."
+        url="/privacy-policy"
+        structuredData={structuredData}
+      />
 
       <ErrorBoundary>
         <main className="min-h-screen bg-white">

@@ -1,33 +1,30 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 const TermsOfService: React.FC = () => {
-  const canonicalUrl = "https://bitcoinenvoy.co/terms-of-service";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Terms of Service",
+    url: "https://bitcoinenvoy.co/terms-of-service",
+    description:
+      "Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services.",
+    publisher: {
+      "@type": "Organization",
+      name: "Bitcoin Envoy",
+      email: "contact@bitcoinenvoy.co",
+    },
+  };
 
   return (
     <>
-      <Helmet>
-        <title>Terms of Service | Bitcoin Envoy</title>
-        <meta name="description" content="Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services." />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta name="robots" content="index,follow" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Terms of Service",
-            url: canonicalUrl,
-            description:
-              "Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services.",
-            publisher: {
-              "@type": "Organization",
-              name: "Bitcoin Envoy",
-              email: "contact@bitcoinenvoy.co",
-            },
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title="Terms of Service"
+        description="Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services."
+        url="/terms-of-service"
+        structuredData={structuredData}
+      />
 
       <ErrorBoundary>
         <main className="min-h-screen bg-white">

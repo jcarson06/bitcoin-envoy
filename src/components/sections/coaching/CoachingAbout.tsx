@@ -24,7 +24,7 @@ const CoachingAbout = () => {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Jeffrey Carson</h3>
-              <p className="text-gray-700 leading-relaxed">Jeff is a former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, tech, and public policy. He’s lived abroad, traveled to 70+ countries, and experienced firsthand the real-world costs of broken money — most notably in Zimbabwe and Argentina. These experiences helped shape his worldview and eventually led him to Bitcoin as a practical solution. Today, he works as a Bitcoin advocate serving as the executive director of the Georgia Bitcoin Council, an organization dedicated to advancing responsible Bitcoin policy in the state of Georgia.</p>
+              <p className="text-gray-700 leading-relaxed">Jeff is a former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, tech, and public policy. He’s lived abroad, traveled to 70+ countries, and experienced firsthand the real-world costs of broken money — most notably in Zimbabwe and Argentina. These experiences helped shape his worldview and eventually led him to Bitcoin as a practical solution. Today, he works as an educator and advocate serving as the executive director of the Georgia Bitcoin Council, an organization dedicated to advancing responsible Bitcoin policy in the state of Georgia.</p>
             </div>
             
             {/* Social links */}

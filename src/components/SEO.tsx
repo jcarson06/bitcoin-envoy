@@ -1,5 +1,9 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet-async";
+
+// Use useLayoutEffect on the client; no-op on the server to avoid SSR warnings.
+const useIsoLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 interface SEOProps {
   title: string;
@@ -80,7 +84,8 @@ const SEO: React.FC<SEOProps> = ({
   // Synchronously mirror metadata into <head> on every render so that
   // (a) react-snap captures the correct per-page tags during prerender, and
   // (b) client-side route changes update tags immediately.
-  useLayoutEffect(() => {
+  useIsoLayoutEffect(() => {
+    if (typeof document === "undefined") return;
     document.title = fullTitle;
     setMetaTag("name", "title", fullTitle);
     setMetaTag("name", "description", description);

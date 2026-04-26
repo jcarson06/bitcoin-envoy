@@ -16,27 +16,42 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+export const AppRoutes = () => (
+  <>
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/learn" element={<Learn />} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/coaching" element={<Coaching />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </>
+);
+
+interface AppProps {
+  /** Optional children to wrap routes in a custom router (e.g. StaticRouter for SSR). */
+  children?: React.ReactNode;
+  /** Helmet context for SSR head extraction. */
+  helmetContext?: Record<string, unknown>;
+}
+
+const App = ({ children, helmetContext }: AppProps = {}) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <HelmetProvider>
+      <HelmetProvider context={helmetContext}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/learn" element={<Learn />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/coaching" element={<Coaching />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
+          {children ?? (
+            <BrowserRouter>
+              <AppRoutes />
+            </BrowserRouter>
+          )}
         </TooltipProvider>
       </HelmetProvider>
     </QueryClientProvider>

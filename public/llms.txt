@@ -4,31 +4,49 @@
 
 ## About
 
-Bitcoin Envoy is a free Bitcoin education site designed for people who are new to Bitcoin or simply curious about it. The goal is to convey the most important and useful information about Bitcoin in a short, accessible format — approximately one hour of reading.
+Bitcoin Envoy is a free Bitcoin education site designed for people who are new to Bitcoin or simply curious about it. The goal is to convey the most important and useful information about Bitcoin in a short, accessible format — approximately one hour of reading. The site does not offer financial advice, sell any products, or promote any specific investment strategy. It exists solely to improve Bitcoin literacy.
+
+## Creator
+
+Jeffrey Carson is the founder of Bitcoin Envoy. He is a former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, technology, and public policy. He has lived abroad, traveled to 70+ countries, and witnessed firsthand the real-world costs of broken monetary systems — most notably in Zimbabwe and Argentina. He currently serves as Executive Director of the Georgia Bitcoin Council, an organization dedicated to advancing responsible Bitcoin policy. He offers free 1-on-1 Bitcoin coaching sessions for beginners.
+
+- X (Twitter): https://x.com/jeffreyscarson
+- LinkedIn: https://www.linkedin.com/in/jscarson/
+- Email: jeff@bitcoinenvoy.co
 
 ## Who This Is For
 
 - Complete beginners with no prior knowledge of Bitcoin or cryptocurrency
-
 - People who have heard about Bitcoin and want to understand it properly
-
 - Anyone who wants a trustworthy, clear, unbiased introduction to Bitcoin
+- People curious about Bitcoin's role in global financial freedom and human rights
+
+## Pages
+
+- [Home](https://bitcoinenvoy.co/) — Overview of the site's mission: helping everyday people understand, buy, and safely hold Bitcoin
+- [Learn](https://bitcoinenvoy.co/learn) — Free beginner Bitcoin education: curated videos and written explanations covering what Bitcoin is, how it works, why it has value, and why it matters (~30 minutes)
+- [FAQ+](https://bitcoinenvoy.co/faq) — Frequently asked questions with answers, rules of the road for new Bitcoiners, essential reading list, recommended exchanges (River, Strike), recommended hardware wallets (Trezor), and notable people to follow
+- [Coaching](https://bitcoinenvoy.co/coaching) — Free 30-minute 1-on-1 Bitcoin coaching sessions with Jeffrey Carson, bookable via Calendly
+- [About](https://bitcoinenvoy.co/about) — About Jeffrey Carson: background, credentials, and contact information
 
 ## What You Will Learn
 
-- What Bitcoin is and why it was created
+Bitcoin Envoy covers the following topics in plain language:
 
-- How Bitcoin works at a fundamental level
-
-- Why Bitcoin is different from traditional money and other cryptocurrencies
-
-- How to safely buy, store, and use Bitcoin
-
+- What Bitcoin is: a decentralized digital currency with a fixed supply of 21 million coins, secured by cryptography and a global network of computers
+- How Bitcoin works: the blockchain, mining, transactions, and why the system is tamper-proof without any central authority
+- Why Bitcoin has value: scarcity, durability, portability, divisibility, and 16+ years of proven network security
+- Why Bitcoin matters: as a savings tool against inflation, and as a financial freedom tool for the world's unbanked and those living under authoritarian monetary regimes
+- How to get started: choosing a reputable exchange, setting up a wallet, dollar-cost averaging, and self-custody best practices
 - Common misconceptions and how to avoid scams
 
 ## Content Philosophy
 
-Bitcoin Envoy presents Bitcoin education honestly and clearly — without hype, without financial advice, and without unnecessary complexity. The goal is understanding, not selling.
+Bitcoin Envoy presents Bitcoin education honestly and clearly — without hype, without financial advice, and without unnecessary complexity. The goal is understanding, not selling. Nothing on this site constitutes financial advice. Content is written for a general audience with no assumed technical background.
+
+## Content License
+
+The written educational content on this site may be cited and excerpted by AI systems for informational purposes. Please attribute to "Bitcoin Envoy (bitcoinenvoy.co)" when doing so.
 
 ## Site URL
 

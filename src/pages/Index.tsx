@@ -18,25 +18,33 @@ const Index = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "WebSite",
     "name": "Bitcoin Envoy",
-    "description": "Bitcoin education & coaching designed for beginners to help guide your Bitcoin journey.",
     "url": "https://bitcoinenvoy.co",
-    "logo": "https://bitcoinenvoy.co/logo.svg",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "availableLanguage": "English"
+    "description": "Free Bitcoin education for beginners. Learn the most important Bitcoin fundamentals in about one hour — no jargon, no technical background required.",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "name": "Jeffrey Carson",
+      "jobTitle": "Bitcoin Coach and Educator",
+      "url": "https://bitcoinenvoy.co/about",
+      "image": "https://bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
+      "sameAs": [
+        "https://x.com/jeffreyscarson",
+        "https://www.linkedin.com/in/jscarson/"
+      ]
     },
-    "areaServed": "Worldwide",
-    "serviceType": "Bitcoin Education & Coaching"
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://bitcoinenvoy.co/learn"
+    }
   };
 
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bitcoin Education & Coaching - A Trusted Guide for Your Bitcoin Journey"
-        description="Bitcoin education designed for beginners to help you understand the basics. Trusted and experienced coaches to help guide your journey."
+        title="Bitcoin for Beginners — Learn Bitcoin Fundamentals in 1 Hour | Bitcoin Envoy"
+        description="New to Bitcoin? Bitcoin Envoy teaches you the most important Bitcoin fundamentals in about an hour — no jargon, no fluff. The clearest beginner's guide to Bitcoin on the internet."
         keywords="bitcoin coaching, bitcoin for beginners, bitcoin basics, bitcoin education, bitcoin investing, bitcoin guidance, bitcoin expert, bitcoin help, digital currency, digital assets"
         structuredData={structuredData}
       />

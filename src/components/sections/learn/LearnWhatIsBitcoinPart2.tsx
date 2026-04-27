@@ -13,8 +13,14 @@ const LearnWhatIsBitcoinPart2 = () => {
         
         <div className="max-w-4xl mx-auto">
           <YouTubeEmbed videoId="BL5vUVQvmX4" title="What is Bitcoin (Part 2)? - Cartoon Explainer" className="mb-6" />
-          <div className="text-center">
-            <p className="text-gray-600 max-w-3xl mx-auto">This animated cartoon makes Bitcoin concepts accessible and entertaining, perfect for reinforcing what you learned in the first video with a more visual and fun approach. Attribution: Tuttle Twins</p>
+          <div className="text-center mb-8">
+            <p className="text-gray-500 text-sm max-w-3xl mx-auto">Attribution: Tuttle Twins</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100 text-left">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">How does Bitcoin actually work?</h3>
+            <p className="text-gray-700 leading-relaxed">
+              When you send Bitcoin to someone, you broadcast a message to the entire Bitcoin network announcing the transfer. Thousands of computers — called nodes — independently verify that you actually own the bitcoin you're trying to send and that you haven't already spent it elsewhere. Once verified, your transaction is grouped with other recent transactions into a "block." Miners then compete to attach that block to the chain of all previous blocks — the blockchain — by solving a computationally expensive puzzle. The first miner to solve it earns bitcoin and gets to add the block permanently. Because every block references the one before it, altering any past transaction would require recomputing every subsequent block faster than the rest of the entire network combined — a practical impossibility. This design makes Bitcoin's transaction history tamper-proof without requiring anyone to trust a central authority.
+            </p>
           </div>
         </div>
       </div>

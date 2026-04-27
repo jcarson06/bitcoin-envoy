@@ -10,13 +10,26 @@ const About = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About Bitcoin Envoy",
+    "name": "About Jeffrey Carson — Bitcoin Coach & Educator",
     "description": "Learn about Jeffrey Carson, founder of Bitcoin Envoy and former U.S. Army Captain, dedicated to Bitcoin education and coaching.",
-    "author": {
+    "url": "https://bitcoinenvoy.co/about",
+    "mainEntity": {
       "@type": "Person",
       "name": "Jeffrey Carson",
       "jobTitle": "Bitcoin Coach and Educator",
-      "description": "Former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, tech, and public policy."
+      "description": "Former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, technology, and public policy. Executive Director of the Georgia Bitcoin Council.",
+      "url": "https://bitcoinenvoy.co/about",
+      "image": "https://bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
+      "email": "jeff@bitcoinenvoy.co",
+      "sameAs": [
+        "https://x.com/jeffreyscarson",
+        "https://www.linkedin.com/in/jscarson/"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Bitcoin Envoy",
+        "url": "https://bitcoinenvoy.co"
+      }
     }
   };
 

@@ -58,11 +58,15 @@ function setStructuredData(data: object | undefined, id = "seo-structured-data")
   el.textContent = JSON.stringify(data);
 }
 
+// Hosted OG image. Replace with a self-hosted /og-social.png (1200×630px) when ready.
+const DEFAULT_OG_IMAGE =
+  "https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon%20Bitcoin%20in%20Cyberpunk%20City.png";
+
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords,
-  image = "/og-image-update.png",
+  image = DEFAULT_OG_IMAGE,
   url,
   type = "website",
   structuredData,
@@ -97,7 +101,10 @@ const SEO: React.FC<SEOProps> = ({
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:image", fullImageUrl);
     setMetaTag("property", "og:site_name", "Bitcoin Envoy");
+    setMetaTag("property", "og:image:width", "1200");
+    setMetaTag("property", "og:image:height", "630");
     setMetaTag("name", "twitter:card", "summary_large_image");
+    setMetaTag("name", "twitter:site", "@bitcoinenvoy");
     setMetaTag("name", "twitter:url", fullUrl);
     setMetaTag("name", "twitter:title", fullTitle);
     setMetaTag("name", "twitter:description", description);
@@ -126,8 +133,11 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Bitcoin Envoy" />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@bitcoinenvoy" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />

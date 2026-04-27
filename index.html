@@ -43,7 +43,7 @@
       content="https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon Bitcoin in Cyberpunk City.png"
     />
 
-    <!-- Schema Markup: Identifies this as an educational website to Google + AI -->
+    <!-- Site-level schema: per-page schema is injected by the SEO component during prerender -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -51,16 +51,30 @@
         "name": "Bitcoin Envoy",
         "url": "https://bitcoinenvoy.co",
         "description": "Bitcoin Envoy teaches Bitcoin fundamentals to beginners and curious people — covering the most important concepts in about one hour.",
-        "educationalCredentialAwarded": "Bitcoin literacy for beginners",
         "teaches": "Bitcoin fundamentals, how Bitcoin works, Bitcoin for beginners",
         "audience": {
           "@type": "EducationalAudience",
           "educationalRole": "student",
           "audienceType": "Beginners and people curious about Bitcoin"
         },
-        "sameAs": []
+        "founder": {
+          "@type": "Person",
+          "name": "Jeffrey Carson",
+          "jobTitle": "Bitcoin Coach and Educator",
+          "url": "https://bitcoinenvoy.co/about",
+          "sameAs": [
+            "https://x.com/jeffreyscarson",
+            "https://www.linkedin.com/in/jscarson/"
+          ]
+        },
+        "sameAs": [
+          "https://x.com/jeffreyscarson"
+        ]
       }
     </script>
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <!-- Favicon -->
     <link rel="icon" href="/bitcoin-favicon.png" type="image/png" />

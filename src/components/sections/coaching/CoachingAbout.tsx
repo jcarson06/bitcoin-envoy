@@ -3,13 +3,14 @@ import { Section } from '@/components/common/Section';
 import { Container } from '@/components/common/Container';
 import { OptimizedImage } from '@/components/common/OptimizedImage';
 import { ExternalLink, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
 const CoachingAbout = () => {
   const isMobile = useIsMobile();
   return <Section spacing="lg" background="gray">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="section-title mb-4">About the Founder</h2>
+          <h1 className="section-title mb-4">About Jeffrey Carson — Bitcoin Coach &amp; Educator</h1>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -48,6 +49,11 @@ const CoachingAbout = () => {
               
               <div className="bg-white p-4 rounded-lg border border-gray-200">
                 <p className="text-gray-700 text-sm leading-relaxed italic">Thanks for stopping by my website. I hope the time you spent was worthwhile and you were able to learn something new about Bitcoin. If you have any questions or feedback about the site, I'd be glad to hear from you!</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Link to="/learn" className="button-primary text-center">Start Learning</Link>
+                <Link to="/faq" className="button-secondary text-center">Browse FAQ+</Link>
               </div>
             </div>
           </div>

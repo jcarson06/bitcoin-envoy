@@ -12,24 +12,54 @@ const Coaching = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Bitcoin Coaching Services",
-    "description": "Professional Bitcoin coaching and education services. Get personalized guidance for your bitcoin journey.",
+    "name": "Free Bitcoin Coaching Sessions",
+    "description": "Free 30-minute 1-on-1 Bitcoin coaching sessions with Jeffrey Carson. Get personalized guidance on buying your first Bitcoin, setting up secure storage, and building confidence as a beginner.",
     "provider": {
-      "@type": "Organization",
-      "name": "Bitcoin Envoy"
+      "@type": "Person",
+      "name": "Jeffrey Carson",
+      "jobTitle": "Bitcoin Coach and Educator",
+      "url": "https://bitcoinenvoy.co/about",
+      "sameAs": [
+        "https://x.com/jeffreyscarson",
+        "https://www.linkedin.com/in/jscarson/"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free 30-minute Bitcoin coaching session"
     },
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceType": "Online Consultation"
-    }
+      "serviceType": "Online Video Call",
+      "serviceUrl": "https://calendly.com/jeff-bitcoinenvoy/coaching"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Dara R." },
+        "reviewBody": "Bitcoin Envoy helped me get started with a dollar-cost-averaging strategy on River. Jeff, the founder, was super helpful and broke everything down for me in clear digestible terms. He made me comfortable and helped me find an approach that works for my age and stage of life."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Matthew S." },
+        "reviewBody": "Jeff has an amazing way of making Bitcoin easy to understand. He's patient, insightful, and super passionate about helping people. If you've ever wanted to learn about Bitcoin without the confusion or hype, Jeff is the perfect guide."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Pete W." },
+        "reviewBody": "Honestly, the educational content is so good that I didn't think I'd need coaching. But eventually I signed up for a session anyway because I had a few questions, and the rest is history. Jeff is the absolute best."
+      }
+    ]
   };
 
   return (
     <div className="min-h-screen">
       <SEO
-        title="Bitcoin Coaching Services - Professional Guidance"
-        description="Get professional coaching services with personalized guidance for your Bitcoin investment journey. Expert coaching for all levels."
+        title="Free Bitcoin Coaching - 1-on-1 Guidance for Beginners"
+        description="Book a free 30-minute Bitcoin coaching session with Jeffrey Carson. Get personalized answers to your Bitcoin questions — buying your first Bitcoin, secure storage, and building confidence."
         keywords="bitcoin coaching services, crypto coaching, cryptocurrency guidance, bitcoin investment coaching, digital currency education"
         url="/coaching"
         structuredData={structuredData}

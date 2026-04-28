@@ -39,23 +39,18 @@ class Logger {
 
   debug(message: string, data?: any) {
     if (this.isDevelopment) {
-      const context = this.createLogContext('debug', message, data);
       console.log(`[DEBUG] ${message}`, data || '');
     }
   }
 
   info(message: string, data?: any) {
-    const context = this.createLogContext('info', message, data);
     if (this.isDevelopment) {
       console.info(`[INFO] ${message}`, data || '');
     }
-    // In production, you could send to analytics service
   }
 
   warn(message: string, data?: any) {
-    const context = this.createLogContext('warn', message, data);
     console.warn(`[WARN] ${message}`, data || '');
-    // In production, you could send to monitoring service
   }
 
   error(message: string, error?: any) {

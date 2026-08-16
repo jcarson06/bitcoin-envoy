@@ -25,5 +25,14 @@ export default tseslint.config(
       ],
       "@typescript-eslint/no-unused-vars": "off",
     },
+  },
+  {
+    // Tailwind loads this config itself, where `require()` for plugins is the
+    // documented idiom. Rewriting it as an ESM import risks breaking styling
+    // for no benefit, so exempt the file rather than change it.
+    files: ["tailwind.config.ts"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
   }
 );

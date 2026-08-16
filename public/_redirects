@@ -11,5 +11,11 @@
 # land somewhere useful instead of a soft 404.
 /coaching           /learn                       301!
 
-# Unknown routes fall back to the SPA shell; React Router handles them client-side.
-/*                  /index.html                  200
+# Unknown routes fall back to the SPA shell; React Router renders NotFound.
+#
+# Status 404, not 200. Every real route is enumerated above, so anything
+# reaching this rule genuinely does not exist, and answering 200 made these
+# soft 404s — crawlers index the shell as a real page. Netlify still serves
+# real files (/assets/*, images, sitemap.xml) before consulting redirects,
+# so only genuinely-missing paths get the 404 status.
+/*                  /index.html                  404

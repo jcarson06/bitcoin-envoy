@@ -1,9 +1,5 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
-
-// Use useLayoutEffect on the client; no-op on the server to avoid SSR warnings.
-const useIsoLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 interface SEOProps {
   title: string;
@@ -15,53 +11,28 @@ interface SEOProps {
   structuredData?: object;
 }
 
-/**
- * Set or replace a <meta> tag in <head> by attribute key+value.
- * Used to guarantee the prerender snapshot picks up per-page metadata,
- * since react-helmet-async writes asynchronously.
- */
-function setMetaTag(attr: "name" | "property", key: string, content: string) {
-  if (typeof document === "undefined") return;
-  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
-  if (!el) {
-    el = document.createElement("meta");
-    el.setAttribute(attr, key);
-    document.head.appendChild(el);
-  }
-  el.setAttribute("content", content);
-}
-
-function setLinkTag(rel: string, href: string) {
-  if (typeof document === "undefined") return;
-  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
-  if (!el) {
-    el = document.createElement("link");
-    el.setAttribute("rel", rel);
-    document.head.appendChild(el);
-  }
-  el.setAttribute("href", href);
-}
-
-function setStructuredData(data: object | undefined, id = "seo-structured-data") {
-  if (typeof document === "undefined") return;
-  let el = document.head.querySelector<HTMLScriptElement>(`script[data-seo="${id}"]`);
-  if (!data) {
-    if (el) el.remove();
-    return;
-  }
-  if (!el) {
-    el = document.createElement("script");
-    el.type = "application/ld+json";
-    el.setAttribute("data-seo", id);
-    document.head.appendChild(el);
-  }
-  el.textContent = JSON.stringify(data);
-}
-
-// Hosted OG image. Replace with a self-hosted /og-social.png (1200×630px) when ready.
+// Hosted OG image. Replace with a self-hosted /og-social.png (1200×630px) when
+// ready — this currently depends on a Lovable-owned bucket we don't control.
 const DEFAULT_OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon%20Bitcoin%20in%20Cyberpunk%20City.png";
 
+// Canonical and OG URLs are always absolute against production. Deriving them
+// from window.location instead would make Netlify deploy previews advertise
+// themselves as canonical, which is how preview domains end up indexed.
+const PROD_ORIGIN = "https://bitcoinenvoy.co";
+
+/**
+ * Per-page document head.
+ *
+ * Helmet is the single source of truth. This component used to *also* mirror
+ * every tag into the DOM imperatively from a layout effect — a leftover from
+ * the react-snap era, when the prerenderer scraped a real browser DOM. The
+ * current prerenderer (scripts/prerender.mjs) renders with renderToString and
+ * reads Helmet's server state directly, so that second path was pure
+ * duplication. It also re-ran on every single render: `structuredData` is built
+ * as a fresh object literal by each page, so it never compared equal in the
+ * dependency array, costing a JSON.stringify and ~17 DOM writes per render.
+ */
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
@@ -73,58 +44,13 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = "Bitcoin Envoy - Bitcoin Education";
   const fullTitle = title.includes("Bitcoin Envoy") ? title : `${title} | ${siteTitle}`;
-  // Use the production origin for canonical/OG URLs so prerendered HTML
-  // doesn't leak the puppeteer/dev host (e.g. http://localhost:45678).
-  // For images we still allow the runtime origin as a fallback.
-  const PROD_ORIGIN = "https://bitcoinenvoy.co";
-  const runtimeOrigin =
-    typeof window !== "undefined" ? window.location.origin : PROD_ORIGIN;
-  const isLocalhost =
-    runtimeOrigin.includes("localhost") || runtimeOrigin.includes("127.0.0.1");
-  const siteUrl = isLocalhost ? PROD_ORIGIN : runtimeOrigin;
-  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-  const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+  const fullUrl = url ? `${PROD_ORIGIN}${url}` : PROD_ORIGIN;
+  const fullImageUrl = image.startsWith("http") ? image : `${PROD_ORIGIN}${image}`;
 
-  // Synchronously mirror metadata into <head> on every render so that
-  // (a) react-snap captures the correct per-page tags during prerender, and
-  // (b) client-side route changes update tags immediately.
-  useIsoLayoutEffect(() => {
-    if (typeof document === "undefined") return;
-    document.title = fullTitle;
-    setMetaTag("name", "title", fullTitle);
-    setMetaTag("name", "description", description);
-    if (keywords) setMetaTag("name", "keywords", keywords);
-    setLinkTag("canonical", fullUrl);
-    setMetaTag("property", "og:type", type);
-    setMetaTag("property", "og:url", fullUrl);
-    setMetaTag("property", "og:title", fullTitle);
-    setMetaTag("property", "og:description", description);
-    setMetaTag("property", "og:image", fullImageUrl);
-    setMetaTag("property", "og:site_name", "Bitcoin Envoy");
-    setMetaTag("property", "og:image:width", "1200");
-    setMetaTag("property", "og:image:height", "630");
-    setMetaTag("name", "twitter:card", "summary_large_image");
-    setMetaTag("name", "twitter:site", "@bitcoinenvoy");
-    setMetaTag("name", "twitter:url", fullUrl);
-    setMetaTag("name", "twitter:title", fullTitle);
-    setMetaTag("name", "twitter:description", description);
-    setMetaTag("name", "twitter:image", fullImageUrl);
-    setStructuredData(structuredData);
-  }, [
-    fullTitle,
-    description,
-    keywords,
-    fullUrl,
-    type,
-    fullImageUrl,
-    structuredData,
-  ]);
-
-  // Helmet kept for consistency / future SSR; the useLayoutEffect above is the
-  // source of truth for the DOM head during prerender + client navigation.
   return (
     <Helmet>
       <title>{fullTitle}</title>
+      <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullUrl} />
@@ -138,6 +64,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:site_name" content="Bitcoin Envoy" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@bitcoinenvoy" />
+      <meta name="twitter:url" content={fullUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />

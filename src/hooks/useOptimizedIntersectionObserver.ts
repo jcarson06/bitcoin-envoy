@@ -9,9 +9,32 @@ interface ObserverEntry {
 class IntersectionObserverManager {
   private observers = new Map<string, ObserverEntry>();
   private elementToKey = new WeakMap<Element, string>();
+  private rootIds = new WeakMap<Element | Document, number>();
+  private nextRootId = 1;
 
+  /** Stable per-root identifier, so two different roots never share a key. */
+  private rootKey(root: IntersectionObserverInit['root']): string {
+    if (!root) return 'viewport';
+    let id = this.rootIds.get(root);
+    if (id === undefined) {
+      id = this.nextRootId++;
+      this.rootIds.set(root, id);
+    }
+    return `root${id}`;
+  }
+
+  /**
+   * Observers are shared by key, so the key must capture every option that
+   * changes observer behaviour. It previously used `options.threshold || 0.1`,
+   * which mapped a deliberate `threshold: 0` onto the `0.1` bucket — and since
+   * observe() reuses an existing observer without reconciling options, the
+   * first caller's threshold silently won for everyone afterwards. `??` keeps
+   * 0 and '' intact, and root is now part of the key.
+   */
   private createObserverKey(options: IntersectionObserverInit): string {
-    return `${options.threshold || 0.1}-${options.rootMargin || '0px'}`;
+    const threshold = options.threshold ?? 0.1;
+    const rootMargin = options.rootMargin ?? '0px';
+    return `${JSON.stringify(threshold)}|${rootMargin}|${this.rootKey(options.root)}`;
   }
 
   observe(
@@ -74,13 +97,20 @@ interface UseOptimizedIntersectionObserverOptions extends IntersectionObserverIn
 export const useOptimizedIntersectionObserver = (
   options: UseOptimizedIntersectionObserverOptions = {}
 ) => {
+  // `root` is destructured by name rather than collected with a rest spread:
+  // IntersectionObserverInit has exactly root/rootMargin/threshold, so a rest
+  // object adds nothing but a fresh identity on every render, which cannot go
+  // in the effect's dependency array.
   const {
     triggerOnce = true,
     animationClass = 'animate-fade-in',
     threshold = 0.1,
     rootMargin = '0px',
-    ...observerOptions
+    root = null,
   } = options;
+
+  // Threshold may be an array; serialize so an inline literal stays stable.
+  const thresholdKey = JSON.stringify(threshold);
 
   const elementRef = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -117,13 +147,15 @@ export const useOptimizedIntersectionObserver = (
     observerManager.observe(element, handleIntersection, {
       threshold,
       rootMargin,
-      ...observerOptions
+      root,
     });
 
     return () => {
       observerManager.unobserve(element);
     };
-  }, [handleIntersection, threshold, rootMargin]);
+    // thresholdKey stands in for `threshold`, which may be a non-primitive.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleIntersection, thresholdKey, rootMargin, root]);
 
   return { elementRef, isIntersecting, hasTriggered };
 };

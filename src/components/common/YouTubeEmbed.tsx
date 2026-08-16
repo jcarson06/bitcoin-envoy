@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { logger } from '@/utils/logger';
 
@@ -8,51 +8,70 @@ interface YouTubeEmbedProps {
   className?: string;
 }
 
-const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ 
-  videoId, 
-  title = "YouTube video", 
-  className = "" 
+// Hoisted out of the component: it closes over nothing, so rebuilding it (and
+// its regex literals) on every render bought nothing.
+const extractVideoId = (input: string): string | null => {
+  if (!input) return null;
+
+  // If it's already a video ID format, return it
+  if (/^[a-zA-Z0-9_-]{10,12}$/.test(input)) {
+    return input;
+  }
+
+  // Extract from various YouTube URL formats
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{10,12})/,
+    /youtube\.com\/v\/([a-zA-Z0-9_-]{10,12})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{10,12})/
+  ];
+
+  for (const pattern of patterns) {
+    const match = input.match(pattern);
+    if (match) {
+      return match[1];
+    }
+  }
+
+  return null;
+};
+
+const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
+  videoId,
+  title = "YouTube video",
+  className = ""
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  // Extract video ID from YouTube URL or validate direct ID
-  const extractVideoId = (input: string): string | null => {
-    if (!input) return null;
-    
-    // If it's already a video ID format, return it
-    if (/^[a-zA-Z0-9_-]{10,12}$/.test(input)) {
-      return input;
-    }
-    
-    // Extract from various YouTube URL formats
-    const patterns = [
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{10,12})/,
-      /youtube\.com\/v\/([a-zA-Z0-9_-]{10,12})/,
-      /youtube\.com\/shorts\/([a-zA-Z0-9_-]{10,12})/
-    ];
-    
-    for (const pattern of patterns) {
-      const match = input.match(pattern);
-      if (match) {
-        return match[1];
-      }
-    }
-    
-    return null;
-  };
-
   const validVideoId = extractVideoId(videoId);
+  const invalidMessage =
+    videoId.includes('youtube.com') || videoId.includes('youtu.be')
+      ? 'Unable to extract video ID from YouTube URL'
+      : 'Invalid YouTube video ID format';
+
+  // Logging is a side effect, so it belongs in an effect rather than the render
+  // body. Called inline it re-fired on every render and twice per mount under
+  // StrictMode.
+  useEffect(() => {
+    if (!validVideoId) {
+      logger.warn('YouTube embed validation failed', {
+        originalInput: videoId,
+        reason: invalidMessage,
+      });
+    }
+  }, [validVideoId, videoId, invalidMessage]);
+
+  useEffect(() => {
+    if (hasError) {
+      logger.warn('YouTube iframe failed to load', {
+        videoId: validVideoId,
+        originalInput: videoId,
+      });
+    }
+  }, [hasError, validVideoId, videoId]);
 
   if (!validVideoId) {
-    const message = videoId.includes('youtube.com') || videoId.includes('youtu.be') 
-      ? 'Unable to extract video ID from YouTube URL' 
-      : 'Invalid YouTube video ID format';
-    
-    logger.warn('YouTube embed validation failed', { 
-      originalInput: videoId, 
-      reason: message 
-    });
+    const message = invalidMessage;
 
     return (
       <div className={`relative w-full ${className}`}>
@@ -69,11 +88,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   }
 
   if (hasError) {
-    logger.warn('YouTube iframe failed to load', { 
-      videoId: validVideoId, 
-      originalInput: videoId 
-    });
-    
     return (
       <div className={`relative w-full ${className}`}>
         <div className="aspect-video flex items-center justify-center bg-muted rounded-xl">

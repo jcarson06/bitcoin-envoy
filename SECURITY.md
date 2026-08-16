@@ -33,13 +33,19 @@ Reports of the following will generally be closed without action:
 
 ## Reporting a Vulnerability
 
-**Please do not open a public GitHub issue for a security problem.**
+**Email [jeff@bitcoinenvoy.co](mailto:jeff@bitcoinenvoy.co)** with `SECURITY` in
+the subject line. That is the only reporting channel.
 
-Preferred: report it privately through GitHub's private vulnerability reporting
-on this repository — go to the **Security** tab, then **Report a vulnerability**.
-This keeps the discussion private until a fix is released.
+This repository is private, so GitHub's private vulnerability reporting is not
+available — that feature only exists for public repositories. If you have been
+given access to this repository, please still use email rather than opening an
+issue, so the details do not sit in the issue tracker before a fix ships.
 
-Alternative: email **jeff@bitcoinenvoy.co** with `SECURITY` in the subject line.
+The same contact is published on the live site at
+[bitcoinenvoy.co/.well-known/security.txt](https://bitcoinenvoy.co/.well-known/security.txt),
+following [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116.html). If you change
+the contact address, update both files — and note that `security.txt` carries an
+`Expires` date that needs renewing once a year.
 
 Helpful reports include:
 

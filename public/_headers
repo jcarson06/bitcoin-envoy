@@ -1,0 +1,32 @@
+# Netlify response headers. Netlify serves this from the publish root; Vite
+# copies it out of public/ into dist/ at build time.
+#
+# Bitcoin Envoy is a static site with no backend, no auth, and no forms, so the
+# policy below is deliberately tight — nothing here needs to phone home.
+
+/*
+  # Anti-clickjacking. This matters more than usual for a site that teaches
+  # people to recognise Bitcoin scams: framing it inside a lookalike page is a
+  # cheap way to borrow its credibility. frame-ancestors is the modern control;
+  # X-Frame-Options is the legacy fallback for older agents.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://storage.googleapis.com; frame-src https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+
+  # Stop the browser guessing content types (MIME-confusion XSS).
+  X-Content-Type-Options: nosniff
+
+  # Send the origin cross-site, the full path same-site. Keeps referrer data
+  # useful for analytics without leaking full URLs to third parties.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # No page on this site uses any of these APIs.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # One year of forced HTTPS. The `preload` token is intentionally omitted:
+  # adding it commits every present and future subdomain to HTTPS-only and is
+  # painful to unwind. Add it only if you submit to hstspreload.org on purpose.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Vite fingerprints these filenames, so they can never go stale.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

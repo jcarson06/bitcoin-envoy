@@ -1,10 +1,18 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*
+ * Google Fonts is linked from index.html rather than @import-ed here. An
+ * @import cannot start until this stylesheet has itself downloaded and parsed,
+ * so it created a render-blocking waterfall — and index.html already requested
+ * the identical URL, so the site was asking for the same stylesheet twice.
+ */
 
 @font-face {
   font-family: 'Brockmann';
-  src: url('/brockmann-medium-webfont.ttf') format('truetype'),
-       url('/brockmann-medium.otf') format('opentype');
+  /* Only the TrueType file is served. The .otf was a byte-for-byte duplicate
+     face in a second format: browsers download just the first supported entry,
+     so the .otf was never fetched here, yet index.html preloaded it anyway —
+     40KB pulled down and thrown away on every cold load.
+     TODO: ship .woff2 instead (~50% smaller again); needs woff2/fonttools. */
+  src: url('/brockmann-medium-webfont.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;

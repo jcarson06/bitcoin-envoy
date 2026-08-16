@@ -1,7 +1,3 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
@@ -12,8 +8,6 @@ import Learn from "./pages/Learn";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
-
-const queryClient = new QueryClient();
 
 export const AppRoutes = () => (
   <>
@@ -40,19 +34,13 @@ interface AppProps {
 
 const App = ({ children, helmetContext }: AppProps = {}) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <HelmetProvider context={helmetContext}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          {children ?? (
-            <BrowserRouter>
-              <AppRoutes />
-            </BrowserRouter>
-          )}
-        </TooltipProvider>
-      </HelmetProvider>
-    </QueryClientProvider>
+    <HelmetProvider context={helmetContext}>
+      {children ?? (
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      )}
+    </HelmetProvider>
   );
 };
 

@@ -4,17 +4,17 @@ const IndexWhyBitcoin = () => {
   const cards = [{
     title: "Learning about Bitcoin instills confidence, offers hope and encourages an appreciation for monetary history",
     tag: "Build A Foundation",
-    backgroundImage: "/background-section1.png",
+    backgroundImage: "/background-section1.webp",
     delay: "0.2s"
   }, {
     title: "Bitcoin protects your savings from inflation and debasement and allows you to build for the future",
     tag: "Secure Your Future",
-    backgroundImage: "/background-section2.png",
+    backgroundImage: "/background-section2.webp",
     delay: "0.4s"
   }, {
     title: "Bitcoin is supporting freedom around the world and is an essential tool used by democracy advocates",
     tag: "Make A Difference",
-    backgroundImage: "/background-section3.png",
+    backgroundImage: "/background-section3.webp",
     delay: "0.6s"
   }];
   return <Section spacing="lg" background="gray" id="why-humanoid">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink, CheckCircle } from 'lucide-react';

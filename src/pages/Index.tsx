@@ -1,4 +1,3 @@
-import React from "react";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 import Navbar from "@/components/Navbar";
 import IndexIntro from "@/components/sections/index/IndexIntro";

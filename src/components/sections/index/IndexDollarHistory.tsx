@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Section } from '@/components/common/Section';
 const IndexDollarHistory = () => {
   const [imageError, setImageError] = useState(false);

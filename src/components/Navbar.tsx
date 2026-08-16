@@ -1,4 +1,4 @@
-import React, { useState, memo } from "react";
+import { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -6,7 +6,7 @@ import { useThrottledScroll } from "@/hooks/useThrottledScroll";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 
 const Navbar = memo(() => {
-  const isScrolled = useThrottledScroll({ threshold: 10, throttleMs: 16 });
+  const isScrolled = useThrottledScroll({ threshold: 10 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Use custom hook for body scroll management

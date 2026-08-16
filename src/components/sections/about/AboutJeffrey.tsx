@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Container } from '@/components/common/Container';
 import { OptimizedImage } from '@/components/common/OptimizedImage';

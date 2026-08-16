@@ -1,4 +1,3 @@
-import React from "react";
 import { Section } from "@/components/common/Section";
 const IndexWhyBitcoin = () => {
   const cards = [{

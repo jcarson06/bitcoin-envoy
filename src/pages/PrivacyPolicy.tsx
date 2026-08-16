@@ -36,7 +36,7 @@ const PrivacyPolicy: React.FC = () => {
           <article className="mx-auto max-w-3xl space-y-6 leading-relaxed">
             <p>
               This Privacy Policy explains how Bitcoin Envoy ("we", "us", or "our") collects, uses, and protects your
-              information when you visit our website, engage with our educational content, or request coaching services.
+              information when you visit our website or engage with our educational content.
             </p>
 
             <h2 className="text-xl font-semibold">1. Information We Collect</h2>
@@ -48,13 +48,13 @@ const PrivacyPolicy: React.FC = () => {
                 Usage data: including pages visited, links clicked, and general analytics collected via cookies or similar technologies.
               </li>
               <li>
-                Communications: messages and inquiries you send to us regarding coaching or educational materials.
+                Communications: messages and inquiries you send to us regarding our educational materials.
               </li>
             </ul>
 
             <h2 className="text-xl font-semibold">2. How We Use Your Information</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li>To provide educational content and optional coaching services you request.</li>
+              <li>To provide the educational content you request.</li>
               <li>To communicate with you about updates, resources, or service-related notices.</li>
               <li>To improve our website, content, and user experience through analytics.</li>
               <li>To comply with legal obligations and enforce our Terms of Service.</li>

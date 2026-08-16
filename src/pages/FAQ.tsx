@@ -10,7 +10,6 @@ import FAQReadingList from "@/components/sections/faq/FAQReadingList";
 import FAQPeopleToFollow from "@/components/sections/faq/FAQPeopleToFollow";
 import FAQRecommendedExchanges from "@/components/sections/faq/FAQRecommendedExchanges";
 import FAQRecommendedHardwareWallets from "@/components/sections/faq/FAQRecommendedHardwareWallets";
-import FAQCoachingCTA from "@/components/sections/faq/FAQCoachingCTA";
 import { faqData } from "@/data/faqData";
 
 // Data is now imported from centralized data file
@@ -61,9 +60,6 @@ const FAQ = () => {
 
         {/* FAQRecommendedHardwareWallets Section */}
         <FAQRecommendedHardwareWallets />
-
-        {/* FAQCoachingCTA Section */}
-        <FAQCoachingCTA />
 
         <Footer />
       </ErrorBoundary>

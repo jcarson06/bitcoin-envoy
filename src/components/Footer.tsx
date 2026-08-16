@@ -8,7 +8,6 @@ const Footer = () => {
           <Link to="/" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">Home</Link>
           <Link to="/learn" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">Learn</Link>
           <Link to="/faq" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">FAQ+</Link>
-          <Link to="/coaching" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">Coaching</Link>
           <Link to="/about" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">About</Link>
         </nav>
         <p className="text-center text-gray-600 text-sm">

@@ -22,7 +22,7 @@ Replace `react-snap` with a deterministic Vite SSR + static-render pipeline.
    - Read `dist/index.html` template.
    - For each route, import `dist/server/entry-server.js`, render to string, extract Helmet head tags, and inject into the template's `<head>` and `<div id="root">`.
    - Write to `dist/<route>/index.html` (and `dist/index.html` for `/`).
-   - Routes: `/`, `/learn`, `/faq`, `/coaching`, `/about`, `/privacy-policy`, `/terms-of-service`.
+   - Routes: `/`, `/learn`, `/faq`, `/about`, `/privacy-policy`, `/terms-of-service`.
 
 5. **Verify**
    - Run `npm run build`.

@@ -71,7 +71,7 @@ const SEO: React.FC<SEOProps> = ({
   type = "website",
   structuredData,
 }) => {
-  const siteTitle = "Bitcoin Envoy - Bitcoin Education & Coaching";
+  const siteTitle = "Bitcoin Envoy - Bitcoin Education";
   const fullTitle = title.includes("Bitcoin Envoy") ? title : `${title} | ${siteTitle}`;
   // Use the production origin for canonical/OG URLs so prerendered HTML
   // doesn't leak the puppeteer/dev host (e.g. http://localhost:45678).

@@ -5,12 +5,12 @@ import { OptimizedImage } from '@/components/common/OptimizedImage';
 import { ExternalLink, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
-const CoachingAbout = () => {
+const AboutJeffrey = () => {
   const isMobile = useIsMobile();
   return <Section spacing="lg" background="gray">
       <Container>
         <div className="text-center mb-12">
-          <h1 className="section-title mb-4">About Jeffrey Carson — Bitcoin Coach &amp; Educator</h1>
+          <h1 className="section-title mb-4">About Jeffrey Carson — Bitcoin Educator</h1>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -61,4 +61,4 @@ const CoachingAbout = () => {
       </Container>
     </Section>;
 };
-export default CoachingAbout;
+export default AboutJeffrey;

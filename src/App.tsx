@@ -10,7 +10,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Learn from "./pages/Learn";
 import FAQ from "./pages/FAQ";
-import Coaching from "./pages/Coaching";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -23,7 +22,6 @@ export const AppRoutes = () => (
       <Route path="/" element={<Index />} />
       <Route path="/learn" element={<Learn />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/coaching" element={<Coaching />} />
       <Route path="/about" element={<About />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -26,7 +26,7 @@ const Index = () => {
     "author": {
       "@type": "Person",
       "name": "Jeffrey Carson",
-      "jobTitle": "Bitcoin Coach and Educator",
+      "jobTitle": "Bitcoin Educator",
       "url": "https://bitcoinenvoy.co/about",
       "image": "https://bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
       "sameAs": [
@@ -45,7 +45,7 @@ const Index = () => {
       <SEO
         title="Bitcoin for Beginners — Learn Bitcoin Fundamentals in 1 Hour | Bitcoin Envoy"
         description="New to Bitcoin? Bitcoin Envoy teaches you the most important Bitcoin fundamentals in about an hour — no jargon, no fluff. The clearest beginner's guide to Bitcoin on the internet."
-        keywords="bitcoin coaching, bitcoin for beginners, bitcoin basics, bitcoin education, bitcoin investing, bitcoin guidance, bitcoin expert, bitcoin help, digital currency, digital assets"
+        keywords="bitcoin for beginners, bitcoin basics, bitcoin education, bitcoin investing, bitcoin guidance, bitcoin expert, bitcoin help, digital currency, digital assets"
         structuredData={structuredData}
       />
       <ErrorBoundary>

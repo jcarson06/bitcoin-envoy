@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import IndexIntro from "@/components/sections/index/IndexIntro";
 import IndexCTA from "@/components/sections/index/IndexCTA";
 import IndexWhyBitcoin from "@/components/sections/index/IndexWhyBitcoin";
-import IndexMission from "@/components/sections/index/IndexMission";
 import IndexDollarHistory from "@/components/sections/index/IndexDollarHistory";
 import IndexBitcoinHistory from "@/components/sections/index/IndexBitcoinHistory";
 
@@ -50,7 +49,6 @@ const Index = () => {
       <ErrorBoundary>
         <Navbar />
         <IndexIntro />
-        <IndexMission />
         <IndexWhyBitcoin />
         <IndexDollarHistory />
         <IndexBitcoinHistory />

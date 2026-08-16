@@ -28,7 +28,7 @@
     <meta property="og:url" content="https://bitcoinenvoy.co/" />
     <meta
       property="og:image"
-      content="https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon Bitcoin in Cyberpunk City.png"
+      content="https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon%20Bitcoin%20in%20Cyberpunk%20City.png"
     />
 
     <!-- Twitter / X Card -->
@@ -40,7 +40,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon Bitcoin in Cyberpunk City.png"
+      content="https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon%20Bitcoin%20in%20Cyberpunk%20City.png"
     />
 
     <!-- Site-level schema: per-page schema is injected by the SEO component during prerender -->
@@ -82,19 +82,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Loaded as a plain stylesheet rather than the preload + onload swap trick:
+      that trick needs an inline event handler, which would force
+      script-src 'unsafe-inline' in the CSP (see public/_headers). The
+      preconnects above already cover most of the latency it saved.
+    -->
     <link
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    /></noscript>
     <link rel="preload" href="/brockmann-medium-webfont.ttf" as="font" type="font/truetype" crossorigin />
-    <link rel="preload" href="/brockmann-medium.otf" as="font" type="font/opentype" crossorigin />
   </head>
 
   <body>

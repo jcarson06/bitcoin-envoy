@@ -1,4 +1,3 @@
-import React from "react";
 import { Section } from "@/components/common/Section";
 const LearnIntro = () => {
   return <Section spacing="lg" className="pt-20 bg-gradient-to-br from-pulse-50 to-white">

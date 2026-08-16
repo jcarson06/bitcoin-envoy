@@ -1,4 +1,3 @@
-import React from 'react';
 import { Section } from '@/components/common/Section';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 

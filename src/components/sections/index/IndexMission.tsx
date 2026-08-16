@@ -1,4 +1,3 @@
-import React from "react";
 import { Section } from "@/components/common/Section";
 const IndexMission = () => {
   return <Section spacing="sm" background="white" id="specifications">

@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Incremental build state written by `tsc -b` (npm run typecheck)
+*.tsbuildinfo
+
+# Environment files — never commit these. Vite inlines anything prefixed
+# VITE_ into the client bundle, so treat every value here as public anyway.
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

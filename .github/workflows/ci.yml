@@ -1,0 +1,60 @@
+name: CI
+
+# Netlify builds and deploys the site; this workflow exists to fail loudly
+# *before* that happens. Commit df0b68d ("Fix broken lint") shipped a lint
+# break that nothing caught, which is exactly what this is here to prevent.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A newer push to the same branch makes an in-flight run redundant.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # `ci` not `install`: it installs exactly what package-lock.json pins and
+      # fails if the lockfile and package.json have drifted apart.
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Also exercises the SSR bundle and the prerender step, so a route that
+      # throws only during renderToString still fails the build here.
+      - name: Build
+        run: npm run build
+
+      - name: Check every prerendered route emitted
+        run: |
+          set -euo pipefail
+          for route in index learn/index faq/index about/index \
+                       privacy-policy/index terms-of-service/index; do
+            test -s "dist/$route.html" || { echo "missing or empty: dist/$route.html"; exit 1; }
+          done
+          echo "all 6 prerendered routes present"
+
+      # Advisories are reported, never fatal: the current four are all
+      # build-chain or unreachable, and a new transitive advisory landing
+      # overnight should not block an unrelated content change.
+      - name: Audit (advisory only)
+        run: npm audit --audit-level=high || true

@@ -25,22 +25,33 @@ class Logger {
   private isDevelopment = import.meta.env.MODE === 'development';
 
   private createLogContext(level: LogLevel, message: string, data?: unknown): LogContext {
+    // Every browser global below is optional: this module is bundled into the
+    // SSR build too, where `window` does not exist. Reading it unguarded threw
+    // a ReferenceError that would have masked whatever error we were trying to
+    // report in the first place.
+    const perf: PerformanceWithMemory | undefined =
+      typeof performance !== 'undefined' ? performance : undefined;
+    const navEntry = perf?.getEntriesByType?.('navigation')[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+
     return {
       timestamp: new Date().toISOString(),
       level,
       message,
       data,
-      userAgent: navigator.userAgent,
-      url: window.location.href,
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      url: typeof window !== 'undefined' ? window.location.href : undefined,
       performance: {
-        memory: (performance as PerformanceWithMemory).memory ? {
-          usedJSHeapSize: (performance as PerformanceWithMemory).memory!.usedJSHeapSize,
-          totalJSHeapSize: (performance as PerformanceWithMemory).memory!.totalJSHeapSize,
-        } : null,
-        navigation: typeof performance !== 'undefined' && 'getEntriesByType' in performance ? {
-          type: (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)?.type || 0,
-          redirectCount: (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)?.redirectCount || 0,
-        } : null,
+        memory: perf?.memory
+          ? {
+              usedJSHeapSize: perf.memory.usedJSHeapSize,
+              totalJSHeapSize: perf.memory.totalJSHeapSize,
+            }
+          : null,
+        navigation: navEntry
+          ? { type: navEntry.type ?? 0, redirectCount: navEntry.redirectCount ?? 0 }
+          : null,
       }
     };
   }

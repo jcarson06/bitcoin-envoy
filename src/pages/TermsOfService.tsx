@@ -9,7 +9,7 @@ const TermsOfService: React.FC = () => {
     name: "Terms of Service",
     url: "https://bitcoinenvoy.co/terms-of-service",
     description:
-      "Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services.",
+      "Review Bitcoin Envoy's Terms of Service for using our website and educational resources.",
     publisher: {
       "@type": "Organization",
       name: "Bitcoin Envoy",
@@ -21,7 +21,7 @@ const TermsOfService: React.FC = () => {
     <>
       <SEO
         title="Terms of Service"
-        description="Review Bitcoin Envoy's Terms of Service for using our website, educational resources, and coaching services."
+        description="Review Bitcoin Envoy's Terms of Service for using our website and educational resources."
         url="/terms-of-service"
         structuredData={structuredData}
       />
@@ -35,8 +35,8 @@ const TermsOfService: React.FC = () => {
         <section className="section-container pb-16">
           <article className="mx-auto max-w-3xl space-y-6 leading-relaxed">
             <p>
-              These Terms of Service ("Terms") govern your use of the Bitcoin Envoy website, educational materials, and
-              optional coaching services (collectively, the "Services"). By accessing or using the Services, you agree to be
+              These Terms of Service ("Terms") govern your use of the Bitcoin Envoy website and educational materials
+              (collectively, the "Services"). By accessing or using the Services, you agree to be
               bound by these Terms.
             </p>
 
@@ -46,9 +46,9 @@ const TermsOfService: React.FC = () => {
               for maintaining the confidentiality of any login credentials and for all activities under your account.
             </p>
 
-            <h2 className="text-xl font-semibold">2. Educational Content & Coaching</h2>
+            <h2 className="text-xl font-semibold">2. Educational Content</h2>
             <p>
-              Our content and coaching are for educational purposes only. Bitcoin Envoy does not provide financial, investment,
+              Our content is for educational purposes only. Bitcoin Envoy does not provide financial, investment,
               tax, or legal advice. You are solely responsible for your decisions and actions.
             </p>
 

@@ -6,7 +6,6 @@ const ROUTES = [
   "/",
   "/learn",
   "/faq",
-  "/coaching",
   "/about",
   "/privacy-policy",
   "/terms-of-service",

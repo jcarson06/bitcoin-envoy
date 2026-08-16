@@ -32,7 +32,7 @@ const Navbar = memo(() => {
       {/* Header - stays visible */}
       <header className={cn("fixed top-0 left-0 right-0 z-40 py-2 sm:py-3 md:py-4 transition-all duration-300", isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent")}>
         <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Education & Coaching" onClick={scrollToTop}>
+          <Link to="/" className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" aria-label="Bitcoin Envoy home" onClick={scrollToTop}>
             <img src="/bitcoin-favicon.png" alt="Bitcoin logo" className="h-7 w-7 hover:scale-110 transition-transform" />
             <span className="font-brockmann text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors">
               Bitcoin Envoy
@@ -46,7 +46,6 @@ const Navbar = memo(() => {
             </Link>
             <Link to="/learn" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Learn</Link>
             <Link to="/faq" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">FAQ+</Link>
-            <Link to="/coaching" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">Coaching</Link>
             <Link to="/about" className="nav-link focus:outline-none focus:ring-2 focus:ring-primary rounded">About</Link>
           </nav>
 
@@ -101,15 +100,8 @@ const Navbar = memo(() => {
           >
             FAQ+
           </Link>
-          <Link 
-            to="/coaching" 
-            className="text-lg font-medium py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors" 
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Coaching
-          </Link>
-          <Link 
-            to="/about" 
+          <Link
+            to="/about"
             className="text-lg font-medium py-3 px-4 rounded-lg text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors" 
             onClick={() => setIsMenuOpen(false)}
           >

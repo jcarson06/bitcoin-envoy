@@ -2,6 +2,18 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import App, { AppRoutes } from "./App";
 
+/** Each react-helmet-async server-state field stringifies to markup for <head>. */
+type HelmetTag = { toString(): string };
+
+type HelmetServerState = {
+  title?: HelmetTag;
+  meta?: HelmetTag;
+  link?: HelmetTag;
+  script?: HelmetTag;
+  htmlAttributes?: HelmetTag;
+  bodyAttributes?: HelmetTag;
+};
+
 export interface RenderResult {
   html: string;
   helmet: {
@@ -15,7 +27,7 @@ export interface RenderResult {
 }
 
 export function render(url: string): RenderResult {
-  const helmetContext: { helmet?: any } = {};
+  const helmetContext: { helmet?: HelmetServerState } = {};
 
   const html = renderToString(
     <App helmetContext={helmetContext}>

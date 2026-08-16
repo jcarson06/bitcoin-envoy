@@ -3,10 +3,13 @@
 /                   /index.html                 200
 /learn              /learn/index.html            200
 /faq                /faq/index.html              200
-/coaching           /coaching/index.html         200
 /about              /about/index.html            200
 /privacy-policy     /privacy-policy/index.html   200
 /terms-of-service   /terms-of-service/index.html 200
+
+# Retired routes: permanently redirect so existing links and search results
+# land somewhere useful instead of a soft 404.
+/coaching           /learn                       301!
 
 # Unknown routes fall back to the SPA shell; React Router handles them client-side.
 /*                  /index.html                  200

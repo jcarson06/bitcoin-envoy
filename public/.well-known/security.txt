@@ -1,0 +1,21 @@
+# Security contact information for bitcoinenvoy.co
+# Format: RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116.html
+#
+# Bitcoin Envoy is a static education site. It has no user accounts, no login,
+# no database, and no backend API. It does not take payments and never asks for
+# wallet keys or seed phrases. No one from Bitcoin Envoy will ever ask you for
+# your seed phrase.
+#
+# In scope: the bitcoinenvoy.co website.
+# Out of scope: third-party sites we link to, missing security headers with no
+# demonstrated impact, scanner output without a proof of concept, denial of
+# service, and social engineering.
+#
+# Please give us a reasonable chance to fix an issue before disclosing publicly.
+# Good-faith research under these terms is welcome; we will not pursue legal
+# action against it.
+
+Contact: mailto:jeff@bitcoinenvoy.co
+Expires: 2027-08-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://bitcoinenvoy.co/.well-known/security.txt

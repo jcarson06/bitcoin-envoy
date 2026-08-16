@@ -43,7 +43,7 @@ const IndexIntro = memo(() => {
                 <div className="text-center text-muted-foreground">
                   <p className="text-sm">Image unavailable</p>
                 </div>
-              </div> : <img src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" alt="Bitcoin education and coaching - Learn the fundamentals of Bitcoin with expert guidance" className="hero-image" loading="eager" decoding="async" onError={handleImageError} />}
+              </div> : <img src="/lovable-uploads/22bdecf3-020a-460e-a323-e5fe40a037a9.png" alt="Bitcoin education - Learn the fundamentals of Bitcoin with expert guidance" className="hero-image" loading="eager" decoding="async" onError={handleImageError} />}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>
         </div>

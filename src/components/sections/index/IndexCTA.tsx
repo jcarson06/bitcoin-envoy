@@ -11,7 +11,7 @@ const IndexCTA = memo(() => {
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
           Ready to Start Your Bitcoin Journey?
         </h2>
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">​Start on the Learn page and watch a few short videos. Then head over to the FAQ page to peruse at your leisure.</p>
+        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Start on the Learn page and watch a few short videos. Then head over to the FAQ page to peruse at your leisure.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/learn" className="button-primary">
             Start Learning

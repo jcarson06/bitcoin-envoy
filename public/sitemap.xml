@@ -5,37 +5,37 @@
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bitcoinenvoy.co/</loc>
+    <loc>https://www.bitcoinenvoy.co/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <lastmod>2026-08-16</lastmod>
   </url>
   <url>
-    <loc>https://bitcoinenvoy.co/learn</loc>
+    <loc>https://www.bitcoinenvoy.co/learn</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-08-16</lastmod>
   </url>
   <url>
-    <loc>https://bitcoinenvoy.co/faq</loc>
+    <loc>https://www.bitcoinenvoy.co/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-08-16</lastmod>
   </url>
   <url>
-    <loc>https://bitcoinenvoy.co/about</loc>
+    <loc>https://www.bitcoinenvoy.co/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-08-16</lastmod>
   </url>
   <url>
-    <loc>https://bitcoinenvoy.co/privacy-policy</loc>
+    <loc>https://www.bitcoinenvoy.co/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <lastmod>2026-08-16</lastmod>
   </url>
   <url>
-    <loc>https://bitcoinenvoy.co/terms-of-service</loc>
+    <loc>https://www.bitcoinenvoy.co/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <lastmod>2026-08-16</lastmod>

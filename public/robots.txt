@@ -40,4 +40,4 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-Sitemap: https://bitcoinenvoy.co/sitemap.xml
+Sitemap: https://www.bitcoinenvoy.co/sitemap.xml

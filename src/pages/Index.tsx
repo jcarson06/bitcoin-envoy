@@ -18,15 +18,15 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Bitcoin Envoy",
-    "url": "https://bitcoinenvoy.co",
+    "url": "https://www.bitcoinenvoy.co",
     "description": "Free Bitcoin education for beginners. Learn the most important Bitcoin fundamentals in about one hour — no jargon, no technical background required.",
     "inLanguage": "en-US",
     "author": {
       "@type": "Person",
       "name": "Jeffrey Carson",
       "jobTitle": "Bitcoin Educator",
-      "url": "https://bitcoinenvoy.co/about",
-      "image": "https://bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
+      "url": "https://www.bitcoinenvoy.co/about",
+      "image": "https://www.bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
       "sameAs": [
         "https://x.com/jeffreyscarson",
         "https://www.linkedin.com/in/jscarson/"
@@ -34,7 +34,7 @@ const Index = () => {
     },
     "potentialAction": {
       "@type": "ReadAction",
-      "target": "https://bitcoinenvoy.co/learn"
+      "target": "https://www.bitcoinenvoy.co/learn"
     }
   };
 

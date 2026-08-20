@@ -18,4 +18,4 @@
 Contact: mailto:jeff@bitcoinenvoy.co
 Expires: 2027-08-16T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://bitcoinenvoy.co/.well-known/security.txt
+Canonical: https://www.bitcoinenvoy.co/.well-known/security.txt

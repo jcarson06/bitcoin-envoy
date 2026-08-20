@@ -7,7 +7,7 @@ const PrivacyPolicy: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Privacy Policy",
-    url: "https://bitcoinenvoy.co/privacy-policy",
+    url: "https://www.bitcoinenvoy.co/privacy-policy",
     description:
       "Read Bitcoin Envoy's Privacy Policy to learn how we collect, use, and protect your information.",
     publisher: {

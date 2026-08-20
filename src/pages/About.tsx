@@ -10,14 +10,14 @@ const About = () => {
     "@type": "AboutPage",
     "name": "About Jeffrey Carson — Bitcoin Educator",
     "description": "Learn about Jeffrey Carson, founder of Bitcoin Envoy and former U.S. Army Captain, dedicated to Bitcoin education.",
-    "url": "https://bitcoinenvoy.co/about",
+    "url": "https://www.bitcoinenvoy.co/about",
     "mainEntity": {
       "@type": "Person",
       "name": "Jeffrey Carson",
       "jobTitle": "Bitcoin Educator",
       "description": "Former U.S. Army Captain and Iraq War veteran with an MBA and two decades of experience across business, technology, and public policy. Executive Director of the Georgia Bitcoin Council.",
-      "url": "https://bitcoinenvoy.co/about",
-      "image": "https://bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
+      "url": "https://www.bitcoinenvoy.co/about",
+      "image": "https://www.bitcoinenvoy.co/lovable-uploads/jeffrey-carson-headshot.jpg",
       "email": "jeff@bitcoinenvoy.co",
       "sameAs": [
         "https://x.com/jeffreyscarson",
@@ -26,7 +26,7 @@ const About = () => {
       "worksFor": {
         "@type": "Organization",
         "name": "Bitcoin Envoy",
-        "url": "https://bitcoinenvoy.co"
+        "url": "https://www.bitcoinenvoy.co"
       }
     }
   };

@@ -11,15 +11,15 @@ interface SEOProps {
   structuredData?: object;
 }
 
-// Hosted OG image. Replace with a self-hosted /og-social.png (1200×630px) when
-// ready — this currently depends on a Lovable-owned bucket we don't control.
-const DEFAULT_OG_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/R8lQS5PGx5bSJbDtC1fKUQEn4u03/social-images/social-1758109489482-Neon%20Bitcoin%20in%20Cyberpunk%20City.png";
+// Self-hosted OG card, 1200×630 — the 2:1 ratio X requires for
+// summary_large_image. Regenerate with build/README.md if the wording changes;
+// the declared og:image:width/height below must keep matching the real file.
+const DEFAULT_OG_IMAGE = "/og-image.jpg";
 
 // Canonical and OG URLs are always absolute against production. Deriving them
 // from window.location instead would make Netlify deploy previews advertise
 // themselves as canonical, which is how preview domains end up indexed.
-const PROD_ORIGIN = "https://bitcoinenvoy.co";
+const PROD_ORIGIN = "https://www.bitcoinenvoy.co";
 
 /**
  * Per-page document head.
@@ -61,6 +61,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:alt" content="Bitcoin Envoy — Bitcoin for Beginners" />
       <meta property="og:site_name" content="Bitcoin Envoy" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@bitcoinenvoy" />
@@ -68,6 +70,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImageUrl} />
+      <meta name="twitter:image:alt" content="Bitcoin Envoy — Bitcoin for Beginners" />
       {structuredData && (
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}

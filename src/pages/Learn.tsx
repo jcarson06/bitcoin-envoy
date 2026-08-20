@@ -17,7 +17,7 @@ const Learn = () => {
     "provider": {
       "@type": "Organization",
       "name": "Bitcoin Envoy",
-      "url": "https://bitcoinenvoy.co"
+      "url": "https://www.bitcoinenvoy.co"
     },
     "educationalLevel": "Beginner",
     "teaches": ["What Bitcoin is", "How Bitcoin works", "Why Bitcoin has value", "Why Bitcoin matters globally"],
@@ -27,7 +27,7 @@ const Learn = () => {
       "courseWorkload": "PT30M"
     },
     "isAccessibleForFree": true,
-    "url": "https://bitcoinenvoy.co/learn"
+    "url": "https://www.bitcoinenvoy.co/learn"
   };
 
   return <div className="min-h-screen">

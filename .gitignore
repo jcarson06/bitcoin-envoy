@@ -31,3 +31,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Intermediate card renders — regenerate with build/README.md.
+# The HTML sources and the original art are tracked; these are not.
+build/og-photo.png
+build/og-typographic.png

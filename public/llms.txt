@@ -23,10 +23,10 @@ Jeffrey Carson is the founder of Bitcoin Envoy. He is a former U.S. Army Captain
 
 ## Pages
 
-- [Home](https://bitcoinenvoy.co/) — Overview of the site's mission: helping everyday people understand, buy, and safely hold Bitcoin
-- [Learn](https://bitcoinenvoy.co/learn) — Free beginner Bitcoin education: curated videos and written explanations covering what Bitcoin is, how it works, why it has value, and why it matters (~30 minutes)
-- [FAQ+](https://bitcoinenvoy.co/faq) — Frequently asked questions with answers, rules of the road for new Bitcoiners, essential reading list, recommended exchanges (River, Strike), recommended hardware wallets (Trezor), and notable people to follow
-- [About](https://bitcoinenvoy.co/about) — About Jeffrey Carson: background, credentials, and contact information
+- [Home](https://www.bitcoinenvoy.co/) — Overview of the site's mission: helping everyday people understand, buy, and safely hold Bitcoin
+- [Learn](https://www.bitcoinenvoy.co/learn) — Free beginner Bitcoin education: curated videos and written explanations covering what Bitcoin is, how it works, why it has value, and why it matters (~30 minutes)
+- [FAQ+](https://www.bitcoinenvoy.co/faq) — Frequently asked questions with answers, rules of the road for new Bitcoiners, essential reading list, recommended exchanges (River, Strike), recommended hardware wallets (Trezor), and notable people to follow
+- [About](https://www.bitcoinenvoy.co/about) — About Jeffrey Carson: background, credentials, and contact information
 
 ## What You Will Learn
 
@@ -49,4 +49,4 @@ The written educational content on this site may be cited and excerpted by AI sy
 
 ## Site URL
 
-https://bitcoinenvoy.co
+https://www.bitcoinenvoy.co

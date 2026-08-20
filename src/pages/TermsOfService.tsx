@@ -7,7 +7,7 @@ const TermsOfService: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Terms of Service",
-    url: "https://bitcoinenvoy.co/terms-of-service",
+    url: "https://www.bitcoinenvoy.co/terms-of-service",
     description:
       "Review Bitcoin Envoy's Terms of Service for using our website and educational resources.",
     publisher: {

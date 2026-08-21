@@ -21,6 +21,11 @@ dist-ssr
 .env.*
 !.env.example
 
+# Local agent settings. Machine-specific and potentially permission-granting,
+# so it must never be committed. This is currently also covered by a global
+# ignore on one machine — repeated here so the rule travels with the repo.
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

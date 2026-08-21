@@ -1,4 +1,4 @@
-## Plan (approved — proceeding to implement)
+## Plan (COMPLETED — this work shipped; kept for historical context)
 
 Replace `react-snap` with a deterministic Vite SSR + static-render pipeline.
 

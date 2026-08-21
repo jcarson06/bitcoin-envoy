@@ -1,69 +1,73 @@
-# Welcome to your Lovable project
+# Bitcoin Envoy
 
-## Project info
+Source for [bitcoinenvoy.co](https://www.bitcoinenvoy.co) — free Bitcoin
+education for beginners. The site teaches the most important Bitcoin
+fundamentals in about an hour, with no jargon and no technical background
+required.
 
-**URL**: https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727
+It is a static, prerendered marketing and education site. There are no user
+accounts, no login, no database, and no backend API. It does not take payments
+and never asks for wallet keys or seed phrases.
 
-## How can I edit this code?
+## Stack
 
-There are several ways of editing your application.
+Vite · React 18 · TypeScript · React Router · Tailwind CSS · shadcn/ui
 
-**Use Lovable**
+## Getting started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires Node.js 20+.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Vite dev server with hot reload |
+| `npm run build` | Full production build — see below |
+| `npm run lint` | ESLint across the project |
+| `npm run typecheck` | `tsc -b`, no emit |
+| `npm run preview` | Serve the built `dist/` locally |
 
-**Use GitHub Codespaces**
+## How the build works
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+`npm run build` is three steps, in order:
 
-## What technologies are used for this project?
+1. `vite build` — the client bundle.
+2. `vite build --ssr src/entry-server.tsx` — an SSR bundle into `dist/server`.
+3. `node scripts/prerender.mjs` — renders each route to static HTML.
 
-This project is built with .
+The prerender step is the reason this project doesn't use a plain SPA build.
+Six routes — `/`, `/learn`, `/faq`, `/about`, `/privacy-policy`, and
+`/terms-of-service` — are written to disk as real HTML with their content and
+`<head>` tags already in place, so crawlers and link unfurlers see each page's
+actual content without executing JavaScript. `public/_redirects` then serves
+those files directly, and unknown paths fall back to the SPA shell with a
+genuine 404 status rather than a soft 404.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deploys
 
-## How can I deploy this project?
+Netlify builds and deploys from `main` automatically. Build settings live in
+the Netlify dashboard; there is no `netlify.toml`.
 
-Simply open [Lovable](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727) and click on Share -> Publish.
+GitHub Actions (`.github/workflows/ci.yml`) runs lint → typecheck → build and
+verifies all six prerendered routes emitted, so a break fails in CI before
+Netlify ships it. Response headers, including the Content-Security-Policy, are
+set in `public/_headers`.
 
-## I want to use a custom domain - is that possible?
+## Security
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Please report vulnerabilities privately — see [SECURITY.md](SECURITY.md). The
+same contact is published at
+[/.well-known/security.txt](https://www.bitcoinenvoy.co/.well-known/security.txt).
+
+## License
+
+[MIT](LICENSE) © Jeffrey Carson.
+
+The license covers the code. The written Bitcoin education content and the
+Bitcoin Envoy name and branding remain the author's — please don't republish
+the articles wholesale or present the brand as your own.

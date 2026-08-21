@@ -33,13 +33,18 @@ Reports of the following will generally be closed without action:
 
 ## Reporting a Vulnerability
 
-**Email [jeff@bitcoinenvoy.co](mailto:jeff@bitcoinenvoy.co)** with `SECURITY` in
-the subject line. That is the only reporting channel.
+Please use one of these two private channels:
 
-This repository is private, so GitHub's private vulnerability reporting is not
-available — that feature only exists for public repositories. If you have been
-given access to this repository, please still use email rather than opening an
-issue, so the details do not sit in the issue tracker before a fix ships.
+- **GitHub private vulnerability reporting** — open the
+  [Security tab](https://github.com/jcarson06/bitcoin-envoy/security/advisories/new)
+  and file a draft advisory. This is preferred: it keeps the report, the
+  discussion, and the fix in one private place until we publish.
+- **Email [jeff@bitcoinenvoy.co](mailto:jeff@bitcoinenvoy.co)** with `SECURITY`
+  in the subject line, if you would rather not use GitHub.
+
+**Please do not open a public issue for a security report.** Public issues are
+visible to everyone the moment you file them, which tells the world about the
+problem before there is a fix.
 
 The same contact is published on the live site at
 [bitcoinenvoy.co/.well-known/security.txt](https://bitcoinenvoy.co/.well-known/security.txt),

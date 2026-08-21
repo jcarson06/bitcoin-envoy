@@ -21,11 +21,15 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      # Node version comes from .nvmrc, not a literal here. Netlify reads that
+      # same file (it overrides the dashboard's UI setting), so CI and the
+      # deploy build on identical Node — which is the only way this workflow
+      # can honestly promise to catch breakage before Netlify ships it.
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version-file: .nvmrc
           cache: npm
 
       # `ci` not `install`: it installs exactly what package-lock.json pins and
